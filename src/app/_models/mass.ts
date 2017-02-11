@@ -6,6 +6,6 @@ import {LocalTime} from "./localTime";
 export class Mass {
   langCode: string;
   parish: Parish;
-  timestamp: number;
+  duration: number;
   info: string;
 }

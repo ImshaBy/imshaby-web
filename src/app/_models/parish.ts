@@ -11,6 +11,6 @@ export class Parish {
 }
 
 export class Location{
-  latitude: string;
-  longitude: string;
+  latitude: number;
+  langitude: number;
 }
