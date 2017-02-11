@@ -1,0 +1,150 @@
+<div class="page-wrapper">
+
+  <!-- Preloader -->
+  <div class="preloader" style="display: none;"></div>
+
+  <!-- Main Header -->
+  <header class="main-header fixed-top-header">
+    <div class="auto-container clearfix">
+      <!--Logo-->
+      <div class="logo"><a href="#">
+        <img src="./images/logo.jpg" alt="Euharist" title="Euharist"></a></div>
+
+      <!--Main Menu-->
+      <nav class="main-menu">
+        <div class="navbar-header">
+          <!-- Toggle Button -->
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+
+        <div class="navbar-collapse collapse clearfix">
+          <ul class="navigation">
+            <li class="current"><a routerLink="/" routerLinkActive="active">Home</a>
+            </li>
+            <li><a routerLink="/about" >About</a>
+            </li>
+            <li><a routerLink="/contact" >Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+      <!--Main Menu End-->
+
+    </div>
+  </header>
+  <!--End Main Header -->
+
+  <!-- Page Banner -->
+  <section class="page-banner" style="background-image:url(./../images/page-banner.jpg);">
+    <div class="auto-container">
+      <!-- <h1>Расклад</h1>-->
+    </div>
+  </section>
+
+  <router-outlet></router-outlet>
+
+  <!--Schedule Section / Style Two-->
+  <section class="schedule-section style-two">
+    <div class="auto-container">
+
+
+      <!--Schedule Box-->
+      <div class="schedule-box clearfix wow fadeInUp animated" data-wow-delay="200ms" data-wow-duration="1500ms"
+           style="visibility: visible; animation-duration: 1500ms; animation-delay: 200ms; animation-name: fadeInUp;">
+
+        <!--Tab Buttons-->
+        <ul class="tab-buttons clearfix">
+          <li class="tab-btn" [class.active]="day.date.getDay() === selectedDay" *ngFor="let day of days" (click)="onSelect(day.date)"><span class="day">{{day.dayName}}</span><span class="date">{{day.humanFormat}} _ {{selectedDay}}</span><span
+            class="curve"></span></li>
+        </ul>
+
+        <!--Tabs Box-->
+        <div class="tabs-box">
+
+          <!--Tab / Current / Monday-->
+          <div class="tab" [class.current]="(massDay.date.getDay() === selectedDay)" [hidden]="!(massDay.date.getDay() === selectedDay)" *ngFor="let massDay of masses.schedule">
+
+            <div class="hour-box" [class.active-box]="massHour.active" *ngFor="let massHour of massDay.massHours" (click)="massHour.active = !massHour.active">
+              <div class="hour">{{massHour.hour}}</div>
+              <div class="img-circle circle"><span></span></div>
+              <div class="toggle-btn" [class.active]="massHour.active"><h3>Падрабязней (колькасць = {{massHour.data.length}})</h3></div>
+              <div class="content-box" [class.collapsed]="massHour.active">
+                <div class="panel panel-default row professional clearfix" style="padding: 1%" *ngFor="let mass of massHour.data">
+                  <div class="col-md-4 col-sm-4 col-xs-6 info">
+                    <figure class="img-circle image"><img class="img-circle" src="{{mass.parish.imgPath}}" alt=""></figure>
+                    <h5 class="prof-title">{{mass.parish.name}}</h5>
+                    <h6 class="prof-occup">{{mass.langCode}}</h6>
+                  </div>
+                  <div class="col-md-4 col-sm-4 col-xs-6 info">
+                    <h5 class="prof-title">{{mass.parish.address}}</h5>
+                    <!--<h6 class="prof-occup">глядець на карце</h6>-->
+                  </div>
+                  <div class="col-md-4 col-sm-4 col-xs-6 info">
+
+                    <h5 class="prof-title">{{mass.info}}</h5>
+                    <h6 class="prof-occup">{{mass.duration}}</h6>
+                    <!--<a href=""-->
+                    <!--class="theme-btn btn-style-one hvr-bounce-to-right dull">10:00 - 12:30</a>-->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+        <!--Tabs Box End-->
+
+      </div>
+      <!--Schedule Box End-->
+      <br>
+      <div class="text-right">
+        <a href="#"
+           class="download-btn theme-btn"><span class="fa fa-file-pdf-o"></span> DOWNLOAD .PDF schedule</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!--Intro Section-->
+  <section class="intro-section" style="background-image:url(./../images/12apostoles.jpg);">
+    <div class="auto-container">
+      <div class="row clearfix">
+        <div class="col-md-8 col-sm-8 col-xs-12 text-content">
+          <h2>ARE YOU READY TO MANAGE YOUR OWN EVENTS?</h2>
+          <div class="text">All of our virtual professionals are highly experienced in the areas in which they
+            work and have been through a thorough recruitment process.
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-4 col-xs-12 text-right">
+          <a href="http://wp1.themexlab.com/html/meeton-new-with-files/schedule-2.html#"
+             class="theme-btn btn-style-one hvr-bounce-to-right"><span class="fa fa-play"></span>SIGN UP TODAY</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--Main Footer-->
+  <footer class="main-footer">
+
+    <!--Footer Bottom-->
+    <div class="footer-bottom">
+      <div class="auto-container">
+        <div class="row clearfix">
+          <div class="col-md-12 col-sm-12 col-xs-12">Copyright 2017 by Imsha.By | All rights
+            reserved
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </footer>
+
+</div>
+<!--End pagewrapper-->
+
+<!--Scroll to top-->
+<div class="scroll-to-top" style="display: block;"></div>
