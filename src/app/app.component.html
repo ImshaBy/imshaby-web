@@ -57,7 +57,7 @@
 
         <!--Tab Buttons-->
         <ul class="tab-buttons clearfix">
-          <li class="tab-btn" [class.active]="day.date.getDay() === selectedDay" *ngFor="let day of days" (click)="onSelect(day.date)"><span class="day">{{day.dayName}}</span><span class="date">{{day.humanFormat}} _ {{selectedDay}}</span><span
+          <li class="tab-btn" [class.active]="(day.date | date: 'dd/MM/yyyy') == (selectedDate | date: 'dd/MM/yyyy') " *ngFor="let day of days" (click)="onSelect(day.date)"><span class="day">{{day.dayName}}</span><span class="date">{{day.humanFormat}}</span><span
             class="curve"></span></li>
         </ul>
 
@@ -65,8 +65,7 @@
         <div class="tabs-box">
 
           <!--Tab / Current / Monday-->
-          <div class="tab" [class.current]="(massDay.date.getDay() === selectedDay)" [hidden]="!(massDay.date.getDay() === selectedDay)" *ngFor="let massDay of masses.schedule">
-
+          <div class="tab" *ngFor="let massDay of masses.schedule" [class.current]="(massDay.date | date: 'dd/MM/yyyy') == (selectedDate | date: 'dd/MM/yyyy')"  [hidden]="!((massDay.date | date: 'dd/MM/yyyy') == (selectedDate | date: 'dd/MM/yyyy'))" >
             <div class="hour-box" [class.active-box]="massHour.active" *ngFor="let massHour of massDay.massHours" (click)="massHour.active = !massHour.active">
               <div class="hour">{{massHour.hour}}</div>
               <div class="img-circle circle"><span></span></div>

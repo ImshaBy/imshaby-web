@@ -1,5 +1,5 @@
 ﻿export * from './mass';
-export * from './massDailySchedule';
+export * from './massSchedule';
 export * from './localTime';
 export * from './parish';
 export * from './day';

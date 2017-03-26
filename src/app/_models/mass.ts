@@ -8,4 +8,12 @@ export class Mass {
   parish: Parish;
   duration: number;
   info: string;
+
+  constructor(langCode: string, parish: Parish, duration: number, info: string) {
+    this.langCode = langCode;
+    this.parish = parish;
+    this.duration = duration;
+    this.info = info;
+  }
+
 }

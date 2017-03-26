@@ -4,9 +4,10 @@ import { ActivatedRoute } from '@angular/router';
 
 import { Mass } from './_models/index';
 import {MassService} from "./_services/mass.service";
-import {MassDailySchedule} from "./_models/massDailySchedule";
+import {MassSchedule} from "./_models/massSchedule";
 import {Day} from "./_models/day";
 import {Utils} from "./_services/app.utils";
+import {Parish} from "./_models/parish";
 
 @Component({
   selector: 'app-root',
@@ -15,40 +16,63 @@ import {Utils} from "./_services/app.utils";
   providers:[MassService, Utils]
 })
 export class AppComponent {
-  masses: MassDailySchedule;
+  masses: MassSchedule;
   massService: MassService;
   utils: Utils;
   today: Date;
   days: Day[];
   selectedDay: number;
+  selectedDate: Date;
 
   constructor(private pMassService: MassService, private pUtils: Utils) {
     console.log("AppComponent  constructor")
     this.massService = pMassService;
     this.utils = pUtils;
+    this.masses = new MassSchedule();
   }
 
   refresh(){
     console.log("AppComponent  refresh");
     this.today = new Date();
-    this.masses = this.getTodaySchedule();
+    // this.masses = this.getTodaySchedule();
+    this.getTodayScheduleAsync();
+    // this.getTodaySchedulePromise();
     this.days = this.getActualDays();
     this.selectedDay = this.utils.getSelectedDay(this.today);
+    this.selectedDate = this.today;
   }
 
   ngOnInit() {
     this.refresh();
-    console.log("out log");
-    console.log(this.masses);
   }
 
   onSelect(massDay: Date): void {
+    console.log(massDay);
     this.selectedDay = massDay.getDay();
+    this.selectedDate = massDay;
   }
 
-  getTodaySchedule(): MassDailySchedule {
+  getTodaySchedule(): MassSchedule {
     return this.massService.getTodaySchedule();
   }
+
+  getTodaySchedulePromise(){
+    this.massService.getTodaySchedulePromise().then(masses => this.masses = masses);
+  }
+
+  getTodayScheduleAsync() {
+    this.massService.getTodayScheduleAsync()
+    .subscribe(
+      masses => {
+        this.masses = masses;
+        console.log(this.masses);
+      },
+      error => console.error('Error: ' + error),
+      () => console.log('Completed async!')
+    );
+  }
+
+
 
   getActualDays(): Day[] {
     return this.utils.getActualDays();

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Mass } from '../_models/index';
-import { MassDailySchedule } from '../_models/index';
+import { MassSchedule } from '../_models/index';
 
 import { MassService } from '../_services/index';
 
@@ -12,7 +12,7 @@ import { MassService } from '../_services/index';
   providers:[MassService]
 })
 export class HomeComponent implements OnInit {
-  massSchedule: MassDailySchedule;
+  massSchedule: MassSchedule;
   massService: MassService;
   constructor(private pMassService: MassService) {
       console.log("Home component constructor")

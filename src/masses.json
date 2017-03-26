@@ -1,0 +1,167 @@
+{
+  "schedule": [
+    {
+      "date": "03/26/2017",
+      "massHours": [
+        {
+          "hour": "10:00",
+          "data": [
+            {
+              "langCode": "by",
+              "parish": {
+                "parishId": "1",
+                "address": "Minsk",
+                "imgPath": "./images/avatars/img1.png",
+                "name": "4k",
+                "gps": {
+                  "langitude": 123,
+                  "latitude": 231
+                }
+              },
+              "duration": 60,
+              "info": "simple"
+            },
+            {
+              "langCode": "by",
+              "parish": {
+                "parishId": "1",
+                "address": "Minsk",
+                "imgPath": "./images/avatars/img1.png",
+                "name": "4k",
+                "gps": {
+                  "langitude": 123,
+                  "latitude": 231
+                }
+              },
+              "duration": 60,
+              "info": "simple"
+            },
+            {
+              "langCode": "by",
+              "parish": {
+                "parishId": "1",
+                "address": "Minsk",
+                "imgPath": "./images/avatars/img1.png",
+                "name": "4k",
+                "gps": {
+                  "langitude": 123,
+                  "latitude": 231
+                }
+              },
+              "duration": 60,
+              "info": "simple"
+            },
+            {
+              "langCode": "by",
+              "parish": {
+                "parishId": "1",
+                "address": "Minsk",
+                "imgPath": "./images/avatars/img1.png",
+                "name": "4k",
+                "gps": {
+                  "langitude": 123,
+                  "latitude": 231
+                }
+              },
+              "duration": 60,
+              "info": "simple"
+            }
+          ],
+          "active": true
+        },
+        {
+          "hour": "12:00",
+          "data": [
+            {
+              "langCode": "by",
+              "parish": {
+                "parishId": "1",
+                "address": "Minsk",
+                "imgPath": "./images/avatars/img1.png",
+                "name": "4k",
+                "gps": {
+                  "langitude": 123,
+                  "latitude": 231
+                }
+              },
+              "duration": 60,
+              "info": "simple"
+            },
+            {
+              "langCode": "by",
+              "parish": {
+                "parishId": "1",
+                "address": "Minsk",
+                "imgPath": "./images/avatars/img1.png",
+                "name": "4k",
+                "gps": {
+                  "langitude": 123,
+                  "latitude": 231
+                }
+              },
+              "duration": 60,
+              "info": "simple"
+            },
+            {
+              "langCode": "by",
+              "parish": {
+                "parishId": "1",
+                "address": "Minsk",
+                "imgPath": "./images/avatars/img1.png",
+                "name": "4k",
+                "gps": {
+                  "langitude": 123,
+                  "latitude": 231
+                }
+              },
+              "duration": 60,
+              "info": "simple"
+            }
+          ],
+          "active": false
+        }
+      ]
+    },
+    {
+      "date": "03/27/2017",
+      "massHours": [
+        {
+          "hour": "16:00",
+          "data": [
+            {
+              "langCode": "by",
+              "parish": {
+                "parishId": "1",
+                "address": "Minsk",
+                "imgPath": "./images/avatars/img1.png",
+                "name": "4k",
+                "gps": {
+                  "langitude": 123,
+                  "latitude": 231
+                }
+              },
+              "duration": 60,
+              "info": "simple"
+            },
+            {
+              "langCode": "by",
+              "parish": {
+                "parishId": "1",
+                "address": "Minsk",
+                "imgPath": "./images/avatars/img1.png",
+                "name": "4k",
+                "gps": {
+                  "langitude": 123,
+                  "latitude": 231
+                }
+              },
+              "duration": 60,
+              "info": "simple"
+            }
+          ],
+          "active": false
+        }
+      ]
+    }
+  ]
+}

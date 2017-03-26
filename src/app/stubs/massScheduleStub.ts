@@ -1,10 +1,10 @@
 /**
  * Created by Alena Misan on 11.01.2017.
  */
-import {MassDailySchedule} from '../_models/massDailySchedule';
+import {MassSchedule} from '../_models/massSchedule';
 import {Mass} from "../_models/mass";
 
-export const SCHEDULE: MassDailySchedule =
+export const SCHEDULE: MassSchedule =
   {
     schedule: [
       {
@@ -65,7 +65,7 @@ export const SCHEDULE: MassDailySchedule =
           }]
       },
       {
-        date: new Date("02/12/2017"),
+        date: new Date("03/15/2017"),
         massHours: [{
           hour: "16:00",
           data: [

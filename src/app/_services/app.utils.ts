@@ -5,10 +5,9 @@ import {Day} from "../_models/day";
 
 @Injectable()
 export class Utils {
-  public DAYS = ["Sunday", "Monday", "Tuesday", "Wensday", "Thursday", "Friday", "Sutturday"];
+  public DAYS = ["Sunday", "Monday", "Tuesday", "Wendsday", "Thursday", "Friday", "Saturday"];
 
   public getActualDays():Day[] {
-    console.log("actual days")
     var actualDays = [];
     var now = new Date();
     var counter = 0;
@@ -18,8 +17,6 @@ export class Utils {
       actualDays.push(day);
       counter++;
     }
-    console.log("actual days - finished")
-
     return actualDays;
   }
 
@@ -32,6 +29,5 @@ export class Utils {
   public getSelectedDay( date: Date){
     return date.getDay();
   }
-
 
 }
