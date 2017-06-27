@@ -34,12 +34,17 @@ export class AppComponent {
   refresh(){
     console.log("AppComponent  refresh");
     this.today = new Date();
+    console.log("today " + this.today)
     // this.masses = this.getTodaySchedule();
-    this.getTodayScheduleAsync();
+
     // this.getTodaySchedulePromise();
     this.days = this.getActualDays();
+    console.log("days" + this.days);
     this.selectedDay = this.utils.getSelectedDay(this.today);
+    console.log("selected day" + this.selectedDay)
     this.selectedDate = this.today;
+    console.log("selected date" + this.selectedDate)
+    this.getTodayScheduleAsync();
   }
 
   ngOnInit() {

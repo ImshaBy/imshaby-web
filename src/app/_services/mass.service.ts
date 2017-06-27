@@ -14,8 +14,8 @@ import {MassScheduleJSON, MassDayJSON} from "../_models/massScheduleJSON";
 
 @Injectable()
 export class MassService {
-  private API_URL = "masses.json";
-  // private API_URL = "http://localhost:5000/api/UserApi";
+  // private API_URL = "masses.json";
+  private API_URL = "http://localhost:3000/api/mass/week";
 
   constructor(private http: Http) {}
 

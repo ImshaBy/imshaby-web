@@ -8,8 +8,15 @@
     "lint": "tslint \"src/**/*.ts\"",
     "test": "ng test",
     "pree2e": "webdriver-manager update",
-    "e2e": "protractor"
+    "e2e": "protractor",
+    "clean": "rm -rf dist",
+    "serve": "http-server . -p 5556",
+    "build": "tsc",
+    "build_prod": "npm run build && browserify -s main dist/main.js > dist/bundle.js && npm run minify",
+    "minify": "uglifyjs dist/bundle.js --screw-ie8 --compress --mangle --output dist/bundle.min.js"
   },
+
+
   "private": true,
   "dependencies": {
     "@angular/common": "^2.1.0",

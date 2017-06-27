@@ -14,5 +14,9 @@
     "typeRoots": [
       "../node_modules/@types"
     ]
-  }
+  },
+  "compileOnSave": false,
+  "files": [
+    "./src/main.ts"
+  ]
 }
