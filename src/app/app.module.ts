@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { Ng2DatetimePickerModule } from 'ng2-datetime-picker';
 import { AlertModule } from 'ng2-bootstrap/alert';
 
 //custom
@@ -23,8 +22,7 @@ import {Utils} from "./_services/app.utils";
     BrowserModule,
     FormsModule,
     HttpModule,
-	  //custom
-  	Ng2DatetimePickerModule,
+
 	  routing,
     AlertModule.forRoot()
   ],

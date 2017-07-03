@@ -10,12 +10,15 @@ import 'rxjs/Rx';
 import { SCHEDULE } from '../stubs/massScheduleStub';
 import {MassSchedule, MassDay} from "../_models/massSchedule";
 import {MassScheduleJSON, MassDayJSON} from "../_models/massScheduleJSON";
+import { environment } from '../../environments/environment';
 
 
 @Injectable()
 export class MassService {
   // private API_URL = "masses.json";
-  private API_URL = "http://localhost:3000/api/mass/week";
+  private API_URL = "http://api-misan.rhcloud.com/api/mass/week";
+
+
 
   constructor(private http: Http) {}
 
