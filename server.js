@@ -4,6 +4,8 @@
 
 // server.js
 const express = require('express');
+const path = require('path');
+
 const app = express();
 // Run the app by serving the static files
 // in the dist directory

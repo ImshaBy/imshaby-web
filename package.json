@@ -11,11 +11,12 @@
     "pree2e": "webdriver-manager update",
     "e2e": "protractor",
     "clean": "rm -rf dist",
+    "styles": "cp default dist && cp -R css dist/ && cp -R fonts dist/ && cp -R images dist/",
     "serve": "http-server . -p 5556",
     "build": "tsc",
     "build_prod": "npm run build && browserify -s main dist/main.js > dist/bundle.js && npm run minify",
     "minify": "uglifyjs dist/bundle.js --screw-ie8 --compress --mangle --output dist/bundle.min.js",
-    "postinstall": "ng build --aot -prod",
+    "postinstall": "clean && ng build --aot -prod && styles",
     "deploy": "git push origin master && git push heroku master"
   },
   "engines": {

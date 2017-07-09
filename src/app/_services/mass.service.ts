@@ -16,7 +16,7 @@ import { environment } from '../../environments/environment';
 @Injectable()
 export class MassService {
   // private API_URL = "masses.json";
-  private API_URL = "http://api-misan.rhcloud.com/api/mass/week";
+  private API_URL = "https://api-misan.rhcloud.com/api/mass/week";
 
 
 
