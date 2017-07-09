@@ -16,7 +16,7 @@
     "build": "tsc",
     "build_prod": "npm run build && browserify -s main dist/main.js > dist/bundle.js && npm run minify",
     "minify": "uglifyjs dist/bundle.js --screw-ie8 --compress --mangle --output dist/bundle.min.js",
-    "postinstall": "clean && ng build --aot -prod && styles",
+    "postinstall": "npm run clean && ng build --aot -prod && npm run styles",
     "deploy": "git push origin master && git push heroku master"
   },
   "engines": {
