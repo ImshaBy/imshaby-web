@@ -15,8 +15,8 @@ import { environment } from '../../environments/environment';
 
 @Injectable()
 export class MassService {
-  // private API_URL = "masses.json";
-  private API_URL = "https://api-misan.rhcloud.com/api/mass/week";
+  // private API_URI = "masses.json";
+  private API_URI = "/api/mass/week";
 
 
 
@@ -27,12 +27,17 @@ export class MassService {
   }
   getTodayScheduleAsync() : Observable<MassSchedule> {
     console.log("async call");
-    return this.http.get(this.API_URL)
+    return this.http.get(this.getServiceURL())
       .map((response) => {
         let jsonObject = response.json();
         let massScheduleJSON: MassScheduleJSON = Object.assign(new MassScheduleJSON(), jsonObject);
         return this.transform(massScheduleJSON);
       });
+  }
+
+  private getServiceURL() {
+    var apiURL = environment.apiHost;
+    return apiURL + this.API_URI;
   }
 
   private transform(massScheduleJSON: MassScheduleJSON) {

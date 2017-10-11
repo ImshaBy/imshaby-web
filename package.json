@@ -8,7 +8,7 @@
     "start": "node server.js",
     "test": "ng test",
     "clean": "rm -rf dist",
-    "serve": "http-server . -p 5556",
+    "serve": "http-server ./dist -p 5556",
     "build": "tsc",
     "postinstall": "npm run clean && ng build --aot -prod",
     "deploy": "git push origin master && git push heroku master"
