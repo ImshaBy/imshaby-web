@@ -36,19 +36,18 @@ Result: ![screen](https://www.screencast.com/t/w5dZb3pXPm4n)
 ## Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
+Development server is working with mock-server.
+
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
 
 production: ng build --prod --env=prod
-local: ng build --prod
+local: ng build
 
 
 
 ## Other project links
 
-https://travis-ci.org/childRon/imshaby-api/jobs/164624513
-https://studio.restlet.com/apis/3d4d9113-390b-489a-b8b1-e6f00cdcd421/resources/~2Fmass~2F%7BmassId%7D/operations/GET
+CI for back-end: https://travis-ci.org/childRon/imshaby-api
 
-bffe62230a894c7ab79bd64e4ef18c21 - jenkins pass
-andrei.misan / 89875956
