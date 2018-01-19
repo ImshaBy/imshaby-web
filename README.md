@@ -29,7 +29,7 @@ To check **Git** installation run from *cmd*: ```git --version```
 1. Navigate to ROOT/mock
 2. Run `java -jar wiremock-standalone-2.12.0.jar --port 3000`
 
-Result: ![screen](https://www.screencast.com/t/w5dZb3pXPm4n)
+Result: [screen](https://www.screencast.com/t/w5dZb3pXPm4n)
 
 *please note, that port 3000 should be available, in other scenario please run [wiremock](http://wiremock.org/docs/running-standalone/) with --port option*
 
@@ -42,8 +42,8 @@ Development server is working with mock-server.
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
 
-production: ng build --prod --env=prod
-local: ng build
+* production environment: ng build --prod --env=prod
+* dev environment: ng build
 
 
 

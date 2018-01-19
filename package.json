@@ -10,7 +10,7 @@
     "clean": "rm -rf dist",
     "serve": "http-server ./dist -p 5556",
     "build": "tsc",
-    "postinstall": "npm run clean && ng build --aot -prod",
+    "postinstall": "npm run clean",
     "deploy": "git push origin master && git push heroku master"
   },
   "engines": {
@@ -37,13 +37,13 @@
     "reflect-metadata": "^0.1.8",
     "rxjs": "5.0.1",
     "systemjs": "0.19.40",
-    "ts-helpers": "^1.1.1",
     "typescript-collections": "^1.2.3",
     "zone.js": "^0.7.2"
   },
   "devDependencies": {
     "@angular/compiler-cli": "^2.4.1",
     "@types/node": "^6.0.42",
+    "@types/jasmine": "2.5.38",
     "angular-cli": "1.0.0-beta.20-4",
     "codelyzer": "~1.0.0-beta.3",
     "css-loader": "^0.25.0",
@@ -61,6 +61,8 @@
     "tslint": "3.13.0",
     "typescript": "~2.0.3",
     "url-loader": "^0.5.7",
-    "webdriver-manager": "10.2.5"
+    "webdriver-manager": "10.2.5",
+    "jasmine-core": "2.5.2",
+    "jasmine-spec-reporter": "3.2.0"
   }
 }
