@@ -77,7 +77,6 @@ body {
     color: #292929;
     line-height: 1.4em;
     font-weight: 400;
-    background: url(./images/12apostoles.jpg);
 }
 
 a {
@@ -222,7 +221,7 @@ ul,li {
     position:relative;
     display:inline-block;
     overflow:hidden;
-    background: #000;
+    background: #000000;
     color:#ffffff;
     line-height:24px;
     padding:8px 22px;
@@ -268,11 +267,11 @@ ul,li {
 }
 
 .padding-40{
-    padding:40px 0px !important;
+    padding:40px 0 !important;
 }
 
 .padding-60{
-    padding:60px 0px 10px !important;
+    padding:60px 0 10px !important;
 }
 
 .padding-70{
@@ -296,9 +295,8 @@ ul,li {
     left: 0;
     top: 0;
     z-index: 999;
-    background-image: url(../images/header_bg.jpg);
+    background: #accbbc url(../images/header_bg.jpg) center no-repeat;
     background-size: cover;
-    background-position: center;
     transition: all 300ms ease;
     -moz-transition: all 300ms ease;
     -webkit-transition: all 300ms ease;
@@ -346,9 +344,10 @@ ul,li {
     color: #fff;
 }
 
-.site-name p {
+.site-name li {
     font: normal 42px/42px 'Microsoft sans serif';
     color: #97b198;
+    margin-bottom: 10px;
 }
 
 .site-name .active a {
@@ -364,7 +363,7 @@ ul,li {
 
 .site-language-switcher li {
     display: inline-block;
-    padding: 0 10px;
+    padding: 0 7px;
     color: #ffffff;
     font-size: 21px;
     line-height: 1.4em;
@@ -375,6 +374,10 @@ ul,li {
     color: #ffffff;
 }
 
+.site-language-switcher li:hover {
+    background: #871266;
+}
+
 .site-language-switcher li.active {
     background: #871266;
 }
@@ -383,7 +386,7 @@ ul,li {
     padding: 0;
 }
 
-.fixed-top-header .site-name p {
+.fixed-top-header .site-name li {
     font-size: 30px;
     line-height: 30px;
     transition:all 300ms ease;
@@ -910,6 +913,11 @@ ul,li {
 .schedule-box {
     position: relative;
     border: 1px solid #dadada;
+
+    visibility: visible;
+    animation-duration: 1500ms;
+    animation-delay: 200ms;
+    animation-name: fadeInUp;
 }
 
 .schedule-box .tab-buttons {
@@ -1861,16 +1869,13 @@ ul,li {
 
 .intro-section {
     position: relative;
-    font-family: "Open Sans";
     font-weight: 300;
     line-height: 1.5em;
     padding: 50px 0;
-    background: #11c3f0;
     color: #000000;
+    background: #e7e5aa url(../images/12apostoles.jpg) center center no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-position: center center;
 }
 
 .intro-section:before {
@@ -1907,30 +1912,30 @@ ul,li {
     font-size: 24px;
 }
 
-.intro-section .carousel {
+.intro-section .parish-list-carousel {
     display: flex;
     margin-bottom: 75px;
 }
 
-.intro-section .carousel .mCSB_container {
+.intro-section .parish-list-carousel .mCSB_container {
     display: flex;
 }
 
-.intro-section .carousel-item {
+.parish-list-carousel .carousel-item {
     flex: 1;
     margin-right: 50px;
 }
 
-.intro-section .carousel-item figcaption {
+.parish-list-carousel .carousel-item figcaption {
     text-align: center;
 }
-.intro-section .carousel-item img {
+.parish-list-carousel .carousel-item img {
     width: 100px;
     margin-bottom: 15px;
     border: 1px solid #d0d0d0;
 }
 
-.intro-section .btn-style-one{
+.intro-section .btn-style-one {
     position: relative;
     margin: 40px 0 0;
     border: 1px solid rgba(255,255,255,0.30);
@@ -1938,6 +1943,19 @@ ul,li {
 
 .intro-section .btn-style-one:before{
     background: #fc5a1b;
+}
+
+.text-content {
+    text-align: center;
+}
+
+.text-content h2 {
+    text-align: left;
+}
+
+.contact-us {
+    font-size: 24px;
+    margin: 5px 0;
 }
 
 /***
@@ -3047,25 +3065,25 @@ ul,li {
 
 ***/
 
-.scroll-to-top{
-    position:fixed;
-    bottom:0px;
-    right:0px;
-    width:48px;
-    height:48px;
-    color:#ffffff;
-    background:#d9d9d9 url(../images/icons/arrow-up.png) center center no-repeat;
-    font-size:20px;
-    line-height:48px;
-    text-align:center;
-    z-index:100;
-    cursor:pointer;
-    display:none;
+.scroll-to-top {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 48px;
+    height: 48px;
+    color: #ffffff;
+    background: #d9d9d9 url(../images/icons/arrow-up.png) center center no-repeat;
+    font-size: 20px;
+    line-height: 48px;
+    text-align: center;
+    z-index: 100;
+    cursor: pointer;
+    display: none;
 }
 
-.scroll-to-top:hover{
-    background-color:#fc5a1b;
-    color:#ffffff;
+.scroll-to-top:hover {
+    background-color: #871266;
+    color: #ffffff;
 }
 
 
@@ -4214,10 +4232,38 @@ ul,li {
 
 .info-partners li {
     display: inline-block;
-    padding-left: 1%;
-    margin-bottom: 10px;
+    padding-right: 50px;
+    margin-bottom: 25px;
 }
 
 .parish-list {
     width: 100%;
+}
+
+.left-section-text {
+    margin-bottom: 75px;
+}
+
+.social-links {
+    display: flex;
+}
+
+.social-links li {
+    flex: 1;
+}
+
+.social-links a {
+    background: #FFFFFF;
+    border-radius: 50%;
+    padding: 13px;
+}
+
+.social-links .fa {
+    font-size: 23px;
+    transition: all .2s linear;
+}
+
+.social-links a:hover {
+    background: #871266;
+    color: #ffffff;
 }

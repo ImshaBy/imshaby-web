@@ -1,35 +1,35 @@
 (function($) {
 	
 	"use strict";
-	
-	var selectors = {
-		preloader: '.preloader',
-		mainHeader: '.main-header',
-		scrollToTop: '.scroll-to-top'
-	};
 
 	//Hide Loading Box (Preloader)
 	function handlePreloader() {
-		if($(selectors.preloader).length){
-			$(selectors.preloader).delay(500).fadeOut(500);
+	    var preloader = '.preloader';
+
+		if($(preloader).length){
+			$(preloader).delay(500).fadeOut(500);
 		}
 	}
 	
 	
 	//Update Header Style + Scroll Top
-	// function headerStyle() {
-	// 	if($(selectors.mainHeader).length){
-	// 		var windowpos = $(window).scrollTop();
-	// 		if (windowpos >= 1) {
-	// 			$(selectors.mainHeader).addClass('fixed-top-header');
-	// 			$(selectors.scrollToTop).fadeIn(300);
-	// 		} else {
-	// 			$(selectors.mainHeader).removeClass('fixed-top-header');
-	// 			$(selectors.scrollToTop).fadeOut(300);
-	// 		}
-	// 	}
-	// }
-	//
+	function headerStyle() {
+		var mainHeaderSelector = '.main-header',
+			scrollToTopSelector = '.scroll-to-top',
+            fixedTopHeaderclassNames = 'fixed-top-header';
+
+		if($(mainHeaderSelector).length){
+			var windowpos = $(window).scrollTop();
+			if (windowpos >= 1) {
+				$(mainHeaderSelector).addClass(fixedTopHeaderclassNames);
+				$(scrollToTopSelector).fadeIn(300);
+			} else {
+				$(mainHeaderSelector).removeClass(fixedTopHeaderclassNames);
+				$(scrollToTopSelector).fadeOut(300);
+			}
+		}
+	}
+
 	
 	//Submenu Dropdown Toggle
 	if($('.main-header li.dropdown .submenu').length){
@@ -42,291 +42,52 @@
 	}
 	
 	
-	//Main Slider
-	if($('.main-slider').length){
-
-		jQuery('.tp-banner').show().revolution({
-		  delay:7500,
-		  startwidth:1200,
-		  startheight:700,
-		  hideThumbs:600,
-	
-		  thumbWidth:80,
-		  thumbHeight:50,
-		  thumbAmount:5,
-	
-		  navigationType:"bullet",
-		  navigationArrows:"0",
-		  navigationStyle:"preview4",
-	
-		  touchenabled:"on",
-		  onHoverStop:"on",
-	
-		  swipe_velocity: 0.7,
-		  swipe_min_touches: 1,
-		  swipe_max_touches: 1,
-		  drag_block_vertical: false,
-	
-		  parallax:"mouse",
-		  parallaxBgFreeze:"on",
-		  parallaxLevels:[7,4,3,2,5,4,3,2,1,0],
-	
-		  keyboardNavigation:"off",
-	
-		  navigationHAlign:"center",
-		  navigationVAlign:"bottom",
-		  navigationHOffset:0,
-		  navigationVOffset:20,
-	
-		  soloArrowLeftHalign:"left",
-		  soloArrowLeftValign:"center",
-		  soloArrowLeftHOffset:20,
-		  soloArrowLeftVOffset:0,
-	
-		  soloArrowRightHalign:"right",
-		  soloArrowRightValign:"center",
-		  soloArrowRightHOffset:20,
-		  soloArrowRightVOffset:0,
-	
-		  shadow:0,
-		  fullWidth:"on",
-		  fullScreen:"off",
-	
-		  spinner:"spinner4",
-	
-		  stopLoop:"off",
-		  stopAfterLoops:-1,
-		  stopAtSlide:-1,
-	
-		  shuffle:"off",
-	
-		  autoHeight:"off",
-		  forceFullWidth:"on",
-	
-		  hideThumbsOnMobile:"on",
-		  hideNavDelayOnMobile:1500,
-		  hideBulletsOnMobile:"on",
-		  hideArrowsOnMobile:"on",
-		  hideThumbsUnderResolution:0,
-	
-		  hideSliderAtLimit:0,
-		  hideCaptionAtLimit:0,
-		  hideAllCaptionAtLilmit:0,
-		  startWithSlide:0,
-		  videoJsPath:"",
-		  fullScreenOffsetContainer: ".main-slider"
-	  });
-
-		
-	}
-	
+	var tabBtnSelector = '.schedule-box .tab-btn',
+		tabSelector = '.schedule-box .tab',
+		body = 'html body',
+		scrollToTop = '.scroll-to-top',
+		classNames = {
+			active: 'active',
+			current: 'current',
+			activeBox: 'active-box'
+		};
 	
 	//Schedule Box Tabs
 	if($('.schedule-box').length){
 		
 		//Tabs
-		$('.schedule-box .tab-btn').on('click', function() {
-			var target = $($(this).attr('data-id'));
-			$('.schedule-box .tab-btn').removeClass('active');
-			$(this).addClass('active');
-			$('.schedule-box .tab').fadeOut(0);
-			$('.schedule-box .tab').removeClass('current');
+		$(tabBtnSelector).on('click', function() {
+			var target = $($(this).attr('data-id')),
+				windowWidth = $(window).width();
+
+			$(tabBtnSelector).removeClass(classNames.active);
+			$(this).addClass(classNames.active);
+			$(tabSelector).fadeOut(0);
+			$(tabSelector).removeClass(classNames.current);
 			$(target).fadeIn(300);
-			$(target).addClass('current');
-			var windowWidth = $(window).width();
+			$(target).addClass(classNames.current);
+
 			if (windowWidth <= 700) {
-				$('html, body').animate({
+				$(body).animate({
 				   scrollTop: $('.tabs-box').offset().top
 				 }, 1000);
 			}
 		});
 		
-		//Accordion
-		$('.schedule-box .hour-box .toggle-btn').on('click', function() {
-			var target = $($(this).next('.content-box'));
-			$(this).toggleClass('active');
-			$(target).slideToggle(300);
-			$(target).parents('.hour-box').toggleClass('active-box');
-		});
-		
 	}
-	
-	
-	//Countdown Timer
-	if($('#countdown-timer').length){                     
-		$('#countdown-timer').countdown('2016/10/13', function(event) {
-			var $this = $(this).html(event.strftime('' + '<div class="counter-column"><span class="count">%D</span><span class="colon">:</span><br>DAYS</div> ' + '<div class="counter-column"><span class="count">%H</span><span class="colon">:</span><br>HOURS</div>  ' + '<div class="counter-column"><span class="count">%M</span><span class="colon">:</span><br>MINUTES</div>  ' + '<div class="counter-column"><span class="count">%S</span><br>SECOND</div>'));
-		});
-	}
-	
-	
-	//Sponsors Slider
-	if ($('.sponsors .slider').length) {
-		$('.sponsors .slider').owlCarousel({
-			loop:true,
-			margin:20,
-			nav:true,
-			autoplay: 5000,
-			responsive:{
-				0:{
-					items:1
-				},
-				600:{
-					items:2
-				},
-				800:{
-					items:3
-				},
-				1024:{
-					items:4
-				},
-				1100:{
-					items:5
-				}
-			}
-		});    		
-	}
-	
-	
-	//Testimonial Slider
-	if($('.testimonials-area .slider').length){
-		$('.testimonials-area .slider').bxSlider({
-			adaptiveHeight: true,
-			auto:true,
-			controls: true,
-			pause: 5000,
-			speed: 500,
-			mode:'fade',
-			pager: false
-		});
-	}
-	
-	
-	//Experience Meter
-	if($('.our-experience .exp-meter').length){
-		$(".exp-meter").each(function() {
-			$(this).css('width',$(this).attr('data-value'));
-		});
-	}
-	
-	
-	//LightBox / Fancybox
-	if($('.lightbox-image').length) {
-		$('.lightbox-image').fancybox();
-	}
-	
-	
-	// Fact Counter
-	function factCounter() {
-		$('.fact-counter.animated .counter-column').each(function() {
-	
-			var $t = $(this),
-				n = $t.find(".count-text").attr("data-stop"),
-				r = parseInt($t.find(".count-text").attr("data-speed"), 10);
-				
-			if (!$t.hasClass("counted")) {
-				$t.addClass("counted");
-				$({
-					countNum: $t.find(".count-text").text()
-				}).animate({
-					countNum: n
-				}, {
-					duration: r,
-					easing: "linear",
-					step: function() {
-						$t.find(".count-text").text(Math.floor(this.countNum));
-					},
-					complete: function() {
-						$t.find(".count-text").text(this.countNum);
-					}
-				});
-			}
-			
-		});
-	}
-	
-	
-	//Contact Form Validation
-	if($('#contact-form').length){
-		$('#contact-form').validate({ // initialize the plugin
-			rules: {
-				username: {
-					required: true
-				},
-				email: {
-					required: true,
-					email: true
-				},
-				subject: {
-					required: true
-				},
-				message: {
-					required: true
-				}
-			}
-		});
-	}
-	
-	
-	// Google Map Settings
-	if($('#map-location').length){
-		var map;
-		 map = new GMaps({
-			el: '#map-location',
-			zoom: 12,
-			scrollwheel:false,
-			//Set Latitude and Longitude Here
-			lat: -37.817085,
-			lng: 144.955631
-		  });
-		  
-		  //Add map Marker
-		  map.addMarker({
-			lat: -37.817085,
-			lng: 144.955631,
-			infoWindow: {
-			  content: '<p><strong>Envato</strong><br>Melbourne VIC 3000, Australia</p>'
-			}
-		 
-		});
-	}
-	
+
 	
 	// Scroll to top
-	if($('.scroll-to-top').length){
-		$(".scroll-to-top").on('click', function() {
-		   // animate
-		   $('html, body').animate({
-			   scrollTop: $('html, body').offset().top
+	if($(scrollToTop).length){
+		$(scrollToTop).on('click', function() {
+
+		   $(body).animate({
+			   scrollTop: $(body).offset().top
 			 }, 1000);
 	
 		});
 	}
 
-	// gallery filter activation
-    function GalleryFilter () {
-
-    	if ($('#image-gallery-mix').length) {
-    		$('.gallery-filter').find('li').each(function () {
-    			$(this).addClass('filter');
-    		});
-    		$('#image-gallery-mix').mixItUp();
-    	};
-    	if($('.gallery-filter.masonary').length){
-			$('.gallery-filter.masonary span').on('click', function(){
-				var selector = $(this).parent().attr('data-filter');
-				$('.gallery-filter.masonary span').parent().removeClass('active');
-				$(this).parent().addClass('active');
-				$('#image-gallery-isotope').isotope({ filter: selector });
-				return false;
-			});
-    	}
-    }
-	function galleryLightBox () {
-		if ($('#image-gallery-mix').length) {
-			$('#image-gallery-mix').find('.fancybox').fancybox();
-		};
-	}
 	// Elements Animation
 	if($('.wow').length){
 		var wow = new WOW(
@@ -346,10 +107,7 @@
    ========================================================================== */
    
 	$(document).on('ready', function() {
-		//headerStyle();
-		factCounter();
-		GalleryFilter();
-		galleryLightBox();
+		headerStyle();
 	});
 
 /* ==========================================================================
@@ -357,8 +115,7 @@
    ========================================================================== */
 	
 	$(window).on('scroll', function() {
-		//headerStyle();
-		factCounter();
+		headerStyle();
 	});
 	
 /* ==========================================================================
@@ -366,9 +123,11 @@
    ========================================================================== */
 	
 	$(window).on('load', function() {
+	    var parishListCarousel = ".parish-list-carousel";
+
 		handlePreloader();
 
-        $(".carousel").mCustomScrollbar({
+        $(parishListCarousel).mCustomScrollbar({
             axis: "x",
             theme: "dark"
         });
