@@ -4,11 +4,26 @@
   <div class="preloader" style="display: none;"></div>
 
   <!-- Main Header -->
-  <header class="main-header fixed-top-header">
+  <header class="main-header">
     <div class="auto-container clearfix">
-      <!--Logo-->
-      <div class="logo"><a href="#">
-        <img src="./images/logo.jpg" alt="Euharist" title="Euharist"></a></div>
+
+      <div class="logo">
+        <a href="#">
+          <img src="./images/logo.png" alt="Euharist" title="Euharist">
+        </a>
+      </div>
+
+      <ul class="site-name">
+        <li class="eng-name"><a href="#">Time of Mass</a></li>
+        <li class="by-name active"><a href="#">Час Iмшы</a></li>
+        <li class="rus-name"><a href="#">Время Мессы</a></li>
+      </ul>
+
+      <ul class="site-language-switcher">
+        <li class="ru"><a href="#">рус</a></li>
+        <li class="bel active"><a href="#">бел</a></li>
+        <li class="eng"><a href="#">en</a></li>
+      </ul>
 
       <!--Main Menu-->
       <nav class="main-menu">
@@ -23,75 +38,91 @@
 
         <div class="navbar-collapse collapse clearfix">
           <ul class="navigation">
-            <li class="current"><a routerLink="/" routerLinkActive="active">Home</a>
-            </li>
-            <li><a routerLink="/about" >About</a>
-            </li>
-            <li><a routerLink="/contact" >Contact</a></li>
+            <li class="current"><a routerLink="/" routerLinkActive="active">Галоўная</a></li>
+            <li><a routerLink="/about" >Чын літургіі</a></li>
+            <li><a routerLink="/contact" >Парафіі</a></li>
           </ul>
         </div>
       </nav>
+
+      <!--<div class="text-right">-->
+        <!--<a href="#"-->
+           <!--class="theme-btn" (click)="refresh()"><span class="fa fa-refresh"></span> Refresh schedule</a>-->
+      <!--</div>-->
       <!--Main Menu End-->
 
     </div>
   </header>
   <!--End Main Header -->
 
-  <!-- Page Banner -->
-  <section class="page-banner" style="background-image:url(./../images/page-banner.jpg);">
-    <div class="auto-container">
-      <!-- <h1>Расклад</h1>-->
-    </div>
-  </section>
-
   <router-outlet></router-outlet>
 
   <!--Schedule Section / Style Two-->
   <section class="schedule-section style-two">
     <div class="auto-container">
-
-      <div class="text-right">
-        <a href="#"
-           class="theme-btn" (click)="refresh()"><span class="fa fa-refresh"></span> Refresh schedule</a>
-      </div>
-      <br>
       <!--Schedule Box-->
-      <div class="schedule-box clearfix wow fadeInUp animated" data-wow-delay="200ms" data-wow-duration="1500ms"
-           style="visibility: visible; animation-duration: 1500ms; animation-delay: 200ms; animation-name: fadeInUp;">
+      <div class="schedule-box clearfix wow fadeInUp animated"
+           data-wow-delay="200ms"
+           data-wow-duration="1500ms">
 
         <!--Tab Buttons-->
         <ul class="tab-buttons clearfix">
-          <li class="tab-btn" [class.active]="(day.date | date: 'dd/MM/yyyy') == (selectedDate | date: 'dd/MM/yyyy') " *ngFor="let day of days" (click)="onSelect(day.date)"><span class="day">{{day.dayName}}</span><span class="date">{{day.humanFormat}}</span><span
-            class="curve"></span></li>
+          <li class="tab-btn" [class.active]="(day.date | date: 'dd/MM/yyyy') == (selectedDate | date: 'dd/MM/yyyy') "
+              *ngFor="let day of days"
+              (click)="onSelect(day.date)">
+            <span class="day">{{day.dayName}}</span>
+            <span class="date">{{day.humanFormat}}</span>
+            <span class="curve"></span>
+          </li>
         </ul>
 
         <!--Tabs Box-->
-        <div class="tabs-box">
+        <div class="tabs-box" data-mcs-theme="dark">
 
           <!--Tab / Current / Monday-->
-          <div class="tab" *ngFor="let massDay of masses.schedule" [class.current]="(massDay.date | date: 'dd/MM/yyyy') == (selectedDate | date: 'dd/MM/yyyy')"  [hidden]="!((massDay.date | date: 'dd/MM/yyyy') == (selectedDate | date: 'dd/MM/yyyy'))" >
-            <div class="hour-box" [class.active-box]="massHour.active" *ngFor="let massHour of massDay.massHours" (click)="massHour.active = !massHour.active">
+          <div class="tab"
+               *ngFor="let massDay of masses.schedule"
+               [class.current]="(massDay.date | date: 'dd/MM/yyyy') == (selectedDate | date: 'dd/MM/yyyy')"
+               [hidden]="!((massDay.date | date: 'dd/MM/yyyy') == (selectedDate | date: 'dd/MM/yyyy'))" >
+            <div class="hour-box"
+                 [class.active-box]="massHour.active" *ngFor="let massHour of massDay.massHours"
+                 (click)="massHour.active = !massHour.active">
               <div class="hour">{{massHour.hour}}</div>
               <div class="img-circle circle"><span></span></div>
-              <div class="toggle-btn" [class.active]="massHour.active"><h3>Падрабязней (колькасць = {{massHour.data.length}})</h3></div>
-              <div class="content-box" [class.collapsed]="massHour.active">
-                <div class="panel panel-default row professional clearfix" style="padding: 1%" *ngFor="let mass of massHour.data">
-                  <div class="col-md-4 col-sm-4 col-xs-6 info">
-                    <figure class="img-circle image"><img class="img-circle" src="{{mass.parish.imgPath}}" alt=""></figure>
-                    <h5 class="prof-title">{{mass.parish.name}}</h5>
-                    <h6 class="prof-occup">{{mass.langCode}}</h6>
+              <div class="toggle-btn" [class.active]="massHour.active">
+                <h3>Падрабязней (колькасць = {{massHour.data.length}})</h3>
+              </div>
+              <div class="content-box row" [class.collapsed]="massHour.active">
+                <div class="panel panel-default mass-card clearfix"
+                     *ngFor="let mass of massHour.data">
+                  <div class="mass-parish-image-wrapper info">
+                    <figure class="img-circle image">
+                      <img class="img-circle" src="{{mass.parish.imgPath}}" alt="church-image">
+                    </figure>
                   </div>
-                  <div class="col-md-4 col-sm-4 col-xs-6 info">
-                    <h5 class="prof-title">{{mass.parish.address}}</h5>
-                    <!--<h6 class="prof-occup">глядець на карце</h6>-->
+                  <div class="mass-parish-info-wrapper info">
+                    <h5 class="mass-parish-name">{{mass.parish.name}}</h5>
+                    <h5 class="mass-parish-address">{{mass.parish.address}}</h5>
+                    <h6 class="mass-language">{{mass.langCode}}</h6>
                   </div>
-                  <div class="col-md-4 col-sm-4 col-xs-6 info">
-
-                    <h5 class="prof-title">{{mass.info}}</h5>
-                    <h6 class="prof-occup">{{mass.duration}}</h6>
-                    <!--<a href=""-->
-                    <!--class="theme-btn btn-style-one hvr-bounce-to-right dull">10:00 - 12:30</a>-->
+                  <div class="mass-parish-additional-info-wrapper info">
+                    <h6 class="mass-duration">{{mass.duration}}</h6>
                   </div>
+                  <!--<div class="mass-parish-name-wrapper info">-->
+                    <!--<figure class="img-circle image"><img class="img-circle" src="{{mass.parish.imgPath}}" alt=""></figure>-->
+                    <!--<h5 class="mass-parish-name">{{mass.parish.name}}</h5>-->
+                    <!--<h6 class="mass-language">{{mass.langCode}}</h6>-->
+                  <!--</div>-->
+                  <!--<div class="mass-parish-address-wrapper info">-->
+                    <!--<h5 class="mass-parish-address">{{mass.parish.address}}</h5>-->
+                    <!--&lt;!&ndash;<h6 class="mass-language">глядець на карце</h6>&ndash;&gt;-->
+                  <!--</div>-->
+                  <!--<div class=" mass-parish-info-wrapper info">-->
+                    <!--<h5 class="mass-parish-info">{{mass.info}}</h5>-->
+                    <!--<h6 class="mass-duration">{{mass.duration}}</h6>-->
+                    <!--&lt;!&ndash;<a href=""&ndash;&gt;-->
+                    <!--&lt;!&ndash;class="theme-btn btn-style-one hvr-bounce-to-right dull">10:00 - 12:30</a>&ndash;&gt;-->
+                  <!--</div>-->
                 </div>
               </div>
             </div>
@@ -109,18 +140,104 @@
   </section>
 
   <!--Intro Section-->
-  <section class="intro-section" style="background-image:url(./../images/12apostoles.jpg);">
+  <section class="intro-section">
     <div class="auto-container">
-      <div class="row clearfix">
-        <div class="col-md-8 col-sm-8 col-xs-12 text-content">
-          <h2>ARE YOU READY TO MANAGE YOUR OWN EVENTS?</h2>
-          <div class="text">All of our virtual professionals are highly experienced in the areas in which they
-            work and have been through a thorough recruitment process.
+      <div class="clearfix">
+        <div class="col-md-4 col-sm-4 col-xs-12">
+          <h2>Аб праекце</h2>
+          <div class="left-section-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,
+            but also the leap into electronic typesetting, remaining essentially unchanged.
           </div>
+          <ul class="social-links">
+            <li><a href="#" class="fa fa-vk"></a></li>
+            <li><a href="#" class="fa fa-instagram"></a></li>
+            <li><a href="#" class="fa fa-facebook-official"></a></li>
+          </ul>
         </div>
-        <div class="col-md-4 col-sm-4 col-xs-12 text-right">
-          <a href="http://wp1.themexlab.com/html/meeton-new-with-files/schedule-2.html#"
-             class="theme-btn btn-style-one hvr-bounce-to-right"><span class="fa fa-play"></span>SIGN UP TODAY</a>
+        <div class="col-md-8 col-sm-8 col-xs-12 text-content">
+          <div class="clearfix parish-list">
+            <h2>Парафіі Мінска</h2>
+            <div class="parish-list-carousel">
+              <figure class="carousel-item">
+                <img src="../images/church1.jpg" class="img-circle" />
+                <figcaption>Архікатэдра Найсвяцейшай Панны Марыі</figcaption>
+              </figure>
+              <figure class="carousel-item">
+                <img src="../images/church2.jpg" class="img-circle" />
+                <figcaption>Парафія Божага Цела (Ангарская)</figcaption>
+              </figure>
+              <figure class="carousel-item">
+                <img src="../images/church3.jpg" class="img-circle" />
+                <figcaption>Парафія Божай Маці Будслаўскай (Каменная горка)</figcaption>
+              </figure>
+              <figure class="carousel-item">
+                <img src="../images/church4.jpg" class="img-circle" />
+                <figcaption>Парафія насйвяцейшай Троіцы (Залатая горка)</figcaption>
+              </figure>
+              <figure class="carousel-item">
+                <img src="../images/church5.jpg" class="img-circle" />
+                <figcaption>Парафія св. апосталаў Пятра і Паўла і св. Мазэно (Зялёны Луг)</figcaption>
+              </figure>
+              <figure class="carousel-item">
+                <img src="../images/church6.jpg" class="img-circle" />
+                <figcaption>Парафія святых Сымона і Алены (Чырвоны касцёл)</figcaption>
+              </figure>
+              <figure class="carousel-item">
+                <img src="../images/church4.jpg" class="img-circle" />
+                <figcaption>Парафія насйвяцейшай Троіцы (Залатая горка)</figcaption>
+              </figure>
+              <figure class="carousel-item">
+                <img src="../images/church5.jpg" class="img-circle" />
+                <figcaption>Парафія св. апосталаў Пятра і Паўла і св. Мазэно (Зялёны Луг)</figcaption>
+              </figure>
+              <figure class="carousel-item">
+                <img src="../images/church6.jpg" class="img-circle" />
+                <figcaption>Парафія святых Сымона і Алены (Чырвоны касцёл)</figcaption>
+              </figure>              <figure class="carousel-item">
+              <img src="../images/church4.jpg" class="img-circle" />
+              <figcaption>Парафія насйвяцейшай Троіцы (Залатая горка)</figcaption>
+            </figure>
+              <figure class="carousel-item">
+                <img src="../images/church5.jpg" class="img-circle" />
+                <figcaption>Парафія св. апосталаў Пятра і Паўла і св. Мазэно (Зялёны Луг)</figcaption>
+              </figure>
+              <figure class="carousel-item">
+                <img src="../images/church6.jpg" class="img-circle" />
+                <figcaption>Парафія святых Сымона і Алены (Чырвоны касцёл)</figcaption>
+              </figure>
+              <figure class="carousel-item">
+                <img src="../images/church4.jpg" class="img-circle" />
+                <figcaption>Парафія насйвяцейшай Троіцы (Залатая горка)</figcaption>
+              </figure>
+              <figure class="carousel-item">
+                <img src="../images/church5.jpg" class="img-circle" />
+                <figcaption>Парафія св. апосталаў Пятра і Паўла і св. Мазэно (Зялёны Луг)</figcaption>
+              </figure>
+              <figure class="carousel-item">
+                <img src="../images/church6.jpg" class="img-circle" />
+                <figcaption>Парафія святых Сымона і Алены (Чырвоны касцёл)</figcaption>
+              </figure>
+            </div>
+          </div>
+          <div class="clearfix">
+            <div class="col-xs-12">
+              <p> Мы маем патрэбу у валанцёрах для пашырэння геаграфіі і актулізацыі раскладу! <br />
+                Калі хочаце прыняць удзел у праекце, звяжыцеся з намі па е-мэйлу <br />
+                <a href="mailto:messtime@gmail.com" class="contact-us">messtime@gmail.com</a>
+              </p>
+            </div>
+          </div>
+          <div class="clearfix">
+            <div class="col-xs-12">
+              <h2>Інфармацыйная падтрымка</h2>
+              <ul class="info-partners">
+                <li><img src="./../images/cath.png" alt="catholic.by"></li>
+                <li><img src="./../images/ave.png" alt="ave"></li>
+                <li><img src="./../images/radio.png" alt="radio"></li>
+                <li><img src="./../images/capuc.png" alt="capuc"></li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -133,8 +250,8 @@
     <div class="footer-bottom">
       <div class="auto-container">
         <div class="row clearfix">
-          <div class="col-md-12 col-sm-12 col-xs-12">Copyright 2017 by Imsha.By | All rights
-            reserved
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <p>Copyright 2017 by Imsha.By | All rights reserved</p>
           </div>
         </div>
       </div>

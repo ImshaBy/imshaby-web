@@ -52,9 +52,10 @@ export class AppComponent {
   }
 
   onSelect(massDay: Date): void {
-    console.log(massDay);
-    this.selectedDay = massDay.getDay();
-    this.selectedDate = massDay;
+      this.refresh();
+      console.log('clicked event, refreshed');
+      this.selectedDay = massDay.getDay();
+      this.selectedDate = massDay;
   }
 
   getTodaySchedule(): MassSchedule {

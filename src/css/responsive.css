@@ -1,27 +1,28 @@
-@media only screen and (max-width: 1139px){
-	.main-menu .navbar-collapse > ul > li > a{
+@media only screen and (max-width: 1139px) {
+	.main-menu .navbar-collapse > ul > li > a {
 		padding-left:30px;
 		padding-right:30px;	
 	}
 	
 	.counter-section .countdown .counter-column .colon,
-	.counter-section .countdown .counter-column .count{
+	.counter-section .countdown .counter-column .count {
 		font-size:28px;	
 	}
+
+	.site-name li {
+		font-size: 30px;
+		line-height: 30px;
+	}
+
 }
 
 
 @media only screen and (max-width: 1023px){
-	
-	
+
 	.main-header .logo{
-		max-width:200px;
+		max-width: 115px;
 	}
-	
-	.main-header .logo img{
-		top:10px;	
-	}
-	
+
 	.main-menu .navbar-collapse > ul > li > a{
 		padding-left:15px;
 		padding-right:15px;	
@@ -89,7 +90,7 @@
 
 @media only screen and (max-width: 767px){
 	
-	.main-header{
+	.main-header {
 		overflow:hidden;	
 	}
 	
@@ -97,37 +98,59 @@
 		position:relative !important;	
 	}
 	
-	.main-header .logo{
-		float:none;
-		width:100%;	
+	.main-header .logo {
+		width: 100%;
+		margin: auto;
 	}
-	
-	.main-header .main-menu{
+
+	.main-header .auto-container {
+		position: relative;
+		display: block;
+		background: url(../images/header_bg_mobile.png) center center;
+	}
+
+	.main-header .main-menu {
 		float:none;
 		width:100%;
-		padding:0px;
-		margin:-28px 0px 0px;
+		padding:0;
+		/*margin:-28px 0 0;*/
 	}
-	
+
+	.site-name {
+		text-align: center;
+		width: 170%;
+		transform: translateX(-20%);
+	}
+
+	.site-name li {
+		display: inline-block;
+		padding-left: 25px;
+	}
+
+	.site-language-switcher {
+		position: absolute;
+		top: 20px;
+		left: 0;
+	}
+
 	.main-menu .collapse {
 	   max-height:none;
 		overflow:hidden;
-		padding:0px;
+		padding: 0;
 		border:1px solid #ffffff;
-		margin:10px 0px;
+		margin:10px 0;
 		width:100%;
 		border-radius:3px;
 		-ms-border-radius:3px;
 		-moz-border-radius:3px;
 		-webkit-border-radius:3px;
-		-o-border-radius:3px;
    }
    
 	.main-menu .collapse.in,
-	.main-menu .collapsing{
-		padding:0px;
+	.main-menu .collapsing {
+		padding:0;
 		border:1px solid #ffffff;
-		margin:10px 0px;
+		margin:10px 0;
 		width:100%;
 		border-radius:3px;
 		-ms-border-radius:3px;
@@ -137,33 +160,33 @@
 	}
 	
 	
-	.main-menu .navbar-header{
+	.main-menu .navbar-header {
+		display: none;
 		position:relative;
 		float:none;
-		display:block;
-		top:-32px;
+		/*top:-32px;*/
 	}
 	
 	.main-menu .navbar-header .navbar-toggle{
-		display:block;
-		z-index:7;
-		border:1px solid #fc5a1b;
-		margin:0px 0px 0px 0px;
+		display: block;
+		z-index: 7;
+		border: 1px solid #871266;
+		margin: 0;
 	}
 	
 	.main-menu .navbar-header .navbar-toggle .icon-bar{
-		background:#fc5a1b;
+		background: #871266;
 	}
 	
 	.main-header .main-menu .navbar-nav{
-		float:none !important;
-		margin:0px;
-		width:100%;
-		background:#fc5a1b;
+		float: none !important;
+		margin: 0;
+		width: 100%;
+		background: #871266;
 	}
 	
 	.main-menu .navbar-collapse > ul > li{
-		margin:0px;
+		margin:0;
 		float:none;
 		width:100%;
 	}
@@ -189,11 +212,11 @@
 		top:auto !important;
 		width:100%;
 		background:#fc5a1b;
-		border-radius:0px;
-		-webkit-border-radius:0px;
-		-ms-border-radius:0px;
-		-o-border-radius:0px;
-		-moz-border-radius:0px;
+		border-radius:0;
+		-webkit-border-radius:0;
+		-ms-border-radius:0;
+		-o-border-radius:0;
+		-moz-border-radius:0;
 		transition:none;
 		-webkit-transition:none;
 		-ms-transition:none;
@@ -246,7 +269,7 @@
 		padding-top:40px;
 	}
 	.blog-area .author-comment { 
-		margin-left:0px;
+		margin-left:0;
 		padding-top:30px; 
 		float:none;
 	 }
@@ -263,22 +286,26 @@
 	.blog-area .post-content { 
 		padding:25px 25px;
 	}
-	
+
 	.schedule-box .tab-buttons,
-	.style-two .schedule-box .tab-buttons{
-		float:none;
-		display:block;
-		width:100%;
-		margin-bottom:10px;	
+	.style-two .schedule-box .tab-buttons {
+		float: none;
+		display: flex;
+		width: 100%;
+		margin-bottom: 10px;
 	}
 	
 	.schedule-box .tab-buttons .tab-btn,
-	.style-two .schedule-box .tab-buttons .tab-btn{
-		display:block;
-		width:100%;
-		float:none;
-		border:1px solid #d0d0d0 !important;
-		margin-bottom:5px;	
+	.style-two .schedule-box .tab-buttons .tab-btn {
+		flex: 1;
+		float: none;
+		border: 1px solid #d0d0d0 !important;
+		margin-bottom: 5px;
+		padding: 20px 6px;
+	}
+
+	.schedule-box .tab-buttons .tab-btn .day {
+		display: none;
 	}
 	
 	.schedule-box .tab-buttons .tab-btn .curve{
@@ -288,6 +315,12 @@
 	.style-two .schedule-box .tabs-box{
 		width:100%;	
 	}
+
+	.schedule-box .hour-box .mass-card .mass-parish-name,
+	.schedule-box .hour-box .mass-card .mass-parish-address,
+	.schedule-box .hour-box .mass-card .mass-parish-info {
+		font-size: 15px;
+	}
 	
 	.schedule-box .hour-box .hour{
 		position:relative;
@@ -295,11 +328,11 @@
 	}
 	
 	.schedule-box .hour-box{
-		padding-left:40px;	
+		padding-left: 55px;
 	}
 	
 	.schedule-box .hour-box .circle{
-		left:0px;	
+		left:0;
 	}
 	
 	.schedule-box .hour-box::before{
@@ -307,7 +340,7 @@
 	}
 	
 	.schedule-box .hour-box .content-box{
-		padding-right:0px;	
+		padding-right:0;
 	}
 	
 	.schedule-box .hour-box .toggle-btn h3{
@@ -332,8 +365,8 @@
 		position:relative;
 		padding:30px 15px;
 		text-align:center;
-		left:0px;
-		top:0px;	
+		left:0;
+		top:0;
 	}
 	
 	.two-column .image-side,
@@ -341,8 +374,8 @@
 		position:relative;
 		min-height:300px;
 		padding:30px 20px;
-		left:0px;
-		top:0px;
+		left:0;
+		top:0;
 		width:100%;
 		margin-bottom:20px;	
 	}
@@ -367,7 +400,7 @@
 	}
 	
 	.counter-section .countdown .counter-column{
-		margin:0px 5px;	
+		margin:0 5px;
 	}
 	
 	.counter-section .countdown .counter-column .colon{
@@ -381,6 +414,11 @@
 	.testimonials-area .bx-controls{
 		display:none;	
 	}
+
+	.info-partners li {
+		display: block;
+		margin-bottom: 10px;
+	}
 }
 
 
@@ -388,43 +426,55 @@
 	
 	
 	.two-column .feature{
-		padding-left:0px;	
+		padding-left:0;
 	}
 	
 	.two-column .icon{
 		position:relative;
-		left:0px;
-		top:0px;
+		left:0;
+		top:0;
 		margin-bottom:15px;	
 	}
 	
-	.our-experience .exp-meter .exp-count{
-		bottom:auto;
-		top:5px;	
+	.our-experience .exp-meter .exp-count {
+		bottom: auto;
+		top: 5px;	
 	}
 	
-	.schedule-box .hour-box .professional .info{
-		padding-left:0px;	
+	.schedule-box .hour-box .mass-card .info {
+		flex: 0 0 133px;
+		padding: 0 10px;
 	}
-	
-	.schedule-box .hour-box .professional .info .image{
-		position:relative;
-		margin-bottom:10px;	
+
+	.schedule-box .hour-box .mass-card .info .image {
+		left: 10px;
 	}
-	
-	.schedule-box .hour-box .professional .text-right{
-		text-align:left !important;
-		padding-left:0px;
+
+	.schedule-box .hour-box .mass-card .text-right {
+		text-align: left !important;
+		padding-left: 0;
+	}
+	.schedule-box .hour-box .mass-card .mass-parish-info-wrapper {
+		padding-right: 10px;
 	}
 	
 	.team-section .team-member .social-links{
-		top:0px;
+		top:0;
 	}
 	
 	.contact-section .map-area{
 		height:250px;	
 	}
-	
+
+	.intro-section .text {
+		padding-right: 0;
+		margin-bottom: 50px;
+	}
+
+	.intro-section .parish-list-carousel {
+		width: 100%;
+		overflow-x: auto;
+	}
 }
 
 
