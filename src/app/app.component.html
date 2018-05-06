@@ -19,12 +19,6 @@
         <li class="rus-name"><a href="#">Время Мессы</a></li>
       </ul>
 
-      <ul class="site-language-switcher">
-        <li class="ru"><a href="#">рус</a></li>
-        <li class="bel active"><a href="#">бел</a></li>
-        <li class="eng"><a href="#">en</a></li>
-      </ul>
-
       <!--Main Menu-->
       <nav class="main-menu">
         <div class="navbar-header">
@@ -44,12 +38,6 @@
           </ul>
         </div>
       </nav>
-
-      <!--<div class="text-right">-->
-        <!--<a href="#"-->
-           <!--class="theme-btn" (click)="refresh()"><span class="fa fa-refresh"></span> Refresh schedule</a>-->
-      <!--</div>-->
-      <!--Main Menu End-->
 
     </div>
   </header>
@@ -77,7 +65,7 @@
         </ul>
 
         <!--Tabs Box-->
-        <div class="tabs-box" data-mcs-theme="dark">
+        <div class="tabs-box mCustomScrollbar" data-mcs-theme="dark">
 
           <!--Tab / Current / Monday-->
           <div class="tab"
@@ -93,7 +81,7 @@
                 <h3>Падрабязней (колькасць = {{massHour.data.length}})</h3>
               </div>
               <div class="content-box row" [class.collapsed]="massHour.active">
-                <div class="panel panel-default mass-card clearfix"
+                <div class="panel panel-default mass-card"
                      *ngFor="let mass of massHour.data">
                   <div class="mass-parish-image-wrapper info">
                     <figure class="img-circle image">
@@ -108,27 +96,15 @@
                   <div class="mass-parish-additional-info-wrapper info">
                     <h6 class="mass-duration">{{mass.duration}}</h6>
                   </div>
-                  <!--<div class="mass-parish-name-wrapper info">-->
-                    <!--<figure class="img-circle image"><img class="img-circle" src="{{mass.parish.imgPath}}" alt=""></figure>-->
-                    <!--<h5 class="mass-parish-name">{{mass.parish.name}}</h5>-->
-                    <!--<h6 class="mass-language">{{mass.langCode}}</h6>-->
-                  <!--</div>-->
-                  <!--<div class="mass-parish-address-wrapper info">-->
-                    <!--<h5 class="mass-parish-address">{{mass.parish.address}}</h5>-->
-                    <!--&lt;!&ndash;<h6 class="mass-language">глядець на карце</h6>&ndash;&gt;-->
-                  <!--</div>-->
-                  <!--<div class=" mass-parish-info-wrapper info">-->
-                    <!--<h5 class="mass-parish-info">{{mass.info}}</h5>-->
-                    <!--<h6 class="mass-duration">{{mass.duration}}</h6>-->
-                    <!--&lt;!&ndash;<a href=""&ndash;&gt;-->
-                    <!--&lt;!&ndash;class="theme-btn btn-style-one hvr-bounce-to-right dull">10:00 - 12:30</a>&ndash;&gt;-->
-                  <!--</div>-->
+                  <div class="mass-parish-relevance">
+                    <p class="placeholder actual">Пададзеная инфармацыя актуальная</p>
+                    <p class="placeholder not-actual">Пададзеная инфармацыя актуальная</p>
+                  </div>
+                  <div class="clearfix"></div>
                 </div>
               </div>
             </div>
           </div>
-
-
         </div>
         <!--Tabs Box End-->
 
@@ -142,112 +118,34 @@
   <!--Intro Section-->
   <section class="intro-section">
     <div class="auto-container">
-      <div class="clearfix">
-        <div class="col-md-4 col-sm-4 col-xs-12">
-          <h2>Аб праекце</h2>
-          <div class="left-section-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,
-            but also the leap into electronic typesetting, remaining essentially unchanged.
-          </div>
-          <ul class="social-links">
-            <li><a href="#" class="fa fa-vk"></a></li>
-            <li><a href="#" class="fa fa-instagram"></a></li>
-            <li><a href="#" class="fa fa-facebook-official"></a></li>
-          </ul>
-        </div>
-        <div class="col-md-8 col-sm-8 col-xs-12 text-content">
-          <div class="clearfix parish-list">
-            <h2>Парафіі Мінска</h2>
-            <div class="parish-list-carousel">
-              <figure class="carousel-item">
-                <img src="../images/church1.jpg" class="img-circle" />
-                <figcaption>Архікатэдра Найсвяцейшай Панны Марыі</figcaption>
-              </figure>
-              <figure class="carousel-item">
-                <img src="../images/church2.jpg" class="img-circle" />
-                <figcaption>Парафія Божага Цела (Ангарская)</figcaption>
-              </figure>
-              <figure class="carousel-item">
-                <img src="../images/church3.jpg" class="img-circle" />
-                <figcaption>Парафія Божай Маці Будслаўскай (Каменная горка)</figcaption>
-              </figure>
-              <figure class="carousel-item">
-                <img src="../images/church4.jpg" class="img-circle" />
-                <figcaption>Парафія насйвяцейшай Троіцы (Залатая горка)</figcaption>
-              </figure>
-              <figure class="carousel-item">
-                <img src="../images/church5.jpg" class="img-circle" />
-                <figcaption>Парафія св. апосталаў Пятра і Паўла і св. Мазэно (Зялёны Луг)</figcaption>
-              </figure>
-              <figure class="carousel-item">
-                <img src="../images/church6.jpg" class="img-circle" />
-                <figcaption>Парафія святых Сымона і Алены (Чырвоны касцёл)</figcaption>
-              </figure>
-              <figure class="carousel-item">
-                <img src="../images/church4.jpg" class="img-circle" />
-                <figcaption>Парафія насйвяцейшай Троіцы (Залатая горка)</figcaption>
-              </figure>
-              <figure class="carousel-item">
-                <img src="../images/church5.jpg" class="img-circle" />
-                <figcaption>Парафія св. апосталаў Пятра і Паўла і св. Мазэно (Зялёны Луг)</figcaption>
-              </figure>
-              <figure class="carousel-item">
-                <img src="../images/church6.jpg" class="img-circle" />
-                <figcaption>Парафія святых Сымона і Алены (Чырвоны касцёл)</figcaption>
-              </figure>              <figure class="carousel-item">
-              <img src="../images/church4.jpg" class="img-circle" />
-              <figcaption>Парафія насйвяцейшай Троіцы (Залатая горка)</figcaption>
-            </figure>
-              <figure class="carousel-item">
-                <img src="../images/church5.jpg" class="img-circle" />
-                <figcaption>Парафія св. апосталаў Пятра і Паўла і св. Мазэно (Зялёны Луг)</figcaption>
-              </figure>
-              <figure class="carousel-item">
-                <img src="../images/church6.jpg" class="img-circle" />
-                <figcaption>Парафія святых Сымона і Алены (Чырвоны касцёл)</figcaption>
-              </figure>
-              <figure class="carousel-item">
-                <img src="../images/church4.jpg" class="img-circle" />
-                <figcaption>Парафія насйвяцейшай Троіцы (Залатая горка)</figcaption>
-              </figure>
-              <figure class="carousel-item">
-                <img src="../images/church5.jpg" class="img-circle" />
-                <figcaption>Парафія св. апосталаў Пятра і Паўла і св. Мазэно (Зялёны Луг)</figcaption>
-              </figure>
-              <figure class="carousel-item">
-                <img src="../images/church6.jpg" class="img-circle" />
-                <figcaption>Парафія святых Сымона і Алены (Чырвоны касцёл)</figcaption>
-              </figure>
+      <h2>Аб праекце</h2>
+      <div class="intro-text clearfix">
+          <div class="row">
+            <div class="col-xs-6">
+              Колькі разоў здаралася так, што мы спрабавалі даведацца, дзе і
+              а каторай можна сустрэцца з Хрыстом у Мінску!
+              А гэта не так проста - інфармацыя, схаваная ў глыбіні інтэрнэт-старонак і ў суполках сацсетак, часам была неактуальная, і даводзілася тэлефанаваць сябрам-католікам і пытацца -
+              <a href="#">у колькі Святая Імша?</a>
+
+            </div>
+            <div class="col-xs-6">
+              Сталася зразумелым - Мінск патрабуе актуальнага раскладу Імш! Вынікам маем гэты праект - старонка, на якой пададзены месца і час цэлебрацыі Святой Эўхарыстыі ў сталіцы.
+              <br />
+              Інфармацыя пастаянна актуалізуецца, і мы маем намер з цягам часу ахапіць усю Беларусь, а магчыма і ўвесь свет.
             </div>
           </div>
-          <div class="clearfix">
-            <div class="col-xs-12">
-              <p> Мы маем патрэбу у валанцёрах для пашырэння геаграфіі і актулізацыі раскладу! <br />
-                Калі хочаце прыняць удзел у праекце, звяжыцеся з намі па е-мэйлу <br />
-                <a href="mailto:messtime@gmail.com" class="contact-us">messtime@gmail.com</a>
-              </p>
-            </div>
-          </div>
-          <div class="clearfix">
-            <div class="col-xs-12">
-              <h2>Інфармацыйная падтрымка</h2>
-              <ul class="info-partners">
-                <li><img src="./../images/cath.png" alt="catholic.by"></li>
-                <li><img src="./../images/ave.png" alt="ave"></li>
-                <li><img src="./../images/radio.png" alt="radio"></li>
-                <li><img src="./../images/capuc.png" alt="capuc"></li>
-              </ul>
-            </div>
-          </div>
+       </div>
+
+      <div class="row">
+        <div class="intro-text-right col-xs-offset-4 col-xs-8">
+          <p> Мы маем патрэбу у валанцёрах для пашырэння геаграфіі і актулізацыі раскладу! <br />
+            Калі хочаце прыняць удзел у праекце, звяжыцеся з намі па е-мэйлу <br />
+            <a href="mailto:messtime@gmail.com" class="contact-us">messtime@gmail.com</a>
+          </p>
         </div>
       </div>
     </div>
-  </section>
-
-  <!--Main Footer-->
-  <footer class="main-footer">
-
-    <!--Footer Bottom-->
-    <div class="footer-bottom">
+    <footer class="footer-bottom">
       <div class="auto-container">
         <div class="row clearfix">
           <div class="col-md-12 col-sm-12 col-xs-12">
@@ -255,10 +153,8 @@
           </div>
         </div>
       </div>
-    </div>
-
-  </footer>
-
+    </footer>
+  </section>
 </div>
 <!--End pagewrapper-->
 

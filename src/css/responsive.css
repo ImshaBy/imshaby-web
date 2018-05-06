@@ -1,12 +1,12 @@
 @media only screen and (max-width: 1139px) {
 	.main-menu .navbar-collapse > ul > li > a {
 		padding-left:30px;
-		padding-right:30px;	
+		padding-right:30px;
 	}
-	
+
 	.counter-section .countdown .counter-column .colon,
 	.counter-section .countdown .counter-column .count {
-		font-size:28px;	
+		font-size:28px;
 	}
 
 	.site-name li {
@@ -25,56 +25,56 @@
 
 	.main-menu .navbar-collapse > ul > li > a{
 		padding-left:15px;
-		padding-right:15px;	
+		padding-right:15px;
 	}
-	
+
 	.main-menu .navbar-collapse > ul > li > ul,
 	.main-menu .navbar-collapse > ul > li > ul > li > ul{
-		width:180px;	
+		width:180px;
 	}
-	
+
 	.blog-area .col-md-8{
-		padding-right:15px;	
+		padding-right:15px;
 	}
-	
+
 	.main-slider .form-container{
-		display:none;	
+		display:none;
 	}
-	
+
 	.sec-title h2,
 	.two-column .content-side h2{
-		font-size:32px;	
+		font-size:32px;
 	}
-	
+
 	.sec-text p{
-		font-size:18px;	
+		font-size:18px;
 	}
-	
+
 	.sec-text p br{
-		display:none;	
+		display:none;
 	}
-	
+
 	.two-column-full .column{
 		width:100%;
-		float:none;	
+		float:none;
 	}
-	
+
 	.latest-posts .post .inner:hover,
 	.team-section .team-member .inner:hover{
 		transform:scale(1.05,1.05);
 		-webkit-transform:scale(1.05,1.05);
 		-ms-transform:scale(1.05,1.05);
 		-o-transform:scale(1.05,1.05);
-		-moz-transform:scale(1.05,1.05);	
+		-moz-transform:scale(1.05,1.05);
 	}
-	
+
 	.counter-section .col-xs-12{
 		text-align:center !important;
 		margin-bottom:15px;
 	}
-	
+
 	.fact-counter{
-		padding:50px 20px;	
+		padding:50px 20px;
 	}
 }
 
@@ -89,15 +89,15 @@
 
 
 @media only screen and (max-width: 767px){
-	
+
 	.main-header {
-		overflow:hidden;	
+		overflow:hidden;
 	}
-	
+
 	.fixed-top-header{
-		position:relative !important;	
+		position:relative !important;
 	}
-	
+
 	.main-header .logo {
 		width: 100%;
 		margin: auto;
@@ -106,7 +106,7 @@
 	.main-header .auto-container {
 		position: relative;
 		display: block;
-		background: url(../images/header_bg_mobile.png) center center;
+		background: url(../images/header_bg_mobile.jpg) center center;
 	}
 
 	.main-header .main-menu {
@@ -127,12 +127,6 @@
 		padding-left: 25px;
 	}
 
-	.site-language-switcher {
-		position: absolute;
-		top: 20px;
-		left: 0;
-	}
-
 	.main-menu .collapse {
 	   max-height:none;
 		overflow:hidden;
@@ -145,7 +139,7 @@
 		-moz-border-radius:3px;
 		-webkit-border-radius:3px;
    }
-   
+
 	.main-menu .collapse.in,
 	.main-menu .collapsing {
 		padding:0;
@@ -156,49 +150,49 @@
 		-ms-border-radius:3px;
 		-moz-border-radius:3px;
 		-webkit-border-radius:3px;
-		-o-border-radius:3px;	
+		-o-border-radius:3px;
 	}
-	
-	
+
+
 	.main-menu .navbar-header {
 		display: none;
 		position:relative;
 		float:none;
 		/*top:-32px;*/
 	}
-	
+
 	.main-menu .navbar-header .navbar-toggle{
 		display: block;
 		z-index: 7;
 		border: 1px solid #871266;
 		margin: 0;
 	}
-	
+
 	.main-menu .navbar-header .navbar-toggle .icon-bar{
 		background: #871266;
 	}
-	
+
 	.main-header .main-menu .navbar-nav{
 		float: none !important;
 		margin: 0;
 		width: 100%;
 		background: #871266;
 	}
-	
+
 	.main-menu .navbar-collapse > ul > li{
 		margin:0;
 		float:none;
 		width:100%;
 	}
-	
+
 	.main-menu .navbar-collapse > ul > li > a{
 		padding:10px 10px !important;
 	}
-	
+
 	.main-menu .navbar-collapse > ul > li > a:after{
-		display:none;	
+		display:none;
 	}
-	
+
 	.main-menu .navbar-collapse > ul > li > ul,
 	.main-menu .navbar-collapse > ul > li > ul > li > ul{
 		position:relative;
@@ -223,22 +217,22 @@
 		-o-transition:none;
 		-moz-transition:none;
 	}
-		
+
 	.main-menu .navbar-collapse > ul > li > ul,
 	.main-menu .navbar-collapse > ul > li > ul > li > ul{
-		border-top:1px solid rgba(255,255,255,1) !important;	
+		border-top:1px solid rgba(255,255,255,1) !important;
 	}
-	
+
 	.main-menu .navbar-collapse > ul > li,
 	.main-menu .navbar-collapse > ul > li > ul > li,
 	.main-menu .navbar-collapse > ul > li > ul > li > ul > li{
-		border-top:1px solid rgba(255,255,255,1) !important;	
+		border-top:1px solid rgba(255,255,255,1) !important;
 	}
-	
+
 	.main-menu .navbar-collapse > ul > li:first-child{
-		border:none;	
+		border:none;
 	}
-	
+
 	.main-menu .navbar-collapse > ul > li > a,
 	.main-menu .navbar-collapse > ul > li > ul > li > a,
 	.main-menu .navbar-collapse > ul > li > ul > li > ul > li > a{
@@ -247,43 +241,43 @@
 		color:#ffffff;
 		background:#fc5a1b;
 	}
-	
+
 	.main-menu .navbar-collapse > ul > li > a:hover,
 	.main-menu .navbar-collapse > ul > li > a:active,
 	.main-menu .navbar-collapse > ul > li > a:focus{
 		background:#fc5a1b;
 	}
-	
+
 	.main-menu .navbar-collapse > ul li.dropdown .dropdown-btn{
-		display:block;	
+		display:block;
 	}
-	
+
 	.main-menu .navbar-collapse > ul li.dropdown:after{
-		display:none !important;	
+		display:none !important;
 	}
-	
-	.blog-area .author img { 
-		position:static; 
-		display:block; 
-		margin:0 auto; 
+
+	.blog-area .author img {
+		position:static;
+		display:block;
+		margin:0 auto;
 		padding-top:40px;
 	}
-	.blog-area .author-comment { 
+	.blog-area .author-comment {
 		margin-left:0;
-		padding-top:30px; 
+		padding-top:30px;
 		float:none;
 	 }
-	.comment-area input[type="text"], 
-	.comment-area input[type="phone"], 
-	.comment-area textarea, 
-	.comment-area input[type="email"]{ 
+	.comment-area input[type="text"],
+	.comment-area input[type="phone"],
+	.comment-area textarea,
+	.comment-area input[type="email"]{
 		width:100%;
 	}
-	.blog-area form { 
-		padding-left:10px; 
+	.blog-area form {
+		padding-left:10px;
 		padding-right:10px;
 	}
-	.blog-area .post-content { 
+	.blog-area .post-content {
 		padding:25px 25px;
 	}
 
@@ -294,7 +288,7 @@
 		width: 100%;
 		margin-bottom: 10px;
 	}
-	
+
 	.schedule-box .tab-buttons .tab-btn,
 	.style-two .schedule-box .tab-buttons .tab-btn {
 		flex: 1;
@@ -307,13 +301,13 @@
 	.schedule-box .tab-buttons .tab-btn .day {
 		display: none;
 	}
-	
+
 	.schedule-box .tab-buttons .tab-btn .curve{
-		display:none;	
+		display:none;
 	}
-	
+
 	.style-two .schedule-box .tabs-box{
-		width:100%;	
+		width:100%;
 	}
 
 	.schedule-box .hour-box .mass-card .mass-parish-name,
@@ -321,46 +315,46 @@
 	.schedule-box .hour-box .mass-card .mass-parish-info {
 		font-size: 15px;
 	}
-	
+
 	.schedule-box .hour-box .hour{
 		position:relative;
-		margin-bottom:15px;	
+		margin-bottom:15px;
 	}
-	
+
 	.schedule-box .hour-box{
 		padding-left: 55px;
 	}
-	
+
 	.schedule-box .hour-box .circle{
 		left:0;
 	}
-	
+
 	.schedule-box .hour-box::before{
-		left:11px;	
+		left:11px;
 	}
-	
+
 	.schedule-box .hour-box .content-box{
 		padding-right:0;
 	}
-	
+
 	.schedule-box .hour-box .toggle-btn h3{
-		font-size:15px;	
+		font-size:15px;
 	}
-	
+
 	.main-slider .form-container{
 		width:320px;
 	}
-	
+
 	.sec-title h2,
 	.two-column .content-side h2{
-		font-size:22px !important;	
+		font-size:22px !important;
 	}
-	
+
 	.two-column-full .column{
 		padding:40px 20px;
 		min-height:100px;
 	}
-	
+
 	.feature-listing .image-side{
 		position:relative;
 		padding:30px 15px;
@@ -368,7 +362,7 @@
 		left:0;
 		top:0;
 	}
-	
+
 	.two-column .image-side,
 	.two-column-fluid .image-side{
 		position:relative;
@@ -377,42 +371,42 @@
 		left:0;
 		top:0;
 		width:100%;
-		margin-bottom:20px;	
+		margin-bottom:20px;
 	}
-	
+
 	.two-column-fluid .content-side{
 		width:100%;
-		padding:30px 20px;	
+		padding:30px 20px;
 	}
-	
+
 	.main-footer .footer-logo,
 	.main-footer .footer-lower .footer-nav{
-		text-align:center !important;	
+		text-align:center !important;
 	}
-	
+
 	.counter-section .countdown .counter-column .colon,
 	.counter-section .countdown .counter-column .count{
-		font-size:32px;	
+		font-size:32px;
 	}
-	
+
 	.counter-section{
-		padding:20px 10px;	
+		padding:20px 10px;
 	}
-	
+
 	.counter-section .countdown .counter-column{
 		margin:0 5px;
 	}
-	
+
 	.counter-section .countdown .counter-column .colon{
-		left:8px;	
+		left:8px;
 	}
-	
+
 	.page-banner h1{
-		font-size:30px;	
+		font-size:30px;
 	}
-	
+
 	.testimonials-area .bx-controls{
-		display:none;	
+		display:none;
 	}
 
 	.info-partners li {
@@ -423,24 +417,24 @@
 
 
 @media only screen and (max-width: 599px){
-	
-	
+
+
 	.two-column .feature{
 		padding-left:0;
 	}
-	
+
 	.two-column .icon{
 		position:relative;
 		left:0;
 		top:0;
-		margin-bottom:15px;	
+		margin-bottom:15px;
 	}
-	
+
 	.our-experience .exp-meter .exp-count {
 		bottom: auto;
-		top: 5px;	
+		top: 5px;
 	}
-	
+
 	.schedule-box .hour-box .mass-card .info {
 		flex: 0 0 133px;
 		padding: 0 10px;
@@ -457,13 +451,13 @@
 	.schedule-box .hour-box .mass-card .mass-parish-info-wrapper {
 		padding-right: 10px;
 	}
-	
+
 	.team-section .team-member .social-links{
 		top:0;
 	}
-	
+
 	.contact-section .map-area{
-		height:250px;	
+		height:250px;
 	}
 
 	.intro-section .text {
@@ -479,16 +473,16 @@
 
 
 @media only screen and (max-width: 479px){
-	
+
 	.comment-details {
 		margin-left: 0;
 		padding-top: 100px;
 	}
-	
+
 	.btn-style-one,
 	.download-btn{
 		padding-left:15px;
-		padding-right:15px;	
+		padding-right:15px;
 	}
 }
 
