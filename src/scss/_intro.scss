@@ -1,0 +1,161 @@
+@import "./variables";
+
+.intro-section {
+  position: relative;
+  font-weight: 300;
+  line-height: 1.5em;
+  padding-bottom: 120px;
+  color: $black;
+  background: #e7e5aa url(../images/footer_church_bg.jpg) center center no-repeat;
+  background-size: cover;
+
+  .auto-container {
+    position: relative;
+    z-index: 5;
+  }
+
+  .text {
+    padding-right: 75px;
+    font-size: 19px;
+    line-height: 23px;
+  }
+
+  .row > div {
+    padding: 30px 30px 70px;
+    font-size: 15px;
+  }
+
+  .footer-bottom .row > div {
+    padding: 0;
+  }
+
+  h2 {
+    font-family: 'Open Sans',sans-serif;
+    font-size: 20px;
+    line-height: 70px;
+    color: $white;
+    text-align: center;
+    border-bottom: 1px solid $white;
+  }
+}
+
+.intro-text {
+  color: #254e5a;
+  border-bottom: 1px solid $white;
+  border-top: 1px solid $white;
+
+  a {
+    color: #99367d;
+  }
+}
+
+.intro-text-right p {
+  color: #254e5a;
+  font-size: 19px;
+  text-align: right;
+}
+
+.intro-section .parish-list-carousel {
+  display: flex;
+  margin-bottom: 75px;
+
+  .mCSB_container {
+    display: flex;
+  }
+}
+
+.parish-list-carousel .carousel-item {
+  flex: 1;
+  margin-right: 50px;
+
+  figcaption {
+    text-align: center;
+  }
+
+  img {
+    width: 100px;
+    margin-bottom: 15px;
+    border: 1px solid #d0d0d0;
+  }
+}
+
+.intro-section .btn-style-one {
+  position: relative;
+  margin: 40px 0 0;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+
+  &:before {
+    background: #fc5a1b;
+  }
+}
+
+.text-content {
+  text-align: center;
+
+  h2 {
+    text-align: left;
+  }
+}
+
+.contact-us {
+  font-size: 24px;
+  margin: 5px 0;
+}
+
+
+
+@media only screen and (max-width: 599px){
+  .two-column {
+    .feature {
+      padding-left: 0;
+    }
+    .icon {
+      position: relative;
+      left: 0;
+      top: 0;
+      margin-bottom: 15px;
+    }
+  }
+
+  .our-experience .exp-meter .exp-count {
+    bottom: auto;
+    top: 5px;
+  }
+
+  .schedule-box .hour-box .mass-card {
+    .info {
+      flex: 0 0 133px;
+      padding: 0 10px;
+      .image {
+        left: 10px;
+      }
+    }
+    .text-right {
+      text-align: left !important;
+      padding-left: 0;
+    }
+    .mass-parish-info-wrapper {
+      padding-right: 10px;
+    }
+  }
+
+  .team-section .team-member .social-links {
+    top: 0;
+  }
+
+  .contact-section .map-area {
+    height: 250px;
+  }
+
+  .intro-section {
+    .text {
+      padding-right: 0;
+      margin-bottom: 50px;
+    }
+    .parish-list-carousel {
+      width: 100%;
+      overflow-x: auto;
+    }
+  }
+}
+

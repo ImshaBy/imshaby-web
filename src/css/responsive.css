@@ -90,31 +90,31 @@
 
 @media only screen and (max-width: 767px){
 
-	.main-header {
-		overflow:hidden;
-	}
+	/*.main-header {*/
+		/*overflow:hidden;*/
+	/*}*/
 
-	.fixed-top-header{
-		position:relative !important;
-	}
+	/*.fixed-top-header{*/
+		/*position:relative !important;*/
+	/*}*/
 
-	.main-header .logo {
-		width: 100%;
-		margin: auto;
-	}
+	/*.main-header .logo {*/
+		/*width: 100%;*/
+		/*margin: auto;*/
+	/*}*/
 
-	.main-header .auto-container {
-		position: relative;
-		display: block;
-		background: url(../images/header_bg_mobile.jpg) center center;
-	}
+	/*.main-header .auto-container {*/
+		/*position: relative;*/
+		/*display: block;*/
+		/*background: url(../images/header_bg_mobile.jpg) center center;*/
+	/*}*/
 
-	.main-header .main-menu {
-		float:none;
-		width:100%;
-		padding:0;
-		/*margin:-28px 0 0;*/
-	}
+	/*.main-header .main-menu {*/
+		/*float:none;*/
+		/*width:100%;*/
+		/*padding:0;*/
+		/*!*margin:-28px 0 0;*!*/
+	/*}*/
 
 	.site-name {
 		text-align: center;
@@ -415,61 +415,6 @@
 	}
 }
 
-
-@media only screen and (max-width: 599px){
-
-
-	.two-column .feature{
-		padding-left:0;
-	}
-
-	.two-column .icon{
-		position:relative;
-		left:0;
-		top:0;
-		margin-bottom:15px;
-	}
-
-	.our-experience .exp-meter .exp-count {
-		bottom: auto;
-		top: 5px;
-	}
-
-	.schedule-box .hour-box .mass-card .info {
-		flex: 0 0 133px;
-		padding: 0 10px;
-	}
-
-	.schedule-box .hour-box .mass-card .info .image {
-		left: 10px;
-	}
-
-	.schedule-box .hour-box .mass-card .text-right {
-		text-align: left !important;
-		padding-left: 0;
-	}
-	.schedule-box .hour-box .mass-card .mass-parish-info-wrapper {
-		padding-right: 10px;
-	}
-
-	.team-section .team-member .social-links{
-		top:0;
-	}
-
-	.contact-section .map-area{
-		height:250px;
-	}
-
-	.intro-section .text {
-		padding-right: 0;
-		margin-bottom: 50px;
-	}
-
-	.intro-section .parish-list-carousel {
-		width: 100%;
-		overflow-x: auto;
-	}
-}
 
 
 @media only screen and (max-width: 479px){

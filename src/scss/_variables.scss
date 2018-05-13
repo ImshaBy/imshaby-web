@@ -1,0 +1,36 @@
+/***
+
+====================================================================
+Fonts
+====================================================================
+
+ ***/
+@font-face {
+  font-family: 'open_sansregular';
+  src: url('../fonts/openSans.eot');
+  src: url('../fonts/openSans.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/openSans.woff2') format('woff2'),
+  url('../fonts/openSans.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+$openSans: 'open_sansregular';
+
+
+
+
+
+/***
+
+====================================================================
+Colors
+====================================================================
+
+ ***/
+$theme-color: #739953;
+$gray1: #dadada;
+$white: #ffffff;
+$black: #000000;
+$footer-dark: #161616;
