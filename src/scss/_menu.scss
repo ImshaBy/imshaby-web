@@ -1,3 +1,5 @@
+@import "./variables";
+
 .main-header {
   position: relative;
   width: 100%;
@@ -57,6 +59,14 @@
   .active a {
     color: #256119;
   }
+}
+
+.location {
+  font-size: 22px;
+  position: absolute;
+  bottom: 12px;
+  left: 31.5%;
+  color: $white;
 }
 
 .main-header .logo img {
@@ -334,6 +344,11 @@
       display: inline-block;
       padding-left: 25px;
     }
+  }
+
+  .location {
+    top: 25px;
+    left: 25px;
   }
 
   .main-menu {
