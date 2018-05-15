@@ -2,36 +2,17 @@
 
   "use strict";
 
-  var selectors = {
-    preloader: '.preloader',
-    mainHeader: '.main-header',
-    scrollToTop: '.scroll-to-top'
-  };
-
   //Hide Loading Box (Preloader)
   function handlePreloader() {
-    if($(selectors.preloader).length){
-      $(selectors.preloader).delay(500).fadeOut(500);
+    var preloader = $('.preloader');
+    if(preloader.length){
+      preloader.delay(500).fadeOut(500);
     }
   }
 
-
-  //Submenu Dropdown Toggle
-  if($('.main-header li.dropdown .submenu').length){
-    $('.main-header li.dropdown').append('<div class="dropdown-btn"></div>');
-
-    //Dropdown Button
-    $('.main-header li.dropdown .dropdown-btn').on('click', function() {
-      $(this).prev('.submenu').slideToggle(500);
-    });
-  }
-
-  function toggleTabs() {
-
-    //Schedule Box Tabs
+  function toggleScheduleTabs() {
     if($('.schedule-box').length){
 
-      //Tabs
       $('.schedule-box .tab-btn').on('click', function() {
         var target = $($(this).attr('data-id'));
         $('.schedule-box .tab-btn').removeClass('active');
@@ -47,46 +28,23 @@
           }, 1000);
         }
       });
-
-
     }
-  }
-
-
-
-  //Countdown Timer
-  if($('#countdown-timer').length){
-    $('#countdown-timer').countdown('2016/10/13', function(event) {
-      var $this = $(this).html(event.strftime('' + '<div class="counter-column"><span class="count">%D</span><span class="colon">:</span><br>DAYS</div> ' + '<div class="counter-column"><span class="count">%H</span><span class="colon">:</span><br>HOURS</div>  ' + '<div class="counter-column"><span class="count">%M</span><span class="colon">:</span><br>MINUTES</div>  ' + '<div class="counter-column"><span class="count">%S</span><br>SECOND</div>'));
-    });
   }
 
   // Scroll to top
 
   function handleScrollToTopBtn () {
-    if($('.scroll-to-top').length){
-      $(".scroll-to-top").on('click', function() {
-        // animate
-        $('html, body').animate({
-          scrollTop: $('html, body').offset().top
-        }, 1000);
+    var scrollToTop = $('.scroll-to-top'),
+        body = $('html, body');
 
+    if(scrollToTop.length){
+      scrollToTop.on('click', function() {
+
+        body.animate({
+          scrollTop: body.offset().top
+        }, 1000);
       });
     }
-  }
-
-  // Elements Animation
-  if($('.wow').length){
-    var wow = new WOW(
-      {
-        boxClass:     'wow',      // animated element css class (default is wow)
-        animateClass: 'animated', // animation css class (default is animated)
-        offset:       0,          // distance to the element when triggering the animation (default is 0)
-        mobile:       true,       // trigger animations on mobile devices (default is true)
-        live:         true       // act on asynchronously loaded content (default is true)
-      }
-    );
-    wow.init();
   }
 
   /* ==========================================================================
@@ -95,7 +53,7 @@
 
   $(document).on('ready', function() {
     handleScrollToTopBtn();
-    toggleTabs();
+    toggleScheduleTabs();
   });
 
   /* ==========================================================================
@@ -104,11 +62,6 @@
 
   $(window).on('load', function() {
     handlePreloader();
-
-    $(".carousel").mCustomScrollbar({
-      axis: "x",
-      theme: "dark"
-    });
   });
 
 
