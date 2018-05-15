@@ -7,10 +7,11 @@ export class Parish {
   imgPath: string;
   gps: Location;
   address: string;
+  needUpdate: boolean;
 
 }
 
-export class Location{
+export class Location {
   latitude: number;
   langitude: number;
 }

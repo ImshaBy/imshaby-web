@@ -3,11 +3,11 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { Mass } from './_models/index';
-import {MassService} from "./_services/mass.service";
-import {MassSchedule} from "./_models/massSchedule";
-import {Day} from "./_models/day";
-import {Utils} from "./_services/app.utils";
-import {Parish} from "./_models/parish";
+import {MassService} from './_services/mass.service';
+import {MassSchedule} from './_models/massSchedule';
+import {Day} from './_models/day';
+import {Utils} from './_services/app.utils';
+import {Parish} from './_models/parish';
 
 @Component({
   selector: 'app-root',
@@ -25,25 +25,25 @@ export class AppComponent {
   selectedDate: Date;
 
   constructor(private pMassService: MassService, private pUtils: Utils) {
-    console.log("AppComponent  constructor")
+    console.log('AppComponent  constructor');
     this.massService = pMassService;
     this.utils = pUtils;
     this.masses = new MassSchedule();
   }
 
   refresh(){
-    console.log("AppComponent  refresh");
+    console.log('AppComponent  refresh');
     this.today = new Date();
-    console.log("today " + this.today)
+    console.log('today ' + this.today);
     // this.masses = this.getTodaySchedule();
 
     // this.getTodaySchedulePromise();
     this.days = this.getActualDays();
-    console.log("days" + this.days);
+    console.log('days' + this.days);
     this.selectedDay = this.utils.getSelectedDay(this.today);
-    console.log("selected day" + this.selectedDay)
+    console.log('selected day' + this.selectedDay);
     this.selectedDate = this.today;
-    console.log("selected date" + this.selectedDate)
+    console.log('selected date' + this.selectedDate);
     this.getTodayScheduleAsync();
   }
 
