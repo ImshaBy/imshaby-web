@@ -46,7 +46,7 @@
     color: #ffffff;
 
     &:hover {
-      color: #256119;
+      color: $theme-dark-color;
     }
   }
 
@@ -57,7 +57,7 @@
   }
 
   .active a {
-    color: #256119;
+    color: $theme-dark-color;
   }
 }
 
@@ -167,7 +167,7 @@
           }
 
           li.dropdown:after {
-            font-family: 'FontAwesome';
+            font-family: $fontAwesome;
             content: '\f0da';
             position: absolute;
             right: 7px;

@@ -158,3 +158,23 @@
   }
 }
 
+.scroll-to-top {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 48px;
+  height: 48px;
+  color: $white;
+  background: $theme-color url(../images/icons/arrow-up.png) center center no-repeat;
+  font-size: 20px;
+  line-height: 48px;
+  text-align: center;
+  z-index: 100;
+  cursor: pointer;
+  display: none;
+
+  &:hover {
+    background-color: $theme-dark-color;
+    color: $white;
+  }
+}
