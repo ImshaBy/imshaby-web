@@ -7,7 +7,6 @@
   .footer-lower {
     background: $footer-dark;
   }
-
 }
 
 .footer-bottom {
@@ -16,4 +15,8 @@
   color: $white;
   background: $footer-dark;
   text-align: center;
+
+  .row > div {
+    padding: 0;
+  }
 }
