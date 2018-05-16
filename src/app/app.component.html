@@ -19,25 +19,29 @@
         <li class="rus-name"><a href="#">Время Мессы</a></li>
       </ul>
 
-      <!--Main Menu-->
-      <nav class="main-menu">
-        <div class="navbar-header">
-          <!-- Toggle Button -->
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-        </div>
+      <div class="location">
+        Мiнск
+      </div>
 
-        <div class="navbar-collapse collapse clearfix">
-          <ul class="navigation">
-            <li class="current"><a routerLink="/" routerLinkActive="active">Галоўная</a></li>
-            <li><a routerLink="/about" >Чын літургіі</a></li>
-            <li><a routerLink="/contact" >Парафіі</a></li>
-          </ul>
-        </div>
-      </nav>
+      <!--Main Menu-->
+      <!--<nav class="main-menu">-->
+        <!--<div class="navbar-header">-->
+          <!--&lt;!&ndash; Toggle Button &ndash;&gt;-->
+          <!--<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">-->
+            <!--<span class="icon-bar"></span>-->
+            <!--<span class="icon-bar"></span>-->
+            <!--<span class="icon-bar"></span>-->
+          <!--</button>-->
+        <!--</div>-->
+
+        <!--<div class="navbar-collapse collapse clearfix">-->
+          <!--<ul class="navigation">-->
+            <!--<li class="current"><a routerLink="/" routerLinkActive="active">Галоўная</a></li>-->
+            <!--<li><a routerLink="/about" >Чын літургіі</a></li>-->
+            <!--<li><a routerLink="/contact" >Парафіі</a></li>-->
+          <!--</ul>-->
+        <!--</div>-->
+      <!--</nav>-->
 
     </div>
   </header>
@@ -65,7 +69,7 @@
         </ul>
 
         <!--Tabs Box-->
-        <div class="tabs-box mCustomScrollbar" data-mcs-theme="dark">
+        <div class="tabs-box">
 
           <!--Tab / Current / Monday-->
           <div class="tab"
@@ -96,8 +100,14 @@
                   <div class="mass-parish-additional-info-wrapper info">
                     <h6 class="mass-duration">{{mass.duration}}</h6>
                   </div>
-                  <div class="mass-parish-relevance">
-                    <p class="placeholder actual">Пададзеная инафрмацы: {{mass.info}}</p>
+                  <div [ngClass]="{'mass-parish-relevance': true, 'actual': mass.parish.needUpdate}">
+                    <p *ngIf="mass.parish.needUpdate === true"
+                       class="placeholder actual">
+                      Iнфармацыя актуальная
+                    </p>
+                    <p *ngIf="mass.parish.needUpdate === false"
+                       class="placeholder not-actual">
+                      Iнфармацыя патрабуе ўдакладнення</p>
                   </div>
                   <div class="clearfix"></div>
                 </div>
@@ -106,10 +116,8 @@
           </div>
         </div>
         <!--Tabs Box End-->
-
       </div>
       <!--Schedule Box End-->
-
 
     </div>
   </section>
@@ -144,16 +152,16 @@
         </div>
       </div>
     </div>
-    <footer class="footer-bottom">
-      <div class="auto-container">
-        <div class="row clearfix">
-          <div class="col-md-12 col-sm-12 col-xs-12">
-            <p>Copyright 2017 by Imsha.By | All rights reserved</p>
-          </div>
+  </section>
+  <footer class="footer-bottom">
+    <div class="auto-container">
+      <div class="row clearfix">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <p>Copyright 2017 by Imsha.By | All rights reserved</p>
         </div>
       </div>
-    </footer>
-  </section>
+    </div>
+  </footer>
 </div>
 <!--End pagewrapper-->
 

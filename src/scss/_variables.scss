@@ -1,0 +1,50 @@
+/***
+
+====================================================================
+Fonts
+====================================================================
+
+ ***/
+@font-face {
+  font-family: 'open_sansregular';
+  src: url('../fonts/openSans.eot');
+  src: url('../fonts/openSans.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/openSans.woff2') format('woff2'),
+  url('../fonts/openSans.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('../fonts/FontAwesome-webfont.eot');
+  src: url('../fonts/FontAwesome-webfont.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/FontAwesome-webfont.woff2') format('woff2'),
+  url('../fonts/FontAwesome-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+$openSans: 'open_sansregular';
+$fontAwesome: 'FontAwesome';
+
+
+
+/***
+
+====================================================================
+Colors
+====================================================================
+
+ ***/
+$theme-color: #739953;
+$not-actual-mass: #f2d389;
+$theme-dark-color: #256119;
+$light-gray1: #dadada;
+$light-gray2: #d2d2d2;
+$color2: #d0d0d0;
+$dark-gray1: #454444;
+$white: #ffffff;
+$black: #000000;
+$footer-dark: #161616;
+$color: #292929;

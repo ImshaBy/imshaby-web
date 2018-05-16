@@ -1,19 +1,19 @@
 
-import {Injectable} from "@angular/core";
+import {Injectable} from '@angular/core';
 
-import {Day} from "../_models/day";
+import {Day} from '../_models/day';
 
 @Injectable()
 export class Utils {
-  public DAYS = ["Sunday", "Monday", "Tuesday", "Wendsday", "Thursday", "Friday", "Saturday"];
+  public DAYS = ['Нядзеля', 'Панядзелак', 'Аўторак', 'Серада', 'Чацвер', 'Пятнiца', 'Субота'];
 
-  public getActualDays():Day[] {
-    var actualDays = [];
-    var now = new Date();
-    var counter = 0;
-    while(counter < 7){
-      var date =  this.addDays(now, counter);
-      var day = new Day(date, this.DAYS[date.getDay()], date.toDateString());
+  public getActualDays(): Day[] {
+    let actualDays = [];
+    let now = new Date();
+    let counter = 0;
+    while (counter < 7) {
+      let date =  this.addDays(now, counter);
+      let day = new Day(date, this.DAYS[date.getDay()], date.toDateString());
       actualDays.push(day);
       counter++;
     }
@@ -21,7 +21,7 @@ export class Utils {
   }
 
   private addDays(date, days) {
-    var result = new Date(date);
+    let result = new Date(date);
     result.setDate(result.getDate() + days);
   return result;
 }
