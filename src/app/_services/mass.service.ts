@@ -7,7 +7,6 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/do';
 import 'rxjs/Rx';
 
-import { SCHEDULE } from '../stubs/massScheduleStub';
 import {MassSchedule, MassDay} from "../_models/massSchedule";
 import {MassScheduleJSON, MassDayJSON} from "../_models/massScheduleJSON";
 import { environment } from '../../environments/environment';
@@ -22,8 +21,10 @@ export class MassService {
 
   constructor(private http: Http) {}
 
+  //TODO implement if it's needed
   getTodaySchedule():MassSchedule {
-    return SCHEDULE;
+    return null;
+    // return SCHEDULE;
   }
   getTodayScheduleAsync() : Observable<MassSchedule> {
     console.log("async call");
@@ -57,9 +58,10 @@ export class MassService {
     return massSchedule;
   }
 
-
+  //TODO implement if it's needed
   getTodaySchedulePromise() : Promise<MassSchedule> {
-    return Promise.resolve(SCHEDULE);
+    return null;
+    // return Promise.resolve(SCHEDULE);
   }
 
 
