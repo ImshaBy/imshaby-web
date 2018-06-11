@@ -78,10 +78,6 @@
   position: relative;
   margin: 40px 0 0;
   border: 1px solid rgba(255, 255, 255, 0.3);
-
-  &:before {
-    background: #fc5a1b;
-  }
 }
 
 .text-content {
@@ -115,23 +111,6 @@
   .our-experience .exp-meter .exp-count {
     bottom: auto;
     top: 5px;
-  }
-
-  .schedule-box .hour-box .mass-card {
-    .info {
-      flex: 0 0 133px;
-      padding: 0 10px;
-      .image {
-        left: 10px;
-      }
-    }
-    .text-right {
-      text-align: left !important;
-      padding-left: 0;
-    }
-    .mass-parish-info-wrapper {
-      padding-right: 10px;
-    }
   }
 
   .team-section .team-member .social-links {
