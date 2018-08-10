@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  apiHost: "http://api-imshaby.mycloud.by"
+  apiHost: "http://localhost:3000"
 };
