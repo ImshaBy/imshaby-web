@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiHost: "http://api-imshaby.mycloud.by"
+  apiHost: "http://prod-api-imsha.mycloud.by"
 };

@@ -12,7 +12,10 @@
     "build": "tsc",
     "deploy": "git push origin master",
     "build:prod": "ng build --env=prod",
-    "ngver": "ng -version"
+    "build:pp": "ng build --env=pp",
+    "build:qa": "ng build --env=qa;",
+    "copy-assets": "cp -R src/css/ dist/ && cp -R src/fonts/ dist/ && cp -R src/images/ dist/ && cp -R src/js/ dist/",
+    "ngver": "ng --version"
   },
   "engines": {
     "node": "6.9.2",
