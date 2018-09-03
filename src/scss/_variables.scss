@@ -7,20 +7,20 @@ Fonts
  ***/
 @font-face {
   font-family: 'open_sansregular';
-  src: url('../fonts/openSans.eot');
-  src: url('../fonts/openSans.eot?#iefix') format('embedded-opentype'),
-  url('../fonts/openSans.woff2') format('woff2'),
-  url('../fonts/openSans.woff') format('woff');
+  src: url('../assets/fonts/openSans.eot');
+  src: url('../assets/fonts/openSans.eot?#iefix') format('embedded-opentype'),
+  url('../assets/fonts/openSans.woff2') format('woff2'),
+  url('../assets/fonts/openSans.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'FontAwesome';
-  src: url('../fonts/FontAwesome-webfont.eot');
-  src: url('../fonts/FontAwesome-webfont.eot?#iefix') format('embedded-opentype'),
-  url('../fonts/FontAwesome-webfont.woff2') format('woff2'),
-  url('../fonts/FontAwesome-webfont.woff') format('woff');
+  src: url('../assets/fonts/FontAwesome-webfont.eot');
+  src: url('../assets/fonts/FontAwesome-webfont.eot?#iefix') format('embedded-opentype'),
+  url('../assets/fonts/FontAwesome-webfont.woff2') format('woff2'),
+  url('../assets/fonts/FontAwesome-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
