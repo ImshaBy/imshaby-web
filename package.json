@@ -14,7 +14,7 @@
     "build:prod": "ng build --env=prod",
     "build:pp": "ng build --env=pp",
     "build:qa": "ng build --env=qa",
-    "copy-assets": "cp -R src/css/ dist/ && cp -R src/fonts/ dist/ && cp -R src/images/ dist/ && cp -R src/js/ dist/",
+    "copy-assets": "cp -R src/assets/css/ dist/ && cp -R src/assets/fonts/ dist/ && cp -R src/assets/images/ dist/ && cp -R src/assets/js/ dist/",
     "ngver": "ng --version"
   },
   "engines": {
