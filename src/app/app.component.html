@@ -99,7 +99,6 @@
                   </div>
                   <div class="mass-parish-additional-info-wrapper info">
                     <h5 class="mass-info">{{mass.info}}</h5>
-                    <h6 class="mass-duration">{{mass.duration}}</h6>
                   </div>
                   <div [ngClass]="{'mass-parish-relevance': true, 'not-actual': mass.parish.needUpdate}">
                     <p *ngIf="mass.parish.needUpdate === false"
