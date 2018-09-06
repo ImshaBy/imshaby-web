@@ -4,8 +4,8 @@
   position: relative;
   font-weight: 300;
   line-height: 1.5em;
-  color: $black;
-  background: #e7e5aa url(../assets/images/footer_church_bg.jpg) center center no-repeat;
+  color: $color-black;
+  background: $color-hampton url(../assets/images/footer_church_bg.jpg) center center no-repeat;
   background-size: cover;
 
   .auto-container {
@@ -25,27 +25,27 @@
   }
 
   h2 {
-    font-family: 'Open Sans',sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: 20px;
     line-height: 70px;
-    color: $white;
+    color: $color-white;
     text-align: center;
-    border-bottom: 1px solid $white;
+    border-bottom: 1px solid $color-white;
   }
 }
 
 .intro-text {
-  color: #254e5a;
-  border-bottom: 1px solid $white;
-  border-top: 1px solid $white;
+  color: $color-blue-dianne;
+  border-bottom: 1px solid $color-white;
+  border-top: 1px solid $color-white;
 
   a {
-    color: #99367d;
+    color: $color-rouge;
   }
 }
 
 .intro-text-right p {
-  color: #254e5a;
+  color: $color-blue-dianne;
   font-size: 19px;
   text-align: right;
 }
@@ -70,7 +70,7 @@
   img {
     width: 100px;
     margin-bottom: 15px;
-    border: 1px solid #d0d0d0;
+    border: 1px solid $color-alto-light;
   }
 }
 
@@ -139,8 +139,8 @@
   right: 0;
   width: 48px;
   height: 48px;
-  color: $white;
-  background: $theme-color url(../assets/images/icons/arrow-up.png) center center no-repeat;
+  color: $color-white;
+  background: $color-asparagus url(../assets/images/icons/arrow-up.png) center center no-repeat;
   font-size: 20px;
   line-height: 48px;
   text-align: center;
@@ -149,7 +149,7 @@
   display: none;
 
   &:hover {
-    background-color: $theme-dark-color;
-    color: $white;
+    background-color: $color-parsley;
+    color: $color-white;
   }
 }

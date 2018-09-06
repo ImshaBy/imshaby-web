@@ -2,18 +2,18 @@
 
 .main-footer {
   position: relative;
-  background: $white;
+  background: $color-white;
 
   .footer-lower {
-    background: $footer-dark;
+    background: $color-cod-gray;
   }
 }
 
 .footer-bottom {
   position:relative;
   padding: 20px 0 20px;
-  color: $white;
-  background: $footer-dark;
+  color: $color-white;
+  background: $color-cod-gray;
   text-align: center;
 
   .row > div {
