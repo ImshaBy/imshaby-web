@@ -15,6 +15,7 @@ import {Parish} from './_models/parish';
   styleUrls: ['./app.component.css'],
   providers:[MassService, Utils]
 })
+
 export class AppComponent {
   masses: MassSchedule;
   massService: MassService;
@@ -101,5 +102,4 @@ export class AppComponent {
   getActualDays(): Day[] {
     return this.utils.getActualDays();
   }
-
 }
