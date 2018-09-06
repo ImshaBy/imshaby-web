@@ -78,7 +78,25 @@ export class AppComponent {
     );
   }
 
+  /**
+   * Check amount of masses to display proper card label
+   * @param amount
+   * @returns {boolean}
+   */
+  checkMassesAmount(amount) {
+    if (amount === 1 || amount === 21 || amount === 31 || amount === 41) {
+        return true;
+    }
+  }
 
+  /**
+   * Check if mass info should be updated
+   * @param param
+   * @returns {boolean}
+   */
+  needUpdate(param) {
+    return !!param;
+  }
 
   getActualDays(): Day[] {
     return this.utils.getActualDays();

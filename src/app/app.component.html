@@ -82,32 +82,38 @@
               <div class="img-circle circle"><span></span></div>
               <div class="toggle-btn" [class.active]="massHour.active"
                    (click)="massHour.active = !massHour.active">
-                <h3>Падрабязней (колькасць = {{massHour.data.length}})</h3>
+                <h3 *ngIf="checkMassesAmount(massHour.data.length)">Святая Імша ў {{massHour.data.length}} парафі</h3>
+                <h3 *ngIf="!checkMassesAmount(massHour.data.length)" >Святая Імша ў {{massHour.data.length}} парафіях</h3>
               </div>
               <div class="content-box row" [class.collapsed]="massHour.active">
                 <div class="panel panel-default mass-card"
                      *ngFor="let mass of massHour.data">
+
                   <div class="mass-parish-image-wrapper info">
                     <figure class="img-circle image">
                       <img class="img-circle" src="{{mass.parish.imgPath}}" alt="church-image">
                     </figure>
                   </div>
+
                   <div class="mass-parish-info-wrapper info">
                     <h5 class="mass-parish-name">{{mass.parish.name}}</h5>
                     <h5 class="mass-parish-address">{{mass.parish.address}}</h5>
                     <h6 class="mass-language">{{mass.langCode}}</h6>
                   </div>
+
                   <div class="mass-parish-additional-info-wrapper info">
                     <h5 class="mass-info">{{mass.info}}</h5>
                   </div>
+
                   <div [ngClass]="{'mass-parish-relevance': true, 'not-actual': mass.parish.needUpdate}">
-                    <p *ngIf="mass.parish.needUpdate === false"
+                    <p *ngIf="!needUpdate(mass.parish.needUpdate)"
                        class="placeholder actual">
                       Iнфармацыя актуальная
                     </p>
-                    <p *ngIf="mass.parish.needUpdate === true"
+                    <p *ngIf="needUpdate(mass.parish.needUpdate)"
                        class="placeholder not-actual">
-                      Iнфармацыя патрабуе ўдакладнення</p>
+                      Iнфармацыя патрабуе ўдакладнення
+                    </p>
                   </div>
                   <div class="clearfix"></div>
                 </div>
