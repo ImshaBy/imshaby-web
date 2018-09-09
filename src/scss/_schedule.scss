@@ -3,7 +3,7 @@
 .schedule-section {
   position: relative;
   padding: 50px 0 100px;
-  background: $white;
+  background: $color-white;
 
   .auto-container {
     padding: 0;
@@ -12,7 +12,7 @@
 
 .schedule-box {
   position: relative;
-  border: 1px solid $light-gray1;
+  border: 1px solid $color-alto;
   visibility: visible;
   animation-duration: 1500ms;
   animation-delay: 200ms;
@@ -37,12 +37,12 @@
   position: relative;
   display: table-cell;
   text-align: center;
-  background: $white;
+  background: $color-white;
   color: #739953;
   line-height: 1.4em;
   padding: 17px 10px;
-  border-bottom: 1px solid $light-gray1;
-  border-right: 1px solid $light-gray1;
+  border-bottom: 1px solid $color-alto;
+  border-right: 1px solid $color-alto;
   font-family: $openSans,sans-serif;
   cursor: pointer;
   transition: all 300ms ease;
@@ -57,7 +57,7 @@
 }
 
 .style-two .schedule-box .tab-buttons .tab-btn:last-child {
-  border-right: 1px solid $light-gray1;
+  border-right: 1px solid $color-alto;
 }
 
 .schedule-box .tab-buttons .tab-btn {
@@ -66,15 +66,15 @@
   }
 
   &.active, &:hover {
-    border-color: $theme-color;
-    background: $theme-color;
-    color: $white;
+    border-color: $color-asparagus;
+    background: $color-asparagus;
+    color: $color-white;
   }
 }
 
 .style-two .schedule-box .tab-buttons .tab-btn {
   &.active, &:hover {
-    border-bottom-color: $white;
+    border-bottom-color: $color-white;
   }
 }
 
@@ -138,7 +138,7 @@
   width: 0;
   height: 0;
   border: 7px solid transparent;
-  border-top-color: $theme-color;
+  border-top-color: $color-asparagus;
 }
 
 .style-two .schedule-box .tab-buttons .tab-btn .curve:after {
@@ -150,7 +150,7 @@
   width: 0;
   height: 0;
   border: 7px solid transparent;
-  border-left-color: $theme-color;
+  border-left-color: $color-asparagus;
 }
 
 .schedule-box .tabs-box {
@@ -195,7 +195,7 @@
     }
 
     &.active-box:before {
-      background: $theme-color;
+      background: $color-asparagus;
     }
 
     &:last-child:before {
@@ -224,11 +224,11 @@
       top: 0;
       width: 24px;
       height: 24px;
-      border: 2px solid $light-gray1;
+      border: 2px solid $color-alto;
     }
 
     &.active-box .circle {
-      border-color: $theme-color;
+      border-color: $color-asparagus;
     }
 
     .content-box {
@@ -262,7 +262,7 @@
     display: inline-block;
     font-size: 18px;
     padding-right: 30px;
-    color: $dark-gray1;
+    color: $color-tundora;
 
     &:after {
       font-family: $fontAwesome;
@@ -273,7 +273,7 @@
       width: 30px;
       height: 30px;
       display: block;
-      color: $theme-color;
+      color: $color-asparagus;
       line-height: 28px;
       font-size: 24px;
       text-align: right;
@@ -303,11 +303,11 @@
     height: 0;
     border-style: solid;
     border-width: 0 0 15px 15px;
-    border-color: transparent transparent $theme-color  transparent;
+    border-color: transparent transparent $color-asparagus transparent;
   }
 
   &.not-actual:after {
-    border-color: transparent transparent $not-actual-mass transparent;
+    border-color: transparent transparent $color-buff transparent;
   }
 
   p {
@@ -345,7 +345,7 @@
 
     .info .image {
       position: absolute;
-      border: 1px solid $light-gray1;
+      border: 1px solid $color-alto;
       overflow: hidden;
 
       img {
@@ -363,36 +363,37 @@
     .mass-parish-name {
       font-size: 21px;
       line-height: 1em;
-      color: $dark-gray1;
+      color: $color-tundora;
     }
 
     .mass-parish-address {
-      color: $dark-gray1;
+      color: $color-tundora;
     }
 
-    .mass-language, .mass-duration {
-      color: $dark-gray1;
+    .mass-language,
+    .mass-duration {
+      color: $color-tundora;
       font-size: 17px;
     }
   }
 
   .theme-btn {
-    background: $theme-color;
+    background: $color-asparagus;
     margin: 15px 5px 5px;
   }
 }
 
 .theme-btn.dull {
-  background: $light-gray2;
+  background: $color-alto2;
 }
 
 .schedule-box .hour-box .theme-btn {
   &.dull {
-    background: $light-gray2;
+    background: $color-alto2;
   }
 
   &:before {
-    background: $dark-gray1;
+    background: $color-tundora;
   }
 }
 

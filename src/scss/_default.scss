@@ -10,7 +10,7 @@
 body {
   font-family: $openSans, sans-serif;
   font-size: 16px;
-  color: #292929;
+  color: $color-mine-shaft;
   line-height: 1.4em;
   font-weight: 400;
 }
@@ -18,7 +18,7 @@ body {
 a {
   text-decoration: none;
   cursor: pointer;
-  color: $theme-color;
+  color: $color-asparagus;
 
   &:hover,
   &:focus,
@@ -103,7 +103,6 @@ ul, li {
   text-transform: none !important;
 }
 
-
 .default-btn {
   position: relative;
   display: inline-block;
@@ -112,7 +111,7 @@ ul, li {
   font-size: 15px;
   text-transform: uppercase;
   margin: 0 10px;
-  color: #ffffff;
+  color: $color-white;
   transition: all 300ms ease;
   -moz-transition: all 300ms ease;
   -webkit-transition: all 300ms ease;
@@ -120,11 +119,11 @@ ul, li {
   -o-transition: all 300ms ease;
 
   &:hover {
-    color: #ffffff !important;
+    color: $color-white !important;
   }
 
   &::before {
-    background-color: #3d3d3d;
+    background-color: $color-tundora;
   }
 }
 
