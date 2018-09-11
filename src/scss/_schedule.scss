@@ -349,6 +349,8 @@
       overflow: hidden;
 
       img {
+        background: rgba(127,127,127, 0.2);
+        font-size: 0;
         display: block;
         width: 110px;
         height: 110px;
@@ -482,7 +484,6 @@
     }
 
     .info {
-      min-height: initial;
       padding-bottom: 20px;
     }
 
