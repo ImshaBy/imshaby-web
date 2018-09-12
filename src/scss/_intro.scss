@@ -95,11 +95,12 @@
 
 
 
-@media only screen and (max-width: 599px){
+@media only screen and (max-width: 599px) {
   .two-column {
     .feature {
       padding-left: 0;
     }
+
     .icon {
       position: relative;
       left: 0;
@@ -126,9 +127,18 @@
       padding-right: 0;
       margin-bottom: 50px;
     }
+
     .parish-list-carousel {
       width: 100%;
       overflow-x: auto;
+    }
+  }
+
+  .intro-text {
+    padding: 30px 0;
+
+    .row > div {
+      padding: 10px 30px;
     }
   }
 }
