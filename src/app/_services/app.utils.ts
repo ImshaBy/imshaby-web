@@ -11,7 +11,6 @@ export class Utils {
     for (let counter = 0; counter < 7; counter++) {
       let dateObject =  this.incrementDate(new Date(), counter);
       let momentObject = this.incrementMoment(counter);
-
       let formattedDayName = this.getFormattedDayName(momentObject);
       let formattedDate = this.getFormattedDate(momentObject);
 
