@@ -34,6 +34,7 @@
     "@angular/router": "^3.1.0",
     "core-js": "^2.4.1",
     "express": "^4.15.3",
+    "moment": "^2.22.2",
     "mydatepicker": "^1.0.19",
     "ng2-bootstrap": "^1.1.16-11",
     "ng2-datetime-picker": "^0.9.10",
