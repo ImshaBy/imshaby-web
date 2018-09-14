@@ -1,5 +1,5 @@
-import {Parish} from "./parish";
-import {LocalTime} from "./localTime";
+import {Parish} from './parish';
+import {LocalTime} from './localTime';
 /**
  * Created by Alena Misan on 03.01.2017.
  */
@@ -15,5 +15,4 @@ export class Mass {
     this.duration = duration;
     this.info = info;
   }
-
 }

@@ -1,6 +1,5 @@
 
 import {Injectable} from '@angular/core';
-
 import {Day} from '../_models/day';
 import * as moment from 'moment';
 
@@ -24,7 +23,7 @@ export class Utils {
   }
 
   /**
-   * Increment Date
+   *
    * @param {Date} date
    * @param {Number} days
    * @returns {Date}
@@ -46,7 +45,6 @@ export class Utils {
   }
 
   /**
-   * Get formatted date
    *
    * @param {moment} date
    * @returns {any}
@@ -91,6 +89,11 @@ export class Utils {
     return window.innerWidth < 768;
   }
 
+  /**
+   *
+   * @param {Date} date
+   * @returns {Number}
+   */
   public getSelectedDay(date: Date) {
     return date.getDay();
   }

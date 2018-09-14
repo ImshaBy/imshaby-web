@@ -8,7 +8,6 @@ export class Parish {
   gps: Location;
   address: string;
   needUpdate: boolean;
-
 }
 
 export class Location {
