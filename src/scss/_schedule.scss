@@ -38,7 +38,7 @@
   display: table-cell;
   text-align: center;
   background: $color-white;
-  color: #739953;
+  color: $color-asparagus;
   line-height: 1.4em;
   padding: 17px 10px;
   border-bottom: 1px solid $color-alto;
@@ -47,7 +47,6 @@
   cursor: pointer;
   transition: all 300ms ease;
   -webkit-transition: all 300ms ease;
-  -ms-transition: all 300ms ease;
   -o-transition: all 300ms ease;
   -moz-transition: all 300ms ease;
 
@@ -122,7 +121,6 @@
     opacity: 1;
     transition: all 300ms ease 200ms;
     -webkit-transition: all 300ms ease 200ms;
-    -ms-transition: all 300ms ease 200ms;
     -o-transition: all 300ms ease 200ms;
     -moz-transition: all 300ms ease 200ms;
   }
@@ -183,7 +181,7 @@
   .hour-box {
     position: relative;
     padding-left: 150px;
-    color: #7f7f7f;
+    color: $color-dark-gray;
     padding-bottom: 20px;
     overflow: hidden;
 
@@ -194,7 +192,7 @@
       top: 24px;
       width: 2px;
       height: 100%;
-      background: #d2d2d2;
+      background: $color-alto2;
     }
 
     &.active-box:before {
@@ -212,7 +210,7 @@
       width: 65px;
       font-size: 14px;
       line-height: 1;
-      color: #7f7f7f;
+      color: $color-dark-gray;
     }
   }
 
@@ -416,7 +414,7 @@
   .style-two .schedule-box .tab-buttons .tab-btn {
     flex: 1;
     float: none;
-    border: 1px solid #d0d0d0 !important;
+    border: 1px solid $color-alto-light !important;
     margin-bottom: 5px;
     padding: 20px 6px;
   }

@@ -5,7 +5,7 @@
   font-weight: 300;
   line-height: 1.5em;
   color: $color-black;
-  background: $color-hampton url(../assets/images/footer_church_bg.jpg) center center no-repeat;
+  background: $color-spindle url(../assets/images/footer_church_bg.jpg) center center no-repeat;
   background-size: cover;
 
   .auto-container {
@@ -25,7 +25,7 @@
   }
 
   h2 {
-    font-family: 'Open Sans', sans-serif;
+    font-family: $openSans;
     font-size: 20px;
     line-height: 70px;
     color: $color-white;
@@ -39,7 +39,7 @@
   border-bottom: 1px solid $color-white;
   border-top: 1px solid $color-white;
 
-  a {
+  span {
     color: $color-rouge;
   }
 }
@@ -48,6 +48,7 @@
   color: $color-blue-dianne;
   font-size: 19px;
   text-align: right;
+  line-height: 1.5em;
 }
 
 .intro-section .parish-list-carousel {
