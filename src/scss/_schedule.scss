@@ -38,7 +38,7 @@
   display: table-cell;
   text-align: center;
   background: $color-white;
-  color: #739953;
+  color: $color-asparagus;
   line-height: 1.4em;
   padding: 17px 10px;
   border-bottom: 1px solid $color-alto;
@@ -47,7 +47,6 @@
   cursor: pointer;
   transition: all 300ms ease;
   -webkit-transition: all 300ms ease;
-  -ms-transition: all 300ms ease;
   -o-transition: all 300ms ease;
   -moz-transition: all 300ms ease;
 
@@ -85,7 +84,10 @@
     font-size: 24px;
     line-height: 36px;
     margin-bottom: 0;
-  }
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 
   .date {
     display: block;
@@ -119,7 +121,6 @@
     opacity: 1;
     transition: all 300ms ease 200ms;
     -webkit-transition: all 300ms ease 200ms;
-    -ms-transition: all 300ms ease 200ms;
     -o-transition: all 300ms ease 200ms;
     -moz-transition: all 300ms ease 200ms;
   }
@@ -180,7 +181,7 @@
   .hour-box {
     position: relative;
     padding-left: 150px;
-    color: #7f7f7f;
+    color: $color-dark-gray;
     padding-bottom: 20px;
     overflow: hidden;
 
@@ -191,7 +192,7 @@
       top: 24px;
       width: 2px;
       height: 100%;
-      background: #d2d2d2;
+      background: $color-alto2;
     }
 
     &.active-box:before {
@@ -209,7 +210,7 @@
       width: 65px;
       font-size: 14px;
       line-height: 1;
-      color: #7f7f7f;
+      color: $color-dark-gray;
     }
   }
 
@@ -261,6 +262,7 @@
     position: relative;
     display: inline-block;
     font-size: 18px;
+    line-height: 28px;
     padding-right: 30px;
     color: $color-tundora;
 
@@ -349,6 +351,8 @@
       overflow: hidden;
 
       img {
+        background: rgba(127,127,127, 0.2);
+        font-size: 0;
         display: block;
         width: 110px;
         height: 110px;
@@ -410,13 +414,12 @@
   .style-two .schedule-box .tab-buttons .tab-btn {
     flex: 1;
     float: none;
-    border: 1px solid #d0d0d0 !important;
+    border: 1px solid $color-alto-light !important;
     margin-bottom: 5px;
     padding: 20px 6px;
   }
 
   .schedule-box .tab-buttons .tab-btn {
-    .day,
     .curve {
       display: none;
     }
@@ -482,7 +485,6 @@
     }
 
     .info {
-      min-height: initial;
       padding-bottom: 20px;
     }
 

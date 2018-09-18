@@ -1,11 +1,9 @@
-
-import {Mass} from "./mass";
-import {MassScheduleJSON} from "./massScheduleJSON";
+import {Mass} from './mass';
+import {MassScheduleJSON} from './massScheduleJSON';
 
 export class MassSchedule {
   schedule: MassDay[]
 }
-
 
 export class MassHour{
   hour: string;
@@ -13,10 +11,7 @@ export class MassHour{
   active: boolean;
 }
 
-
-
 export class MassDay {
   date: Date;
   massHours: MassHour[]
-
 }

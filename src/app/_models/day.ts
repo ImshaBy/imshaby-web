@@ -9,6 +9,6 @@ export class Day {
   constructor(date: Date, dayName: string, humanFormat: string) {
     this.date = date;
     this.dayName = dayName;
-    this.humanFormat = date.toLocaleDateString('be-BY');
+    this.humanFormat = humanFormat;
   }
 }

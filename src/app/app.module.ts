@@ -10,7 +10,7 @@ import { routing }        from './app.routing'
 
 import { HomeComponent } from './home/home.component';
 import {MassService} from './_services/mass.service';
-import {Utils} from "./_services/app.utils";
+import {Utils} from './_services/app.utils';
 
 @NgModule({
   declarations: [

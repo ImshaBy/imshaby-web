@@ -1,5 +1,5 @@
 
-import {MassHour} from "./massSchedule";
+import {MassHour} from './massSchedule';
 
 export class MassScheduleJSON {
   schedule: MassDayJSON[]
