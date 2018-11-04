@@ -17,11 +17,15 @@
       "tsconfig": "tsconfig.json",
       "prefix": "app",
       "mobile": false,
-      "styles": [],
+      "styles": [
+        "scss/styles.scss"
+      ],
       "scripts": [],
+      "environmentSource": "environments/environment.ts",
       "environments": {
-        "source": "environments/environment.ts",
         "dev": "environments/environment.ts",
+        "qa": "environments/environment.qa.ts",
+        "pp": "environments/environment.pp.ts",
         "prod": "environments/environment.prod.ts"
       }
     }

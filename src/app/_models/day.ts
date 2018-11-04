@@ -5,7 +5,8 @@ export class Day {
   public dayName: string;
   public humanFormat: string;
   public date: Date;
-  constructor(date:Date, dayName: string, humanFormat:string){
+
+  constructor(date: Date, dayName: string, humanFormat: string) {
     this.date = date;
     this.dayName = dayName;
     this.humanFormat = humanFormat;

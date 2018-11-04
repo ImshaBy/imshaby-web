@@ -1,0 +1,22 @@
+@import "./variables";
+
+.main-footer {
+  position: relative;
+  background: $color-white;
+
+  .footer-lower {
+    background: $color-cod-gray;
+  }
+}
+
+.footer-bottom {
+  position:relative;
+  padding: 20px 0 20px;
+  color: $color-white;
+  background: $color-cod-gray;
+  text-align: center;
+
+  .row > div {
+    padding: 0;
+  }
+}
