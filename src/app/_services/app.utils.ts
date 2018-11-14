@@ -27,7 +27,7 @@ export class Utils {
    * @param {Number} days
    * @returns {Date}
    */
-  private incrementDate(date, days) {
+  private incrementDate(date: Date , days: number) {
     let result = new Date(date);
     result.setDate(result.getDate() + days);
 
@@ -39,7 +39,7 @@ export class Utils {
    * @param days
    * @returns {moment.Moment}
    */
-  private incrementMoment(days) {
+  private incrementMoment(days: number) {
     return moment().add(days, 'days');
   }
 
@@ -48,7 +48,7 @@ export class Utils {
    * @param {moment} date
    * @returns {any}
    */
-  private getFormattedDate(date) {
+  private getFormattedDate(date : moment.Moment ) {
     let formatted;
 
     if (this.isMobileWidth()) {
@@ -67,7 +67,7 @@ export class Utils {
    * @param {moment} date
    * @returns {any}
    */
-  private getFormattedDayName(date) {
+  private getFormattedDayName(date: moment.Moment) {
     let dayName;
 
     if (this.isMobileWidth()) {

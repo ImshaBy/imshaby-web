@@ -1,0 +1,166 @@
+@import "./variables";
+
+.intro-section {
+  position: relative;
+  font-weight: 300;
+  line-height: 1.5em;
+  color: $color-black;
+  background: $color-spindle url(/assets/images/footer_church_bg.jpg) center center no-repeat;
+  background-size: cover;
+
+  .auto-container {
+    position: relative;
+    z-index: 5;
+  }
+
+  .text {
+    padding-right: 75px;
+    font-size: 19px;
+    line-height: 23px;
+  }
+
+  .row > div {
+    padding: 30px 30px 70px;
+    font-size: 15px;
+  }
+
+  h2 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    line-height: 70px;
+    color: $color-white;
+    text-align: center;
+    border-bottom: 1px solid $color-white;
+  }
+}
+
+.intro-text {
+  color: $color-blue-dianne;
+  border-bottom: 1px solid $color-white;
+  border-top: 1px solid $color-white;
+
+  span {
+    color: $color-rouge;
+  }
+}
+
+.intro-text-right p {
+  color: $color-blue-dianne;
+  font-size: 19px;
+  text-align: right;
+  line-height: 1.5em;
+}
+
+.intro-section .parish-list-carousel {
+  display: flex;
+  margin-bottom: 75px;
+
+  .mCSB_container {
+    display: flex;
+  }
+}
+
+.parish-list-carousel .carousel-item {
+  flex: 1;
+  margin-right: 50px;
+
+  figcaption {
+    text-align: center;
+  }
+
+  img {
+    width: 100px;
+    margin-bottom: 15px;
+    border: 1px solid $color-alto-light;
+  }
+}
+
+.intro-section .btn-style-one {
+  position: relative;
+  margin: 40px 0 0;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.text-content {
+  text-align: center;
+
+  h2 {
+    text-align: left;
+  }
+}
+
+.contact-us {
+  font-size: 24px;
+  margin: 5px 0;
+}
+
+
+
+@media only screen and (max-width: 599px) {
+  .two-column {
+    .feature {
+      padding-left: 0;
+    }
+
+    .icon {
+      position: relative;
+      left: 0;
+      top: 0;
+      margin-bottom: 15px;
+    }
+  }
+
+  .our-experience .exp-meter .exp-count {
+    bottom: auto;
+    top: 5px;
+  }
+
+  .team-section .team-member .social-links {
+    top: 0;
+  }
+
+  .contact-section .map-area {
+    height: 250px;
+  }
+
+  .intro-section {
+    .text {
+      padding-right: 0;
+      margin-bottom: 50px;
+    }
+
+    .parish-list-carousel {
+      width: 100%;
+      overflow-x: auto;
+    }
+  }
+
+  .intro-text {
+    padding: 30px 0;
+
+    .row > div {
+      padding: 10px 30px;
+    }
+  }
+}
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 48px;
+  height: 48px;
+  color: $color-white;
+  background: $color-asparagus url(/assets/images/icons/arrow-up.png) center center no-repeat;
+  font-size: 20px;
+  line-height: 48px;
+  text-align: center;
+  z-index: 100;
+  cursor: pointer;
+  display: none;
+
+  &:hover {
+    background-color: $color-parsley;
+    color: $color-white;
+  }
+}

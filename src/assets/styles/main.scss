@@ -1,0 +1,30 @@
+/**
+ Add an auto-generated sprite map. 
+
+
+ After that you can use your sprite like:
+
+ // @include sprite($android);
+
+ Where android - is the origin image name
+
+ The sprite sources placed in the src/assets/ico
+*/
+@import "../spritesmith-generated/sprite";
+
+
+/* ---  Vendors  --- */
+
+
+
+/* ---  !Vendors  --- */
+
+
+
+/* --- System low-level parts of rules like @media/mixins etc. --- */
+
+/* --- !System --- */
+
+
+@import "partials/styles";
+

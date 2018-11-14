@@ -84,7 +84,7 @@ export class AppComponent {
    * @param amount
    * @returns {boolean}
    */
-  checkMassesAmount(amount) {
+  checkMassesAmount(amount: number) {
     if (amount === 1 || amount === 21 || amount === 31 || amount === 41) {
         return true;
     }
@@ -95,7 +95,7 @@ export class AppComponent {
    * @param param
    * @returns {boolean}
    */
-  needUpdate(param) {
+  needUpdate(param: boolean ) {
     return !!param;
   }
 
