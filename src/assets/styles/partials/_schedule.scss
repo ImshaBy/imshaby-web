@@ -431,6 +431,11 @@
 
   .schedule-box .hour-box {
     padding-left: 50px;
+    padding-top: 5px;
+
+    &.active-box {
+      padding-top: 2px;
+    }
 
     .mass-card {
       flex-direction: column;
