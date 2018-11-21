@@ -46,10 +46,7 @@ export class MassService {
 
     for (let massDay of massDays) {
       let massDayFinal = new MassDay();
-      console.log('massDay processing:');
-      console.log(massDay.date);
       massDayFinal.date = new Date(massDay.date);
-      console.log(massDayFinal.date);
       massDayFinal.massHours = massDay.massHours;
       massDaysFinal.push(massDayFinal);
     }
@@ -77,7 +74,6 @@ export class MassService {
   }
 
   private handleError(error:Response) {
-    console.error(error);
     return Observable.throw(error.json().error || 'Server error');
   }
 
