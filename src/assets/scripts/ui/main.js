@@ -43,6 +43,7 @@
 
   $(window).on('load', function() {
     handlePreloader();
+    handleScrollToTopBtn();
   });
 
 })(window.jQuery);
