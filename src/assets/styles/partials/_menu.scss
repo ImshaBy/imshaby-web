@@ -9,9 +9,7 @@
   background: $color-aqua-spring url(/assets/images/header_bg.jpg) center no-repeat;
   background-size: cover;
   transition: all 300ms ease;
-  -moz-transition: all 300ms ease;
   -webkit-transition: all 300ms ease;
-  -o-transition: all 300ms ease;
 
   .auto-container {
     position: relative;
@@ -31,9 +29,7 @@
   padding: 50px 0 32px;
   margin: 0 16% 0 4.166666666%; /*50*100/1200*/
   transition: all 300ms ease;
-  -moz-transition: all 300ms ease;
   -webkit-transition: all 300ms ease;
-  -o-transition: all 300ms ease;
 
   a:hover {
     cursor: default;
@@ -98,9 +94,7 @@
           overflow: hidden;
           text-transform: uppercase;
           transition: all 300ms ease;
-          -moz-transition: all 300ms ease;
           -webkit-transition: all 300ms ease;
-          -o-transition: all 300ms ease;
 
           &:after {
             content: '';
@@ -112,9 +106,7 @@
             height: 15px;
             background: url(/assets/images/icons/icon-arrow-up.png) center bottom no-repeat;
             transition: all 300ms ease 300ms;
-            -moz-transition: all 300ms ease 100ms;
             -webkit-transition: all 300ms ease 100ms;
-            -o-transition: all 300ms ease 100ms;
           }
         }
 
@@ -179,7 +171,6 @@
         display: none;
         border-radius: 3px;
         -webkit-border-radius: 3px;
-        -moz-border-radius: 3px;
       }
 
       > li > ul > li {
@@ -192,8 +183,6 @@
           background: none;
           transition: all 300ms ease;
           -webkit-transition: all 300ms ease;
-          -moz-transition: all 300ms ease;
-          -o-transition: all 300ms ease;
         }
 
         &:hover {
@@ -225,8 +214,6 @@
             background: none;
             transition: all 300ms ease;
             -webkit-transition: all 300ms ease;
-            -moz-transition: all 300ms ease;
-            -o-transition: all 300ms ease;
           }
 
           &:hover > a {
@@ -277,7 +264,9 @@
     .auto-container {
       position: relative;
       display: block;
-      background: url(/assets/images/header_bg_mobile.jpg) center center;
+      background: url(/assets/images/header_bg_mobile.jpg);
+      background-position-x: 51%;
+      background-position-y: 34%;
     }
 
     .main-menu {
@@ -311,7 +300,6 @@
       margin: 10px 0;
       width: 100%;
       border-radius: 3px;
-      -moz-border-radius: 3px;
       -webkit-border-radius: 3px;
       &.in {
         padding: 0;
@@ -319,7 +307,6 @@
         margin: 10px 0;
         width: 100%;
         border-radius: 3px;
-        -moz-border-radius: 3px;
         -webkit-border-radius: 3px;
       }
     }
@@ -329,7 +316,6 @@
       margin: 10px 0;
       width: 100%;
       border-radius: 3px;
-      -moz-border-radius: 3px;
       -webkit-border-radius: 3px;
     }
     .navbar-header {

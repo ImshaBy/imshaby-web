@@ -157,7 +157,7 @@
   text-align: center;
   z-index: 100;
   cursor: pointer;
-  display: none;
+  display: block;
 
   &:hover {
     background-color: $color-parsley;

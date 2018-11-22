@@ -26,25 +26,19 @@ export class AppComponent {
   selectedDate: Date;
 
   constructor(private pMassService: MassService, private pUtils: Utils) {
-    console.log('AppComponent  constructor');
     this.massService = pMassService;
     this.utils = pUtils;
     this.masses = new MassSchedule();
   }
 
   refresh(){
-    console.log('AppComponent  refresh');
     this.today = new Date();
-    console.log('today ' + this.today);
     // this.masses = this.getTodaySchedule();
 
     // this.getTodaySchedulePromise();
     this.days = this.getActualDays();
-    console.log('days' + this.days);
     this.selectedDay = this.utils.getSelectedDay(this.today);
-    console.log('selected day' + this.selectedDay);
     this.selectedDate = this.today;
-    console.log('selected date' + this.selectedDate);
     this.getTodayScheduleAsync();
   }
 
@@ -54,7 +48,6 @@ export class AppComponent {
 
   onSelect(massDay: Date): void {
       this.refresh();
-      console.log('clicked event, refreshed');
       this.selectedDay = massDay.getDay();
       this.selectedDate = massDay;
   }
@@ -72,10 +65,8 @@ export class AppComponent {
     .subscribe(
       masses => {
         this.masses = masses;
-        console.log(this.masses);
       },
-      error => console.error('Error: ' + error),
-      () => console.log('Completed async!')
+      error => console.error('Error: ' + error)
     );
   }
 
