@@ -65,7 +65,7 @@
 
                   <div class="mass-parish-image-wrapper info">
                     <figure class="img-circle image">
-                      <img class="img-circle" src="{{mass.parish.imgPath}}" alt="church-image">
+                      <img class="img-circle" [src]="mass.parish.imgPath !== null ? mass.parish.imgPath : '/assets/images/building-in-progress.png'" alt="church-image">
                     </figure>
                   </div>
 
