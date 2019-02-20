@@ -41,5 +41,20 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
+  <!-- begin Wootric code -->
+  <script type="text/javascript">
+    window.wootric_survey_immediately = true; // Shows survey immediately for testing purposes. TODO: Comment out for production.
+    window.wootricSettings = {
+      email: 'kaciallaurynovich@gmail.com', // TODO: Required to uniquely identify a user. Email is recommended but this can be any unique identifier.
+      account_token: 'NPS-3726815f' // This is your unique account token.
+    };
+  </script>
+  <script type="text/javascript" src="https://cdn.wootric.com/wootric-sdk.js"></script>
+  <script type="text/javascript">
+    // This loads the Wootric survey
+    window.wootric('run');
+  </script>
+  <!-- end Wootric code -->
+
 </body>
 </html>
