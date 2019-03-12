@@ -39,21 +39,13 @@
 .site-name {
   flex: 1;
 
-  a {
-    color: $color-white;
-
-    &:hover {
-      cursor: default;
-    }
-  }
-
   li {
     font: normal 35px/35px 'Microsoft sans serif';
-    color: $color-envy;
+    color: $color-white;
     margin-bottom: 10px;
   }
 
-  .active a {
+  .active {
     color: $color-parsley;
   }
 }

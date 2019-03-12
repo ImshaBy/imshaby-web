@@ -4,15 +4,13 @@
   <header class="main-header">
     <div class="auto-container clearfix">
       <div class="logo">
-        <a href="#">
-          <img src="/assets/static_files_to_copy/images/logo.png" alt="Euharist" title="Euharist">
-        </a>
+        <img src="/assets/static_files_to_copy/images/logo.png" alt="Euharist" title="Euharist">
       </div>
 
       <ul class="site-name">
-        <li class="eng-name"><a href="#">Time of Mass</a></li>
-        <li class="by-name active"><a href="#">Час Iмшы</a></li>
-        <li class="rus-name"><a href="#">Время Мессы</a></li>
+        <li class="eng-name">Time of Mass</li>
+        <li class="by-name active">Час Iмшы</li>
+        <li class="rus-name">Время Мессы</li>
       </ul>
 
       <div class="location">
@@ -65,7 +63,9 @@
 
                   <div class="mass-parish-image-wrapper info">
                     <figure class="img-circle image">
-                      <img class="img-circle" [src]="mass.parish.imgPath !== null ? mass.parish.imgPath : '/assets/images/building-in-progress.png'" alt="church-image">
+                      <img class="img-circle"
+                           [src]="mass.parish.imgPath !== null ? mass.parish.imgPath : '/assets/images/building-in-progress.png'"
+                           alt='Мінск, Здымак: {{mass.parish.name}}'>
                     </figure>
                   </div>
 
