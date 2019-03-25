@@ -79,12 +79,12 @@
                     <h5 class="mass-info">{{mass.info}}</h5>
                   </div>
 
-                  <div [ngClass]="{'mass-parish-relevance': true, 'not-actual': mass.parish.needUpdate}">
-                    <p *ngIf="!needUpdate(mass.parish.needUpdate)"
+                  <div [ngClass]="{'mass-parish-relevance': true, 'not-actual': mass.needUpdate}">
+                    <p *ngIf="!needUpdate(mass.needUpdate)"
                        class="placeholder actual">
                       Iнфармацыя актуальная
                     </p>
-                    <p *ngIf="needUpdate(mass.parish.needUpdate)"
+                    <p *ngIf="needUpdate(mass.needUpdate)"
                        class="placeholder not-actual">
                       Iнфармацыя патрабуе ўдакладнення
                     </p>
