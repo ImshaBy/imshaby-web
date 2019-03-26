@@ -4,7 +4,8 @@
   "description": "ImshaBy Project",
   "scripts": {
     "start": "webpack-dev-server --env.APP_TARGET pp --inline --progress --colors --port 8080",
-    "deploy": "rimraf dist && webpack --env.APP_TARGET pp --config config/webpack.prod.js --progress --profile --bail",
+    "deploy": "rimraf dist && webpack --env.APP_TARGET pp --config config/webpack.prod.js --progress --profile --bail && npm run assets",
+    "assets": "cp -R src/assets/images dist/assets && cp -R src/assets/fonts dist/assets && mkdirp ./dist/images && cp -R src/assets/avatars dist/images/avatars",
     "postinstall": "typings install",
     "test": "karma start"
   },
@@ -75,6 +76,7 @@
     "webpack-glob": "^2.0.2",
     "webpack-merge": "^0.18.0",
     "webpack-spritesmith": "^0.3.0",
-    "webpack-svgstore-plugin": "^3.0.5"
+    "webpack-svgstore-plugin": "^3.0.5",
+    "mkdirp": "0.5.1"
   }
 }
