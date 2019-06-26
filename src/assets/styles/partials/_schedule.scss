@@ -404,6 +404,13 @@
     display: flex;
     width: 100%;
     margin-bottom: 10px;
+
+    &.sticky {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 10;
+    }
   }
 
   .schedule-box .tab-buttons .tab-btn,
