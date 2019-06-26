@@ -98,11 +98,9 @@ export class AppComponent {
   onWindowScroll() {
 
      if (window.pageYOffset > 315 && window.pageYOffset < document.getElementById('tabs-box').offsetHeight + 315 ) {
-       console.log('down');
        let element = document.getElementById('navbar');
        element.classList.add('sticky');
      } else {
-       console.log('up');
        let element = document.getElementById('navbar');
        element.classList.remove('sticky');
      }
