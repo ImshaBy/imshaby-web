@@ -8,13 +8,13 @@
       </div>
 
       <ul class="site-name">
-        <li class="eng-name">Time of Mass</li>
-        <li class="by-name active">Час Iмшы</li>
-        <li class="rus-name">Время Мессы</li>
+        <li class="eng-name" [class.active]="lang == 'en'" (click)="onChangeLang('en')">Time of Mass</li>
+        <li class="by-name" [class.active]="lang == 'be'" (click)="onChangeLang('be')">Час Iмшы</li>
+        <li class="rus-name" [class.active]="lang == 'ru'" (click)="onChangeLang('ru')">Время Мессы</li>
       </ul>
 
       <div class="location">
-        <p>Мiнск</p>
+        <p >Мiнск</p>
       </div>
 
     </div>

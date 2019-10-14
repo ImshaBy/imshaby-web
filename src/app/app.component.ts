@@ -1,6 +1,8 @@
 import { Component, HostListener } from '@angular/core';
 
 import { ActivatedRoute } from '@angular/router';
+import { CookieService } from "angular2-cookie/services/cookies.service";
+
 
 import { Mass } from './_models/index';
 import {MassService} from './_services/mass.service';
@@ -8,12 +10,13 @@ import {MassSchedule} from './_models/massSchedule';
 import {Day} from './_models/day';
 import {Utils} from './_services/app.utils';
 import {Parish} from './_models/parish';
+import { RequestOptions } from '@angular/http';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers:[MassService, Utils]
+  providers:[MassService, Utils, CookieService]
 })
 
 export class AppComponent {
@@ -24,11 +27,15 @@ export class AppComponent {
   days: Day[];
   selectedDay: number;
   selectedDate: Date;
+  cookieService: CookieService;
+  lang: string;
 
-  constructor(private pMassService: MassService, private pUtils: Utils) {
+  constructor(private pMassService: MassService, private pUtils: Utils, private pCookieService: CookieService ) {
     this.massService = pMassService;
     this.utils = pUtils;
+    this.cookieService = pCookieService;
     this.masses = new MassSchedule();
+    this.lang = 'be';
   }
 
   refresh(){
@@ -52,6 +59,12 @@ export class AppComponent {
       this.selectedDate = massDay;
   }
 
+  onChangeLang(pLang: string): void {
+    this.lang = pLang;
+    this.cookieService.put("i_lang", this.lang);
+    this.refresh();
+  }
+
   getTodaySchedule(): MassSchedule {
     return this.massService.getTodaySchedule();
   }
@@ -69,6 +82,10 @@ export class AppComponent {
       error => console.error('Error: ' + error)
     );
   }
+
+  
+
+
 
   /**
    * Check amount of masses to display proper card label
