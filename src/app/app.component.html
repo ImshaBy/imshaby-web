@@ -6,131 +6,25 @@
       <div class="logo">
         <img src="/assets/static_files_to_copy/images/logo.png" alt="Euharist" title="Euharist">
       </div>
-
-      <ul class="site-name">
-        <li class="eng-name" [class.active]="lang == 'en'" (click)="onChangeLang('en')">Time of Mass</li>
-        <li class="by-name" [class.active]="lang == 'be'" (click)="onChangeLang('be')">Час Iмшы</li>
-        <li class="rus-name" [class.active]="lang == 'ru'" (click)="onChangeLang('ru')">Время Мессы</li>
+      <ul class="site-name"> 
+        <li class="eng-name" [routerLink]="['/en']" [class.active]="lang == 'en'" (click)="onChangeLang('en')">Time of Mass</li>
+        <li class="by-name" [routerLink]="['/by']" [class.active]="lang == 'be'" (click)="onChangeLang('be')">Час Iмшы</li>
+        <li class="rus-name" [routerLink]="['/ru']" [class.active]="lang == 'ru'" (click)="onChangeLang('ru')">Время Мессы</li>
       </ul>
-
       <div class="location">
-        <p >Мiнск</p>
+        <p class="city" [class.visible]="lang == 'en'">Minsk</p>
+        <p class="city" [class.visible]="lang == 'be'">Мiнск</p>
+        <p class="city" [class.visible]="lang == 'ru'">Минск</p>
       </div>
-
     </div>
   </header>
   <!--End Main Header -->
+  
+<!-- Main section -->
 
   <router-outlet></router-outlet>
 
-  <!--Schedule Section / Style Two-->
-  <section class="schedule-section style-two">
-    <div class="auto-container">
-      <!--Schedule Box-->
-      <div class="schedule-box clearfix fadeInUp animated">
-
-        <!--Tab Buttons-->
-        <ul class="tab-buttons clearfix" id="navbar">
-          <li class="tab-btn" [class.active]="(day.date | date: 'dd/MM/yyyy') == (selectedDate | date: 'dd/MM/yyyy') "
-              *ngFor="let day of days"
-              (click)="onSelect(day.date)">
-            <span class="day">{{day.dayName}}</span>
-            <span class="date">{{day.humanFormat}}</span>
-            <span class="curve"></span>
-          </li>
-        </ul>
-
-        <!--Tabs Box-->
-        <div class="tabs-box" id="tabs-box">
-
-          <!--Tab / Current / Monday-->
-          <div class="tab"
-               *ngFor="let massDay of masses.schedule"
-               [class.current]="(massDay.date | date: 'dd/MM/yyyy') == (selectedDate | date: 'dd/MM/yyyy')"
-               [hidden]="!((massDay.date | date: 'dd/MM/yyyy') == (selectedDate | date: 'dd/MM/yyyy'))" >
-            <div class="hour-box"
-                 [class.active-box]="massHour.active" *ngFor="let massHour of massDay.massHours">
-              <div class="hour">{{massHour.hour}}</div>
-              <div class="img-circle circle"><span></span></div>
-              <div class="toggle-btn" [class.active]="massHour.active"
-                   (click)="massHour.active = !massHour.active">
-                <h3 *ngIf="checkMassesAmount(massHour.data.length)">Святая Імша ў {{massHour.data.length}} парафіі</h3>
-                <h3 *ngIf="!checkMassesAmount(massHour.data.length)" >Святая Імша ў {{massHour.data.length}} парафіях</h3>
-              </div>
-              <div class="content-box row" [class.collapsed]="massHour.active">
-                <div class="panel panel-default mass-card"
-                     *ngFor="let mass of massHour.data">
-
-                  <div class="mass-parish-image-wrapper info">
-                    <figure class="img-circle image">
-                      <img class="img-circle"
-                           [src]="mass.parish.imgPath !== null ? mass.parish.imgPath : '/assets/images/building-in-progress.png'"
-                           alt='Мінск, Здымак: {{mass.parish.name}}'>
-                    </figure>
-                  </div>
-
-                  <div class="mass-parish-info-wrapper info">
-                    <h5 class="mass-parish-name">{{mass.parish.name}}</h5>
-                    <h5 class="mass-parish-address">{{mass.parish.address}}</h5>
-                    <h6 class="mass-language">{{mass.langCode}}</h6>
-                  </div>
-
-                  <div class="mass-parish-additional-info-wrapper info">
-                    <h5 class="mass-info">{{mass.info}}</h5>
-                  </div>
-
-                  <div [ngClass]="{'mass-parish-relevance': true, 'not-actual': mass.needUpdate}">
-                    <p *ngIf="!needUpdate(mass.needUpdate)"
-                       class="placeholder actual">
-                      Iнфармацыя актуальная
-                    </p>
-                    <p *ngIf="needUpdate(mass.needUpdate)"
-                       class="placeholder not-actual">
-                      Iнфармацыя патрабуе ўдакладнення
-                    </p>
-                  </div>
-                  <div class="clearfix"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!--Tabs Box End-->
-      </div>
-      <!--Schedule Box End-->
-
-    </div>
-  </section>
-
-  <!--Intro Section-->
-  <section class="intro-section">
-    <div class="auto-container">
-      <h2>Аб праекце</h2>
-      <div class="intro-text clearfix">
-        <div class="row">
-          <div class="col-sm-6 col-xs-12">
-            <p>
-              Дзе і а якой можна сустрэцца з Хрыстом у сталіцы Беларусі і як знайсці актуальны расклад Імшаў?
-              Інфармацыя пра месца і час цэлебрацыі святой Эўхарыстыі ў горадзе Мінск прадстаўлена на нашым сайце imsha.by
-            </p>
-          </div>
-          <div class="col-sm-6 col-xs-12">
-            <p>
-              Tут вы знойдзеце актуальны расклад лацінскай рыма-каталіцкай імшы і візантыйскай грэка-каталіцкай літургіі.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="intro-text-right col-sm-offset-4 col-sm-8 col-xs-12">
-          <p> Увага! Сэрвіс знаходзіцца ў распрацоўцы. Калі вы знайшлі памылку, калі ласка, напішыце нам на
-            <a href="mailto:byimsha@gmail.com" class="contact-us">byimsha@gmail.com</a>
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
+<!-- End of Main section -->
   <footer class="footer-bottom">
     <div class="auto-container">
       <div class="row clearfix">

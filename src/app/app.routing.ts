@@ -1,12 +1,15 @@
 import { Routes, RouterModule } from '@angular/router';
-
-import { HomeComponent } from './home/index';
+import { ByAppComponent } from './byApp';
+import { EnAppComponent } from './enApp';
+import { RuAppComponent } from './ruApp';
 
 const appRoutes: Routes = [
-    { path: 'about', component: HomeComponent },
-    { path: 'contact', component: HomeComponent },
+  { path: 'by', component: ByAppComponent },    
+  { path: 'en', component: EnAppComponent },    
+  { path: 'ru', component: RuAppComponent }, 
+  { path: '', redirectTo: '/by', pathMatch: 'full'},   
   // otherwise redirect to root
-    { path: '**', redirectTo: '' }
+  { path: '**', redirectTo: '' }
 ];
 
 export const routing = RouterModule.forRoot(appRoutes);

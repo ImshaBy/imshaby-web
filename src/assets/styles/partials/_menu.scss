@@ -40,9 +40,15 @@
   flex: 1;
 
   li {
+    display: block;
     font: normal 35px/35px 'Microsoft sans serif';
     color: $color-white;
     margin-bottom: 10px;
+    cursor: pointer;
+    
+    &:hover {
+      text-decoration: none;
+    }
   }
 
   .active {
@@ -56,6 +62,14 @@
   bottom: 12px;
   left: 31.5%;
   color: $color-chambray;
+
+  .city {
+    display: none;
+  }
+
+  .visible {
+    display: block;
+  }
 }
 
 .main-header .logo img {

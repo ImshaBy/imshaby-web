@@ -7,8 +7,8 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/do';
 import 'rxjs/Rx';
 
-import {MassSchedule, MassDay} from '../_models/massSchedule';
-import {MassScheduleJSON, MassDayJSON} from '../_models/massScheduleJSON';
+import { MassSchedule, MassDay } from '../_models/massSchedule';
+import { MassScheduleJSON, MassDayJSON } from '../_models/massScheduleJSON';
 import { environment } from '../../environments/environment';
 
 
@@ -24,6 +24,7 @@ export class MassService {
     return null;
     // return SCHEDULE;
   }
+ 
   getTodayScheduleAsync() : Observable<MassSchedule> {
     return this.http.get(this.getServiceURL(), { withCredentials: true})
       .map((response) => {
@@ -33,7 +34,6 @@ export class MassService {
         return this.transform(massScheduleJSON);
       });
   }
-
 
   private getServiceURL() {
     let apiURL = environment.apiHost;
@@ -64,7 +64,6 @@ export class MassService {
     // return Promise.resolve(SCHEDULE);
   }
 
-
   private jwt() {
     // create authorization header with jwt token
     let currentUser = JSON.parse(localStorage.getItem('currentUser'));
@@ -77,5 +76,4 @@ export class MassService {
   private handleError(error:Response) {
     return Observable.throw(error.json().error || 'Server error');
   }
-
 }
