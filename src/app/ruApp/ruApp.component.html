@@ -29,8 +29,8 @@
             <div class="img-circle circle"><span></span></div>
             <div class="toggle-btn" [class.active]="massHour.active"
                   (click)="massHour.active = !massHour.active">
-              <h3 *ngIf="checkMassesAmount(massHour.data.length)">Святая служба в {{massHour.data.length}} парафии</h3>
-              <h3 *ngIf="!checkMassesAmount(massHour.data.length)" >Святая служба в {{massHour.data.length}} парафиях</h3>
+              <h3 *ngIf="checkMassesAmount(massHour.data.length)">Святая месса в {{massHour.data.length}} приходе</h3>
+              <h3 *ngIf="!checkMassesAmount(massHour.data.length)" >Святая месса в {{massHour.data.length}} приходах</h3>
             </div>
             <div class="content-box row" [class.collapsed]="massHour.active">
               <div class="panel panel-default mass-card"
@@ -85,13 +85,13 @@
       <div class="row">
         <div class="col-sm-6 col-xs-12">
           <p>
-            Когда и во сколько можно встретиться с Христом в столице Беларуси и как найти актульное расписание Служб?
-            Информация про место и время отправлений святой Евхаристии в городе Минск представлена на нашем сайте imsha.by
+            Где и во сколько можно встретиться с Христом в столице Беларуси и как найти актуальное расписание Месс?
+            Информация про место и время совершения святой Евхаристии в Минске представлена на сайте www.imsha.by.
           </p>
         </div>
         <div class="col-sm-6 col-xs-12">
           <p>
-            Тут вы найдете актуальное расписание римо-каталической службы и византийской греко-каталической литургии.
+            Здесь вы найдете актуальное расписание латинской римо-католической мессы и византийской греко-католической литургии.
           </p>
         </div>
       </div>

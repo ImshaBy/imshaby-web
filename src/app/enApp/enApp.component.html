@@ -29,8 +29,8 @@
             <div class="img-circle circle"><span></span></div>
             <div class="toggle-btn" [class.active]="massHour.active"
                   (click)="massHour.active = !massHour.active">
-              <h3 *ngIf="checkMassesAmount(massHour.data.length)">Holly mass at{{massHour.data.length}} parish</h3>
-              <h3 *ngIf="!checkMassesAmount(massHour.data.length)" >Holly mass at {{massHour.data.length}} parishes</h3>
+              <h3 *ngIf="checkMassesAmount(massHour.data.length)">Holy mass at {{massHour.data.length}} parish</h3>
+              <h3 *ngIf="!checkMassesAmount(massHour.data.length)" >Holy mass at {{massHour.data.length}} parishes</h3>
             </div>
             <div class="content-box row" [class.collapsed]="massHour.active">
               <div class="panel panel-default mass-card"
@@ -85,17 +85,14 @@
       <div class="row">
         <div class="col-sm-6 col-xs-12">
           <p>
-            English translation English translation English translation English translation 
-            English translation English translation English translation English translation 
-            English translation English translation English translation English translation 
+            Where and what time can you meet Jesus in the capital of Belarus and how to find an up-to-date 
+            schedule of masses? Information about place and time of Holy Eucharist can be found at www.imsha.by.
           </p>
         </div>
         <div class="col-sm-6 col-xs-12">
           <p>
-            English translation English translation English translation English translation 
-            English translation English translation English translation English translation 
-            English translation English translation English translation English translation 
-            English translation English translation English translation English translation 
+            Here you can find an up-to-date schedule of Latin Roman-Catholic service and Byzantian 
+            Greek-Catholic liturgy. 
           </p>
         </div>
       </div>
@@ -103,7 +100,7 @@
 
     <div class="row">
       <div class="intro-text-right col-sm-offset-4 col-sm-8 col-xs-12">
-        <p> Attention!
+        <p> If you find any mistake, please, contact us via
           <a href="mailto:byimsha@gmail.com" class="contact-us">byimsha@gmail.com</a>
         </p>
       </div>
