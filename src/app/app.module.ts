@@ -9,6 +9,8 @@ import { routing } from './app.routing'
 import { RuAppComponent } from './ruApp/index';
 import { EnAppComponent } from './enApp/index';
 import { ByAppComponent } from './byApp/index';
+import { PlAppComponent } from './plApp/index';
+
 import { MassService } from './_services/mass.service';
 import { Utils } from './_services/app.utils';
 
@@ -19,6 +21,8 @@ import { Utils } from './_services/app.utils';
     RuAppComponent,
     EnAppComponent,
     ByAppComponent,
+    PlAppComponent
+
   ],
   imports: [
     BrowserModule,
