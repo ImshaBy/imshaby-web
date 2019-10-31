@@ -7,6 +7,7 @@
         <img src="/assets/static_files_to_copy/images/logo.png" alt="Euharist" title="Euharist">
       </div>
       <ul class="site-name"> 
+        <li class="pl-name" [routerLink]="['/pl']" [class.active]="lang == 'pl'" (click)="onChangeLang('pl')">Godzina Msze</li>
         <li class="eng-name" [routerLink]="['/en']" [class.active]="lang == 'en'" (click)="onChangeLang('en')">Time of Mass</li>
         <li class="by-name" [routerLink]="['/by']" [class.active]="lang == 'be'" (click)="onChangeLang('be')">Час Iмшы</li>
         <li class="rus-name" [routerLink]="['/ru']" [class.active]="lang == 'ru'" (click)="onChangeLang('ru')">Время Мессы</li>
@@ -15,6 +16,8 @@
         <p class="city" [class.visible]="lang == 'en'">Minsk</p>
         <p class="city" [class.visible]="lang == 'be'">Мiнск</p>
         <p class="city" [class.visible]="lang == 'ru'">Минск</p>
+        <p class="city" [class.visible]="lang == 'pl'">Mińsk</p>
+
       </div>
     </div>
   </header>

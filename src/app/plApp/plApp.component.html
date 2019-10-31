@@ -29,8 +29,8 @@
             <div class="img-circle circle"><span></span></div>
             <div class="toggle-btn" [class.active]="massHour.active"
                   (click)="massHour.active = !massHour.active">
-              <h3 *ngIf="checkMassesAmount(massHour.data.length)">Holly mass at {{massHour.data.length}} parish</h3>
-              <h3 *ngIf="!checkMassesAmount(massHour.data.length)" >Holly mass at {{massHour.data.length}} parishes</h3>
+              <h3 *ngIf="checkMassesAmount(massHour.data.length)">Msza Święta w {{massHour.data.length}} parafii</h3>
+              <h3 *ngIf="!checkMassesAmount(massHour.data.length)" >Msza Święta w {{massHour.data.length}} parafiach</h3>
             </div>
             <div class="content-box row" [class.collapsed]="massHour.active">
               <div class="panel panel-default mass-card"
@@ -40,7 +40,7 @@
                   <figure class="img-circle image">
                     <img class="img-circle"
                           [src]="mass.parish.imgPath !== null ? mass.parish.imgPath : '/assets/images/building-in-progress.png'"
-                          alt='Minsk, Picture: {{mass.parish.name}}'>
+                          alt='Мінск, Здымак: {{mass.parish.name}}'>
                   </figure>
                 </div>
 
@@ -57,11 +57,11 @@
                 <div [ngClass]="{'mass-parish-relevance': true, 'not-actual': mass.needUpdate}">
                   <p *ngIf="!needUpdate(mass.needUpdate)"
                       class="placeholder actual">
-                    Information is relevant
+                      Aktualne informacje
                   </p>
                   <p *ngIf="needUpdate(mass.needUpdate)"
                       class="placeholder not-actual">
-                    Information requires confirmation
+                      Informacje wymagają wyjaśnienia
                   </p>
                 </div>
                 <div class="clearfix"></div>
@@ -80,18 +80,18 @@
 <!--Intro Section-->
 <section class="intro-section">
   <div class="auto-container">
-    <h2>About project</h2>
+    <h2>O projekcie</h2>
     <div class="intro-text clearfix">
       <div class="row">
         <div class="col-sm-6 col-xs-12">
           <p>
-           Where and what time can you meet Jesus in the capital of Belarus and how to find an up-to-date schedule of services?
-           Information about place and time of Holy Eucharist can be found at www.imsha.by
+            Gdzie w stolicy Białorusi można spotkać się z Chrystusem? Gdzie szukać aktualnego rozkładu Mszy Świętych, odprawianych w Mińsku? 
+Na stronie www.imsha.by jest umieszczona informacja o miejscach i godzinach celebracji Eucharystii w Mińsku białoruskim.
           </p>
         </div>
         <div class="col-sm-6 col-xs-12">
           <p>
-            Here you can find an up-to-date schedule of Latin Roman-Catholic service and Byzantian Greek-Catholic liturgy.
+            Znajdziesz tu aktualne rozkłady Mszy łacińskiej (obrządku rzymskokatolickiego) oraz Liturgii bizantyjskiej (obrządku greckokatolickiego).
           </p>
         </div>
       </div>
@@ -99,7 +99,7 @@
 
     <div class="row">
       <div class="intro-text-right col-sm-offset-4 col-sm-8 col-xs-12">
-        <p> If you find any mistake, please, contact us via
+        <p> Jeśli znajdziesz błąd, napisz do nas na 
           <a href="mailto:byimsha@gmail.com" class="contact-us">byimsha@gmail.com</a>
         </p>
       </div>

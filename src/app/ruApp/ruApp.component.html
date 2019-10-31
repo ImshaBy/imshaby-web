@@ -29,8 +29,8 @@
             <div class="img-circle circle"><span></span></div>
             <div class="toggle-btn" [class.active]="massHour.active"
                   (click)="massHour.active = !massHour.active">
-              <h3 *ngIf="checkMassesAmount(massHour.data.length)">Святая месса в {{massHour.data.length}} приходе</h3>
-              <h3 *ngIf="!checkMassesAmount(massHour.data.length)" >Святая месса в {{massHour.data.length}} приходах</h3>
+              <h3 *ngIf="checkMassesAmount(massHour.data.length)">Святая служба в {{massHour.data.length}} приходе</h3>
+              <h3 *ngIf="!checkMassesAmount(massHour.data.length)" >Святая служба в {{massHour.data.length}} приходах</h3>
             </div>
             <div class="content-box row" [class.collapsed]="massHour.active">
               <div class="panel panel-default mass-card"
@@ -86,12 +86,12 @@
         <div class="col-sm-6 col-xs-12">
           <p>
             Где и во сколько можно встретиться с Христом в столице Беларуси и как найти актуальное расписание Месс?
-            Информация про место и время совершения святой Евхаристии в Минске представлена на сайте www.imsha.by.
+            Информация про место и время совершения святой Евхаристии в Минске представлена на сайте www.imsha.by
           </p>
         </div>
         <div class="col-sm-6 col-xs-12">
           <p>
-            Здесь вы найдете актуальное расписание латинской римо-католической мессы и византийской греко-католической литургии.
+            Здесь вы найдете актуальное расписание латинской римо-католической мессы и византийской греко-католической литургии
           </p>
         </div>
       </div>
@@ -99,7 +99,7 @@
 
     <div class="row">
       <div class="intro-text-right col-sm-offset-4 col-sm-8 col-xs-12">
-        <p> Внимание! Сервис находится в разработке. Если вы нашли ошибку, пожалуйста, напишите на 
+        <p> Если вы нашли ошибку, пожалуйста, напишите нам на
           <a href="mailto:byimsha@gmail.com" class="contact-us">byimsha@gmail.com</a>
         </p>
       </div>

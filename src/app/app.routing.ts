@@ -3,9 +3,11 @@ import { MetaGuard } from 'ng2-meta';
 import { ByAppComponent } from './byApp';
 import { EnAppComponent } from './enApp';
 import { RuAppComponent } from './ruApp';
+import { PlAppComponent } from './plApp';
+
 
 const appRoutes: Routes = [
-  { 
+  {
     path: 'by',
     component: ByAppComponent,
     canActivate: [MetaGuard],
@@ -15,9 +17,9 @@ const appRoutes: Routes = [
         description: 'By - Description of the home page'
       }
     }
-  },    
-  { 
-    path: 'en', 
+  },
+  {
+    path: 'en',
     component: EnAppComponent,
     canActivate: [MetaGuard],
     data: {
@@ -26,7 +28,7 @@ const appRoutes: Routes = [
         description: 'En - Description of the home page'
       }
     }
-  },    
+  },
   { path: 'ru',
     component: RuAppComponent,
     canActivate: [MetaGuard],
@@ -36,9 +38,8 @@ const appRoutes: Routes = [
         description: 'Ru - Description of the home page'
       }
     }
-  }, 
-  { path: '', 
-    redirectTo: '/by',
+  },
+  { path: '',
     pathMatch: 'full',
     canActivate: [MetaGuard],
     data: {
@@ -47,9 +48,19 @@ const appRoutes: Routes = [
         description: 'By - redirect - Description of the home page'
       }
     }
-  },   
+  },
+  { path: 'pl',
+    component: PlAppComponent,
+    canActivate: [MetaGuard],
+    data: {
+      meta: {
+        title: 'Pl',
+        description: 'Pl- Description of the home page'
+      }
+    }
+  },
   // otherwise redirect to root
-  { path: '**', redirectTo: '' }
+   { path: '**', redirectTo: '' }
 ];
 
 export const routing = RouterModule.forRoot(appRoutes);
