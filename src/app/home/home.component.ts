@@ -15,7 +15,9 @@ export class HomeComponent implements OnInit {
   massSchedule: MassSchedule;
   massService: MassService;
 
-  constructor(private pMassService: MassService) {
+  constructor(
+    private pMassService: MassService
+  ) {
       this.massService = pMassService;
   }
 

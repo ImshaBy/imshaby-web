@@ -1,5 +1,7 @@
 import { Component, HostListener } from '@angular/core';
 import { CookieService } from 'angular2-cookie/core';
+import { MetaService } from 'ng2-meta';
+import { Router, NavigationEnd, Event } from '@angular/router';
 
 import { Day } from './_models/day';
 
@@ -15,9 +17,30 @@ export class AppComponent {
   cookieService: CookieService;
   lang: string;
 
-  constructor(private pCookieService: CookieService ) {
+  constructor(
+    private pCookieService: CookieService,
+    private metaService: MetaService,
+    private router: Router,
+    ) {
     this.cookieService = pCookieService;
     this.lang = 'be';
+  }
+
+  ngOnInit() {
+    this.router.events.subscribe((event:Event) => {
+      if(event instanceof NavigationEnd ){
+        console.log(event.url);
+        let langs = ['/by', '/ru', '/en', '/pl'];
+
+        if(event.url === '/by') {
+          event.url = '/be'
+        }
+
+        if (langs.includes(event.url)) {
+          this.onChangeLang(event.url.replace('/', ''));
+        }
+      }
+    });
   }
 
   onChangeLang(pLang: string): void {

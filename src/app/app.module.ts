@@ -1,4 +1,5 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule,  } from '@angular/platform-browser';
+import { MetaModule } from 'ng2-meta';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
@@ -24,7 +25,8 @@ import { Utils } from './_services/app.utils';
     BrowserModule,
     FormsModule,
     HttpModule,
-	  routing,
+    routing,
+    MetaModule.forRoot(),
   ],
   providers: [
 	  MassService,
