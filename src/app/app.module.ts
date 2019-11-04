@@ -3,6 +3,7 @@ import { MetaModule } from 'ng2-meta';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { CookieService } from 'angular2-cookie/core';
 
 //custom
 import { AppComponent } from './app.component';
@@ -34,7 +35,8 @@ import { Utils } from './_services/app.utils';
   ],
   providers: [
 	  MassService,
-    Utils
+    Utils,
+    CookieService
   ],
   bootstrap: [AppComponent]
 })
