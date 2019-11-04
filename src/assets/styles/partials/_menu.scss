@@ -19,6 +19,11 @@
   }
 }
 
+.text-container {
+  display: flex;
+  flex-direction: column;
+}
+
 .navigation {
   display: none;
 }
@@ -58,13 +63,11 @@
 
 .location {
   font-size: 22px;
-  position: absolute;
-  bottom: 12px;
-  left: 31.5%;
   color: $color-chambray;
 
   .city {
     display: none;
+    margin: 0;
   }
 
   .visible {

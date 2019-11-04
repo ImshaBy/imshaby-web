@@ -7,39 +7,51 @@ import { PlAppComponent } from './plApp';
 
 
 const appRoutes: Routes = [
-  {
+  { 
     path: 'by',
     component: ByAppComponent,
     canActivate: [MetaGuard],
     data: {
       meta: {
-        title: 'By',
-        description: 'By - Description of the home page'
+        title: 'Святая Імша Мінск',
+        description: 'Святая Эўхарыстыя ў горадзе Мінск: расклад, час і месца. Рыма-Каталіцкая Імша і Грэка-Каталіцкая Літургія'
       }
     }
-  },
-  {
-    path: 'en',
+  },    
+  { 
+    path: 'en', 
     component: EnAppComponent,
     canActivate: [MetaGuard],
     data: {
       meta: {
-        title: 'En',
-        description: 'En - Description of the home page'
+        title: 'Holy Mass Minsk',
+        description: 'Holy Eucharist in Minsk: schedule, time and place. Roman Catholic Mass and Greek Catholic Liturgy'
       }
     }
-  },
+  },    
   { path: 'ru',
     component: RuAppComponent,
     canActivate: [MetaGuard],
     data: {
       meta: {
-        title: 'Ru',
-        description: 'Ru - Description of the home page'
+        title: 'Святая Месса Минск',
+        description: 'Святая Евхаристия в городе Минск: расписание, время и место. Римско-Католическая Месса и Греко-Католическая Литургия'
       }
     }
-  },
-  { path: '',
+  }, 
+  { 
+    path: 'pl',
+    component: PlAppComponent,
+    canActivate: [MetaGuard],
+    data: {
+      meta: {
+        title: 'Msza Święta Mińsk',
+        description: 'Święta Eucharystia w mieście Mińsk: rozkład, czas i miejsce. Msza Rzymskokatolicka i Liturgia Greckokatolicka'
+      }
+    }
+  },  
+  { path: '', 
+    redirectTo: '/by',
     pathMatch: 'full',
     canActivate: [MetaGuard],
     data: {
@@ -48,19 +60,9 @@ const appRoutes: Routes = [
         description: 'By - redirect - Description of the home page'
       }
     }
-  },
-  { path: 'pl',
-    component: PlAppComponent,
-    canActivate: [MetaGuard],
-    data: {
-      meta: {
-        title: 'Pl',
-        description: 'Pl- Description of the home page'
-      }
-    }
-  },
+  },   
   // otherwise redirect to root
-   { path: '**', redirectTo: '' }
+  { path: '**', redirectTo: '' }
 ];
 
 export const routing = RouterModule.forRoot(appRoutes);
