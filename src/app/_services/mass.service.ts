@@ -25,8 +25,8 @@ export class MassService {
     // return SCHEDULE;
   }
  
-  getTodayScheduleAsync() : Observable<MassSchedule> {
-    return this.http.get(this.getServiceURL(), { withCredentials: true})
+  getTodayScheduleAsync(pLang: String) : Observable<MassSchedule> {
+    return this.http.get(this.getServiceURL(pLang), {  withCredentials: true})
       .map((response) => {
         let jsonObject = response.json();
         let massScheduleJSON: MassScheduleJSON = Object.assign(new MassScheduleJSON(), jsonObject);
@@ -35,10 +35,10 @@ export class MassService {
       });
   }
 
-  private getServiceURL() {
+  private getServiceURL(pLang: String) {
     let apiURL = environment.apiHost;
 
-    return apiURL + this.API_URI;
+    return apiURL + this.API_URI + '?lang=' + pLang;
   }
 
   private transform(massScheduleJSON: MassScheduleJSON) {

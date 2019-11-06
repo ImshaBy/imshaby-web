@@ -59,7 +59,7 @@ export class PlAppComponent {
   }
 
   getTodayScheduleAsync() {
-    this.massService.getTodayScheduleAsync()
+    this.massService.getTodayScheduleAsync(this.lang)
     .subscribe(
       masses => {
         this.masses = masses;

@@ -60,7 +60,7 @@ export class ByAppComponent {
   }
 
   getTodayScheduleAsync() {
-    this.massService.getTodayScheduleAsync()
+    this.massService.getTodayScheduleAsync(this.lang)
     .subscribe(
       masses => {
         this.masses = masses;
