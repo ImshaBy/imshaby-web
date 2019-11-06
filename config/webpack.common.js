@@ -14,10 +14,6 @@ var webpack = require("webpack"),
 // var ProvidePlugin = require("webpack/lib/ProvidePlugin");
 
 
-
-
-
-
 module.exports = {
   entry : {
     "polyfills" : "./" + srcName + "/polyfills.ts",

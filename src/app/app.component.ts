@@ -1,96 +1,61 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
+import { CookieService } from 'angular2-cookie/core';
+import { MetaService } from 'ng2-meta';
+import { Router, NavigationEnd, Event } from '@angular/router';
 
-import { ActivatedRoute } from '@angular/router';
-
-import { Mass } from './_models/index';
-import {MassService} from './_services/mass.service';
-import {MassSchedule} from './_models/massSchedule';
-import {Day} from './_models/day';
-import {Utils} from './_services/app.utils';
-import {Parish} from './_models/parish';
+import { Day } from './_models/day';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers:[MassService, Utils]
+  providers: [CookieService]
 })
 
 export class AppComponent {
-  masses: MassSchedule;
-  massService: MassService;
-  utils: Utils;
-  today: Date;
   days: Day[];
-  selectedDay: number;
-  selectedDate: Date;
+  cookieService: CookieService;
+  lang: string;
 
-  constructor(private pMassService: MassService, private pUtils: Utils) {
-    this.massService = pMassService;
-    this.utils = pUtils;
-    this.masses = new MassSchedule();
-  }
-
-  refresh(){
-    this.today = new Date();
-    // this.masses = this.getTodaySchedule();
-
-    // this.getTodaySchedulePromise();
-    this.days = this.getActualDays();
-    this.selectedDay = this.utils.getSelectedDay(this.today);
-    this.selectedDate = this.today;
-    this.getTodayScheduleAsync();
+  constructor(
+    private pCookieService: CookieService,
+    private metaService: MetaService,
+    private router: Router,
+    ) {
+    this.cookieService = pCookieService;
+    this.lang = 'be';
   }
 
   ngOnInit() {
-    this.refresh();
+    this.router.events.subscribe((event:Event) => {
+      if(event instanceof NavigationEnd ){
+        console.log(event.url);
+        let langs = ['/by', '/ru', '/en', '/pl'];
+
+        if(event.url === '/by') {
+          event.url = '/be'
+        }
+
+        if (langs.includes(event.url)) {
+          this.onChangeLang(event.url.replace('/', ''));
+        }
+      }
+    });
   }
 
-  onSelect(massDay: Date): void {
-      this.refresh();
-      this.selectedDay = massDay.getDay();
-      this.selectedDate = massDay;
+  onChangeLang(pLang: string): void {
+    this.lang = pLang;
+    this.cookieService.put("i_lang", this.lang);
   }
 
-  getTodaySchedule(): MassSchedule {
-    return this.massService.getTodaySchedule();
-  }
-
-  getTodaySchedulePromise(){
-    this.massService.getTodaySchedulePromise().then(masses => this.masses = masses);
-  }
-
-  getTodayScheduleAsync() {
-    this.massService.getTodayScheduleAsync()
-    .subscribe(
-      masses => {
-        this.masses = masses;
-      },
-      error => console.error('Error: ' + error)
-    );
-  }
-
-  /**
-   * Check amount of masses to display proper card label
-   * @param amount
-   * @returns {boolean}
-   */
-  checkMassesAmount(amount: number) {
-    if (amount === 1 || amount === 21 || amount === 31 || amount === 41) {
-        return true;
-    }
-  }
-
-  /**
-   * Check if mass info should be updated
-   * @param param
-   * @returns {boolean}
-   */
-  needUpdate(param: boolean ) {
-    return !!param;
-  }
-
-  getActualDays(): Day[] {
-    return this.utils.getActualDays();
+  @HostListener('window:scroll', ['$event'])
+  onWindowScroll() {
+     if (window.pageYOffset > 315 && window.pageYOffset < document.getElementById('tabs-box').offsetHeight + 315 ) {
+       let element = document.getElementById('navbar');
+       element.classList.add('sticky');
+     } else {
+       let element = document.getElementById('navbar');
+       element.classList.remove('sticky');
+     }
   }
 }
