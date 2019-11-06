@@ -1,0 +1,568 @@
+@import "./variables";
+
+.schedule-section {
+  position: relative;
+  padding: 50px 0 100px;
+  background: $color-white;
+
+  .auto-container {
+    padding: 0;
+  }
+}
+
+.schedule-box {
+  position: relative;
+  border: 1px solid $color-alto;
+  visibility: visible;
+  animation-duration: 1500ms;
+  animation-delay: 200ms;
+  animation-name: fadeInUp;
+
+  //TODO add animate.css
+
+  .tab-buttons {
+    position: relative;
+    width: 100%;
+    display: table;
+  }
+}
+
+.style-two .schedule-box .tab-buttons {
+  display: block;
+  float: left;
+  width: 17.5%;
+}
+
+.schedule-box .tab-buttons .tab-btn {
+  position: relative;
+  display: table-cell;
+  text-align: center;
+  background: $color-white;
+  color: $color-asparagus;
+  line-height: 1.4em;
+  padding: 17px 10px;
+  border-bottom: 1px solid $color-alto;
+  border-right: 1px solid $color-alto;
+  font-family: $openSans,sans-serif;
+  cursor: pointer;
+  transition: all 300ms ease;
+  -webkit-transition: all 300ms ease;
+
+  .style-two & {
+    display: block;
+  }
+}
+
+.style-two .schedule-box .tab-buttons .tab-btn:last-child {
+  border-right: 1px solid $color-alto;
+}
+
+.schedule-box .tab-buttons .tab-btn {
+  &:last-child {
+    border-right: none;
+  }
+
+  &.active, &:hover {
+    border-color: $color-asparagus;
+    background: $color-asparagus;
+    color: $color-white;
+  }
+}
+
+.style-two .schedule-box .tab-buttons .tab-btn {
+  &.active, &:hover {
+    border-bottom-color: $color-white;
+  }
+}
+
+.schedule-box .tab-buttons .tab-btn {
+  .day {
+    display: block;
+    text-transform: capitalize;
+    font-size: 24px;
+    line-height: 36px;
+    margin-bottom: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+  .date {
+    display: block;
+    font-size: 15px;
+  }
+
+  .curve {
+    position: absolute;
+    display: block;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    background: none;
+    text-align: center;
+    opacity: 0;
+  }
+}
+
+.style-two .schedule-box .tab-buttons .tab-btn .curve {
+  width: 20px;
+  height: 100%;
+  bottom: auto;
+  left: auto;
+  right:0;
+  top:0;
+}
+
+.schedule-box .tab-buttons .tab-btn {
+  &.active .curve, &:hover .curve {
+    bottom: -19px;
+    opacity: 1;
+    transition: all 300ms ease 200ms;
+    -webkit-transition: all 300ms ease 200ms;
+  }
+}
+
+.style-two .schedule-box .tab-buttons .tab-btn {
+  &.active .curve, &:hover .curve {
+    bottom: auto;
+    right: -17px;
+  }
+}
+
+.schedule-box .tab-buttons .tab-btn .curve:after {
+  content: '';
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border: 7px solid transparent;
+  border-top-color: $color-asparagus;
+}
+
+.style-two .schedule-box .tab-buttons .tab-btn .curve:after {
+  content: '';
+  position: absolute;
+  right: 3px;
+  top: 42px;
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border: 7px solid transparent;
+  border-left-color: $color-asparagus;
+}
+
+.schedule-box .tabs-box {
+  position: relative;
+}
+
+.style-two .schedule-box .tabs-box {
+  float: left;
+  width: 82%;
+}
+
+.schedule-box .tab {
+  position: relative;
+  padding: 40px 5px 40px 20px;
+  display: none;
+}
+
+.style-two .schedule-box .tab {
+  padding-bottom: 10px;
+}
+
+.schedule-box {
+  .tab.current {
+    display: block;
+  }
+
+  .hour-box {
+    position: relative;
+    padding-left: 150px;
+    color: $color-dark-gray;
+    padding-bottom: 20px;
+    overflow: hidden;
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: 105px;
+      top: 24px;
+      width: 2px;
+      height: 100%;
+      background: $color-alto2;
+    }
+
+    &.active-box:before {
+      background: $color-asparagus;
+    }
+
+    &:last-child:before {
+      display: none;
+    }
+
+    .hour {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 65px;
+      font-size: 14px;
+      line-height: 1;
+      color: $color-dark-gray;
+    }
+  }
+
+  .active-box .hour {
+    font-size: 19px;
+  }
+
+  .hour-box {
+    .circle {
+      position: absolute;
+      left: 94px;
+      top: 0;
+      width: 24px;
+      height: 24px;
+      border: 2px solid $color-alto;
+    }
+
+    &.active-box .circle {
+      border-color: $color-asparagus;
+    }
+
+    .content-box {
+      position: relative;
+      padding-right: 20px;
+      display: none;
+
+      &.collapsed {
+        display: block;
+      }
+
+      .mass-card {
+        position: relative;
+        display: flex;
+        padding: 25px 0 0;
+        margin-bottom: 50px;
+      }
+    }
+  }
+}
+
+
+.schedule-box .hour-box .toggle-btn {
+  position: relative;
+  top: -3px;
+  margin-bottom: 11px;
+  cursor: pointer;
+
+  h3 {
+    position: relative;
+    display: inline-block;
+    font-size: 18px;
+    line-height: 28px;
+    padding-right: 30px;
+    color: $color-tundora;
+
+    &:after {
+      font-family: $fontAwesome;
+      content: '\f107';
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 30px;
+      height: 30px;
+      display: block;
+      color: $color-asparagus;
+      line-height: 28px;
+      font-size: 24px;
+      text-align: right;
+      z-index: 5;
+    }
+  }
+
+  &.active h3:after {
+    content: '\f106';
+  }
+}
+
+.mass-parish-relevance {
+  position: absolute;
+  bottom: -18px;
+  right: 0;
+  width: 100%;
+  height: 0;
+
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 0;
+    right: 0;
+    bottom: 18px;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 15px 15px;
+    border-color: transparent transparent $color-asparagus transparent;
+  }
+
+  &.not-actual:after {
+    border-color: transparent transparent $color-buff transparent;
+  }
+
+  p {
+    position: absolute;
+    bottom: -10px;
+    right: 0;
+    margin: 0;
+  }
+}
+
+.schedule-box .hour-box {
+  .mass-card {
+    .info {
+      flex: 1;
+      position: relative;
+      min-height: 50px;
+      padding-right: 10px;
+      padding-bottom: 20px;
+    }
+
+    .mass-parish-image-wrapper {
+      flex: 0 0 162px;
+      padding: 0 25px;
+      min-height: 110px;
+    }
+
+    .mass-parish-info-wrapper {
+      flex: 1;
+      padding-right: 25px;
+    }
+
+    .mass-parish-additional-info-wrapper {
+      flex: 0 0 30%;
+    }
+
+    .info .image {
+      position: absolute;
+      border: 1px solid $color-alto;
+      overflow: hidden;
+
+      img {
+        background: rgba(127,127,127, 0.2);
+        font-size: 0;
+        display: block;
+        width: 110px;
+        height: 110px;
+      }
+    }
+
+    .mass-parish-name, .mass-parish-address, .mass-parish-info {
+      font-size: 16px;
+      margin-bottom: 16px;
+    }
+
+    .mass-parish-name {
+      font-size: 21px;
+      line-height: 1em;
+      color: $color-tundora;
+    }
+
+    .mass-parish-address {
+      color: $color-tundora;
+    }
+
+    .mass-language,
+    .mass-duration {
+      color: $color-tundora;
+      font-size: 17px;
+    }
+  }
+
+  .theme-btn {
+    background: $color-asparagus;
+    margin: 15px 5px 5px;
+  }
+}
+
+.theme-btn.dull {
+  background: $color-alto2;
+}
+
+.schedule-box .hour-box .theme-btn {
+  &.dull {
+    background: $color-alto2;
+  }
+
+  &:before {
+    background: $color-tundora;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .schedule-box .tab-buttons,
+  .style-two .schedule-box .tab-buttons {
+    float: none;
+    display: flex;
+    width: 100%;
+    margin-bottom: 10px;
+
+    &.sticky {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 10;
+    }
+  }
+
+  .schedule-box .tab-buttons .tab-btn,
+  .style-two .schedule-box .tab-buttons .tab-btn {
+    flex: 1;
+    float: none;
+    border: 1px solid $color-alto-light !important;
+    margin-bottom: 5px;
+    padding: 20px 6px;
+  }
+
+  .schedule-box .tab-buttons .tab-btn {
+    .curve {
+      display: none;
+    }
+  }
+
+  .style-two .schedule-box .tabs-box {
+    width: 100%;
+  }
+
+  .schedule-box .hour-box {
+    padding-left: 50px;
+    padding-top: 5px;
+
+    &.active-box {
+      padding-top: 2px;
+    }
+
+    .mass-card {
+      flex-direction: column;
+
+      .mass-parish-name,
+      .mass-parish-address,
+      .mass-parish-info {
+        font-size: 15px;
+      }
+
+      .info .image img {
+        width: 90px;
+        height: 90px;
+      }
+    }
+
+    .content-box {
+      width: 100%;
+    }
+
+    .hour {
+      position: relative;
+      margin-bottom: 15px;
+    }
+
+    .circle {
+      left: 0;
+    }
+
+    &::before {
+      left: 11px;
+    }
+
+    .content-box {
+      padding-right: 0;
+    }
+
+    .toggle-btn h3 {
+      font-size: 15px;
+    }
+  }
+
+  .schedule-box .hour-box .mass-card {
+    .info,
+    .mass-parish-image-wrapper {
+      flex: 1;
+      padding: 0 20px;
+
+      .image {
+        left: 20px;
+      }
+    }
+
+    .info {
+      padding-bottom: 20px;
+    }
+
+    .mass-parish-image-wrapper {
+      height: 110px;
+    }
+
+    .text-right {
+      text-align: left !important;
+      padding-left: 0;
+    }
+
+
+    .mass-parish-info-wrapper {
+      padding-right: 10px;
+    }
+  }
+
+
+  .main-slider .form-container {
+    width: 320px;
+  }
+
+  .sec-title h2, .two-column .content-side h2 {
+    font-size: 22px !important;
+  }
+
+  .two-column-full .column {
+    padding: 40px 20px;
+    min-height: 100px;
+  }
+
+  .feature-listing .image-side {
+    position: relative;
+    padding: 30px 15px;
+    text-align: center;
+    left: 0;
+    top: 0;
+  }
+
+  .two-column .image-side {
+    position: relative;
+    min-height: 300px;
+    padding: 30px 20px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .two-column-fluid {
+    .image-side {
+      position: relative;
+      min-height: 300px;
+      padding: 30px 20px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    .content-side {
+      width: 100%;
+      padding: 30px 20px;
+    }
+  }
+
+  .main-footer {
+    .footer-logo, .footer-lower .footer-nav {
+      text-align: center !important;
+    }
+  }
+}

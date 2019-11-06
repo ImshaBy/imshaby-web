@@ -1,0 +1,59 @@
+/***
+
+====================================================================
+Fonts
+====================================================================
+
+ ***/
+@font-face {
+  font-family: 'open_sansregular';
+  src: url('/assets/fonts/openSans.eot');
+  src: url('/assets/fonts/openSans.eot?#iefix') format('embedded-opentype'),
+  url('/assets/fonts/openSans.woff2') format('woff2'),
+  url('/assets/fonts/openSans.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('/assets/fonts/fontAwesome-webfont.eot');
+  src: url('/assets/fonts/fontAwesome-webfont.eot?#iefix') format('embedded-opentype'),
+  url('/assets/fonts/fontawesome-webfont.woff2') format('woff2'),
+  url('/assets/fonts/fontawesome-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+$openSans: 'open_sansregular';
+$fontAwesome: 'FontAwesome';
+
+/***
+
+====================================================================
+Colors
+====================================================================
+
+ ***/
+$color-chambray: #4e5e75;
+$color-spindle: #abbdd1;
+$color-aqua-spring: #e9ede9;
+$color-blue-dianne: #254e5a;
+$color-disco: #871266;
+$color-rouge: #99367d;
+$color-parsley: #256119;
+$color-asparagus: #739953;
+$color-envy: #97b198;
+$color-gum-leaf: #accbbc;
+$color-buff: #f2d389;
+$color-hampton: #e7e5aa;
+$color-silver-chalice: #a6a6a6;
+$color-alto-light: #d0d0d0;
+$color-alto2: #d2d2d2;
+$color-alto: #dadada;
+$color-white: #ffffff;
+$color-black: #000000;
+$color-cod-gray: #161616;
+$color-mine-shaft: #292929;
+$color-tundora: #454444;
+$color-dark-gray: #7f7f7f;

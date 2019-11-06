@@ -1,168 +1,39 @@
-<div class="page-wrapper">
-
-  <!-- Preloader -->
-  <div class="preloader" style="display: none;"></div>
+<div class="page-wrapper" (scroll)="onWindowScroll($event);">
 
   <!-- Main Header -->
   <header class="main-header">
-    <div class="auto-container clearfix">
+    <div class="auto-container">
       <div class="logo">
-        <a href="#">
-          <img src="./assets/images/logo.png" alt="Euharist" title="Euharist">
-        </a>
+        <img src="/assets/static_files_to_copy/images/logo.png" alt="Euharist" title="Euharist">
       </div>
-
-      <ul class="site-name">
-        <li class="eng-name"><a href="#">Time of Mass</a></li>
-        <li class="by-name active"><a href="#">Час Iмшы</a></li>
-        <li class="rus-name"><a href="#">Время Мессы</a></li>
-      </ul>
-
-      <div class="location">
-        <p>Мiнск</p>
+      <div class="text-container">
+        <ul class="site-name"> 
+          <li class="pl-name" [routerLink]="['/pl']" [class.active]="lang == 'pl'" (click)="onChangeLang('pl')">Godzina Msze</li>
+          <li class="eng-name" [routerLink]="['/en']" [class.active]="lang == 'en'" (click)="onChangeLang('en')">Time of Mass</li>
+          <li class="by-name" [routerLink]="['/by']" [class.active]="lang == 'be'" (click)="onChangeLang('be')">Час Iмшы</li>
+          <li class="rus-name" [routerLink]="['/ru']" [class.active]="lang == 'ru'" (click)="onChangeLang('ru')">Время Мессы</li>
+        </ul>
+        <div class="location">
+          <p class="city" [class.visible]="lang == 'en'">Minsk</p>
+          <p class="city" [class.visible]="lang == 'be'">Мiнск</p>
+          <p class="city" [class.visible]="lang == 'ru'">Минск</p>
+          <p class="city" [class.visible]="lang == 'pl'">Mińsk</p>
+        </div>
       </div>
-
-      <!--Main Menu-->
-      <!--<nav class="main-menu">-->
-        <!--<div class="navbar-header">-->
-          <!--&lt;!&ndash; Toggle Button &ndash;&gt;-->
-          <!--<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">-->
-            <!--<span class="icon-bar"></span>-->
-            <!--<span class="icon-bar"></span>-->
-            <!--<span class="icon-bar"></span>-->
-          <!--</button>-->
-        <!--</div>-->
-
-        <!--<div class="navbar-collapse collapse clearfix">-->
-          <!--<ul class="navigation">-->
-            <!--<li class="current"><a routerLink="/" routerLinkActive="active">Галоўная</a></li>-->
-            <!--<li><a routerLink="/about" >Чын літургіі</a></li>-->
-            <!--<li><a routerLink="/contact" >Парафіі</a></li>-->
-          <!--</ul>-->
-        <!--</div>-->
-      <!--</nav>-->
-
     </div>
   </header>
   <!--End Main Header -->
+  
+<!-- Main section -->
 
   <router-outlet></router-outlet>
 
-  <!--Schedule Section / Style Two-->
-  <section class="schedule-section style-two">
-    <div class="auto-container">
-      <!--Schedule Box-->
-      <div class="schedule-box clearfix fadeInUp animated">
-
-        <!--Tab Buttons-->
-        <ul class="tab-buttons clearfix">
-          <li class="tab-btn" [class.active]="(day.date | date: 'dd/MM/yyyy') == (selectedDate | date: 'dd/MM/yyyy') "
-              *ngFor="let day of days"
-              (click)="onSelect(day.date)">
-            <span class="day">{{day.dayName}}</span>
-            <span class="date">{{day.humanFormat}}</span>
-            <span class="curve"></span>
-          </li>
-        </ul>
-
-        <!--Tabs Box-->
-        <div class="tabs-box">
-
-          <!--Tab / Current / Monday-->
-          <div class="tab"
-               *ngFor="let massDay of masses.schedule"
-               [class.current]="(massDay.date | date: 'dd/MM/yyyy') == (selectedDate | date: 'dd/MM/yyyy')"
-               [hidden]="!((massDay.date | date: 'dd/MM/yyyy') == (selectedDate | date: 'dd/MM/yyyy'))" >
-            <div class="hour-box"
-                 [class.active-box]="massHour.active" *ngFor="let massHour of massDay.massHours">
-              <div class="hour">{{massHour.hour}}</div>
-              <div class="img-circle circle"><span></span></div>
-              <div class="toggle-btn" [class.active]="massHour.active"
-                   (click)="massHour.active = !massHour.active">
-                <h3 *ngIf="checkMassesAmount(massHour.data.length)">Святая Імша ў {{massHour.data.length}} парафіі</h3>
-                <h3 *ngIf="!checkMassesAmount(massHour.data.length)" >Святая Імша ў {{massHour.data.length}} парафіях</h3>
-              </div>
-              <div class="content-box row" [class.collapsed]="massHour.active">
-                <div class="panel panel-default mass-card"
-                     *ngFor="let mass of massHour.data">
-
-                  <div class="mass-parish-image-wrapper info">
-                    <figure class="img-circle image">
-                      <img class="img-circle" src="{{mass.parish.imgPath}}" alt="church-image">
-                    </figure>
-                  </div>
-
-                  <div class="mass-parish-info-wrapper info">
-                    <h5 class="mass-parish-name">{{mass.parish.name}}</h5>
-                    <h5 class="mass-parish-address">{{mass.parish.address}}</h5>
-                    <h6 class="mass-language">{{mass.langCode}}</h6>
-                  </div>
-
-                  <div class="mass-parish-additional-info-wrapper info">
-                    <h5 class="mass-info">{{mass.info}}</h5>
-                  </div>
-
-                  <div [ngClass]="{'mass-parish-relevance': true, 'not-actual': mass.parish.needUpdate}">
-                    <p *ngIf="!needUpdate(mass.parish.needUpdate)"
-                       class="placeholder actual">
-                      Iнфармацыя актуальная
-                    </p>
-                    <p *ngIf="needUpdate(mass.parish.needUpdate)"
-                       class="placeholder not-actual">
-                      Iнфармацыя патрабуе ўдакладнення
-                    </p>
-                  </div>
-                  <div class="clearfix"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!--Tabs Box End-->
-      </div>
-      <!--Schedule Box End-->
-
-    </div>
-  </section>
-
-  <!--Intro Section-->
-  <section class="intro-section">
-    <div class="auto-container">
-      <h2>Аб праекце</h2>
-      <div class="intro-text clearfix">
-          <div class="row">
-            <div class="col-sm-6 col-xs-12">
-              <p>
-                Колькі разоў здаралася так, што мы спрабавалі даведацца, дзе і
-                а каторай можна сустрэцца з Хрыстом у Мінску!
-                А гэта не так проста - інфармацыя, схаваная ў глыбіні інтэрнэт-старонак і ў суполках сацсетак, часам была неактуальная, і даводзілася тэлефанаваць сябрам-католікам і пытацца -
-                <span>у колькі Святая Імша?</span>
-              </p>
-            </div>
-            <div class="col-sm-6 col-xs-12">
-              <p>
-                Сталася зразумелым - Мінск патрабуе актуальнага раскладу Імш! Вынікам маем гэты праект - старонка, на якой пададзены месца і час цэлебрацыі Святой Эўхарыстыі ў сталіцы.
-                <br />
-                Інфармацыя пастаянна актуалізуецца, і мы маем намер з цягам часу ахапіць усю Беларусь, а магчыма і ўвесь свет.
-              </p>
-            </div>
-          </div>
-       </div>
-
-      <div class="row">
-        <div class="intro-text-right col-sm-offset-4 col-sm-8 col-xs-12">
-          <p> Увага! Сэрвіс знаходзіцца ў распрацоўцы. Калі вы знайшлі памылку, калі ласка, напішыце нам на
-            <a href="mailto:messtime@gmail.com" class="contact-us">byimsha@gmail.com</a>
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
+<!-- End of Main section -->
   <footer class="footer-bottom">
     <div class="auto-container">
       <div class="row clearfix">
         <div class="col-md-12 col-sm-12 col-xs-12">
-          <p>Copyright 2018 by Imsha.By | All rights reserved</p>
+          <p>Copyright 2019 by Imsha.by | All rights reserved</p>
         </div>
       </div>
     </div>
@@ -171,4 +42,4 @@
 <!--End pagewrapper-->
 
 <!--Scroll to top-->
-<div class="scroll-to-top" style="display: block;"></div>
+<div class="scroll-to-top"></div>

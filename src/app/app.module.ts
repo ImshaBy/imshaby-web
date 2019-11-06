@@ -1,34 +1,42 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { BrowserModule,  } from '@angular/platform-browser';
+import { MetaModule } from 'ng2-meta';
+import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { AlertModule } from 'ng2-bootstrap/alert';
+import { CookieService } from 'angular2-cookie/core';
 
 //custom
 import { AppComponent } from './app.component';
-import { routing }        from './app.routing'
+import { routing } from './app.routing'
+import { RuAppComponent } from './ruApp/index';
+import { EnAppComponent } from './enApp/index';
+import { ByAppComponent } from './byApp/index';
+import { PlAppComponent } from './plApp/index';
 
-import { HomeComponent } from './home/home.component';
-import {MassService} from './_services/mass.service';
-import {Utils} from './_services/app.utils';
+import { MassService } from './_services/mass.service';
+import { Utils } from './_services/app.utils';
 
 @NgModule({
   declarations: [
     AppComponent,
     //custom
-    HomeComponent
+    RuAppComponent,
+    EnAppComponent,
+    ByAppComponent,
+    PlAppComponent
+
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-
-	  routing,
-    AlertModule.forRoot()
+    routing,
+    MetaModule.forRoot(),
   ],
   providers: [
 	  MassService,
-    Utils
+    Utils,
+    CookieService
   ],
   bootstrap: [AppComponent]
 })

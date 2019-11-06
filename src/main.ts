@@ -1,11 +1,12 @@
-import './polyfills.ts';
+import Helpers from './helpers';
 
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { enableProdMode } from '@angular/core';
-import { environment } from './environments/environment';
-import { AppModule } from './app/';
+import { AppModule } from './app/app.module';
 
-if (environment.production) {
+Helpers.initSvgEngine();
+
+if (process.env.ENV === 'production') {
   enableProdMode();
 }
 

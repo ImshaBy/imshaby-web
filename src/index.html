@@ -1,33 +1,67 @@
 <!doctype html>
 <html>
-
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-  <title>Imsha BY</title>
+  <title>Расклад Імшаў у Мінску</title>
   <base href="/">
+  <!--<link rel="canonical" href="https://imsha.by/"> -->
+  <link rel="alternate" hreflang="be" href="https://imsha.by/" />
+  <link rel="alternate" hreflang="en" href="https://imsha.by/en/" />
+  <link rel="alternate" hreflang="pl" href="https://imsha.by/pl/" /> 
+
+  <meta name="description" content="Расклад цэлебрацыі святой Эўхарыстыі ў горадзе Мінск. Час і месца рыма-каталіцкай імшы і грэка-каталіцкай літургіі">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-129690230-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-129690230-1');
+  </script>
+
   <!-- Stylesheets -->
-  <link href="./assets/css/bootstrap.css" rel="stylesheet">
-  <link href="./assets/css/revolution-slider.css" rel="stylesheet">
-  <link href="./assets/css/jquery.mCustomScrollbar.css" rel="stylesheet">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- TODO: need to validate with Kate -->
+  <!--
+
+  <link href="assets/static_files_to_copy/css/revolution-slider.css" rel="stylesheet">
+  <link href="assets/static_files_to_copy/css/jquery.mCustomScrollbar.css" rel="stylesheet">
+-->
+  <link rel="icon" type="image/x-icon" href="assets/static_files_to_copy/favicon.ico">
+
   <!-- Responsive -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
   <!--[if lt IE 9]>
   <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-  <!--[if lt IE 9]>
-  <script src="js/respond.js"></script><![endif]-->
 </head>
 
 <body>
-  <app-root></app-root>
+<app-root></app-root>
 
-  <script async="" src="./assets/default" charset="UTF-8" crossorigin="*"></script>
 
-  <script src="./assets/js/jquery.js"></script>
-  <script src="./assets/js/bootstrap.min.js"></script>
-  <script src="./assets/js/script.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+  <!-- begin Wootric code -->
+  <script type="text/javascript">
+    window.wootric_survey_immediately = true; // Shows survey immediately for testing purposes. TODO: Comment out for production.
+    window.wootricSettings = {
+      email: 'kaciallaurynovich@gmail.com', // TODO: Required to uniquely identify a user. Email is recommended but this can be any unique identifier.
+      account_token: 'NPS-3726815f', // This is your unique account token.
+      language: 'EN'
+    };
+  </script>
+  <script type="text/javascript" src="https://cdn.wootric.com/wootric-sdk.js"></script>
+  <script type="text/javascript">
+    // This loads the Wootric survey
+    window.wootric('run');
+  </script>
+  <!-- end Wootric code -->
 
 </body>
 </html>

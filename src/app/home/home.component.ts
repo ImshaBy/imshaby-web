@@ -15,12 +15,12 @@ export class HomeComponent implements OnInit {
   massSchedule: MassSchedule;
   massService: MassService;
 
-  constructor(private pMassService: MassService) {
-      console.log('Home component constructor')
+  constructor(
+    private pMassService: MassService
+  ) {
       this.massService = pMassService;
   }
 
   ngOnInit() {
-    console.log('Home component onInit')
   }
 }

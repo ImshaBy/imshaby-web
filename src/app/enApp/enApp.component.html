@@ -1,0 +1,108 @@
+<!--Schedule Section / Style Two-->
+<section class="schedule-section style-two">
+  <div class="auto-container">
+    <!--Schedule Box-->
+    <div class="schedule-box clearfix fadeInUp animated">
+
+      <!--Tab Buttons-->
+      <ul class="tab-buttons clearfix" id="navbar">
+        <li class="tab-btn" [class.active]="(day.date | date: 'dd/MM/yyyy') == (selectedDate | date: 'dd/MM/yyyy') "
+            *ngFor="let day of days"
+            (click)="onSelect(day.date)">
+          <span class="day">{{day.dayName}}</span>
+          <span class="date">{{day.humanFormat}}</span>
+          <span class="curve"></span>
+        </li>
+      </ul>
+
+      <!--Tabs Box-->
+      <div class="tabs-box" id="tabs-box">
+
+        <!--Tab / Current / Monday-->
+        <div class="tab"
+              *ngFor="let massDay of masses.schedule"
+              [class.current]="(massDay.date | date: 'dd/MM/yyyy') == (selectedDate | date: 'dd/MM/yyyy')"
+              [hidden]="!((massDay.date | date: 'dd/MM/yyyy') == (selectedDate | date: 'dd/MM/yyyy'))" >
+          <div class="hour-box"
+                [class.active-box]="massHour.active" *ngFor="let massHour of massDay.massHours">
+            <div class="hour">{{massHour.hour}}</div>
+            <div class="img-circle circle"><span></span></div>
+            <div class="toggle-btn" [class.active]="massHour.active"
+                  (click)="massHour.active = !massHour.active">
+              <h3 *ngIf="checkMassesAmount(massHour.data.length)">Holly mass at {{massHour.data.length}} parish</h3>
+              <h3 *ngIf="!checkMassesAmount(massHour.data.length)" >Holly mass at {{massHour.data.length}} parishes</h3>
+            </div>
+            <div class="content-box row" [class.collapsed]="massHour.active">
+              <div class="panel panel-default mass-card"
+                    *ngFor="let mass of massHour.data">
+
+                <div class="mass-parish-image-wrapper info">
+                  <figure class="img-circle image">
+                    <img class="img-circle"
+                          [src]="mass.parish.imgPath !== null ? mass.parish.imgPath : '/assets/images/building-in-progress.png'"
+                          alt='Minsk, Picture: {{mass.parish.name}}'>
+                  </figure>
+                </div>
+
+                <div class="mass-parish-info-wrapper info">
+                  <h5 class="mass-parish-name">{{mass.parish.name}}</h5>
+                  <h5 class="mass-parish-address">{{mass.parish.address}}</h5>
+                  <h6 class="mass-language">{{mass.langCode}}</h6>
+                </div>
+
+                <div class="mass-parish-additional-info-wrapper info">
+                  <h5 class="mass-info">{{mass.info}}</h5>
+                </div>
+
+                <div [ngClass]="{'mass-parish-relevance': true, 'not-actual': mass.needUpdate}">
+                  <p *ngIf="!needUpdate(mass.needUpdate)"
+                      class="placeholder actual">
+                    Information is relevant
+                  </p>
+                  <p *ngIf="needUpdate(mass.needUpdate)"
+                      class="placeholder not-actual">
+                    Information requires confirmation
+                  </p>
+                </div>
+                <div class="clearfix"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Tabs Box End-->
+    </div>
+    <!--Schedule Box End-->
+
+  </div>
+</section>
+
+<!--Intro Section-->
+<section class="intro-section">
+  <div class="auto-container">
+    <h2>About project</h2>
+    <div class="intro-text clearfix">
+      <div class="row">
+        <div class="col-sm-6 col-xs-12">
+          <p>
+           Where and what time can you meet Jesus in the capital of Belarus and how to find an up-to-date schedule of services?
+           Information about place and time of Holy Eucharist can be found at www.imsha.by
+          </p>
+        </div>
+        <div class="col-sm-6 col-xs-12">
+          <p>
+            Here you can find an up-to-date schedule of Latin Roman-Catholic service and Byzantian Greek-Catholic liturgy.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="intro-text-right col-sm-offset-4 col-sm-8 col-xs-12">
+        <p> If you find any mistake, please, contact us via
+          <a href="mailto:byimsha@gmail.com" class="contact-us">byimsha@gmail.com</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
