@@ -151,7 +151,7 @@
   width: 48px;
   height: 48px;
   color: $color-white;
-  background: $color-asparagus url(/assets/images/icons/arrow-up.png) center center no-repeat;
+  background: $color-advent url(/assets/images/icons/arrow-up.png) center center no-repeat;
   font-size: 20px;
   line-height: 48px;
   text-align: center;
@@ -160,7 +160,7 @@
   display: block;
 
   &:hover {
-    background-color: $color-parsley;
+    background-color: $color-advent;
     color: $color-white;
   }
 }

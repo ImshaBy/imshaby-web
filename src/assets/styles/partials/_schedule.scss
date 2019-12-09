@@ -2,7 +2,7 @@
 
 .schedule-section {
   position: relative;
-  padding: 50px 0 100px;
+  padding: 10px 0 100px;
   background: $color-white;
 
   .auto-container {
@@ -38,7 +38,7 @@
   display: table-cell;
   text-align: center;
   background: $color-white;
-  color: $color-asparagus;
+  color: $color-advent;
   line-height: 1.4em;
   padding: 17px 10px;
   border-bottom: 1px solid $color-alto;
@@ -63,8 +63,8 @@
   }
 
   &.active, &:hover {
-    border-color: $color-asparagus;
-    background: $color-asparagus;
+    border-color: $color-advent;
+    background: $color-advent;
     color: $color-white;
   }
 }
@@ -135,7 +135,7 @@
   width: 0;
   height: 0;
   border: 7px solid transparent;
-  border-top-color: $color-asparagus;
+  border-top-color: $color-advent;
 }
 
 .style-two .schedule-box .tab-buttons .tab-btn .curve:after {
@@ -147,7 +147,7 @@
   width: 0;
   height: 0;
   border: 7px solid transparent;
-  border-left-color: $color-asparagus;
+  border-left-color: $color-advent;
 }
 
 .schedule-box .tabs-box {
@@ -192,7 +192,7 @@
     }
 
     &.active-box:before {
-      background: $color-asparagus;
+      background: $color-advent;
     }
 
     &:last-child:before {
@@ -225,7 +225,7 @@
     }
 
     &.active-box .circle {
-      border-color: $color-asparagus;
+      border-color: $color-advent;
     }
 
     .content-box {
@@ -271,7 +271,7 @@
       width: 30px;
       height: 30px;
       display: block;
-      color: $color-asparagus;
+      color: $color-advent;
       line-height: 28px;
       font-size: 24px;
       text-align: right;
@@ -301,7 +301,7 @@
     height: 0;
     border-style: solid;
     border-width: 0 0 15px 15px;
-    border-color: transparent transparent $color-asparagus transparent;
+    border-color: transparent transparent $color-advent transparent;
   }
 
   &.not-actual:after {
@@ -378,7 +378,7 @@
   }
 
   .theme-btn {
-    background: $color-asparagus;
+    background: $color-advent;
     margin: 15px 5px 5px;
   }
 }
@@ -398,6 +398,10 @@
 }
 
 @media only screen and (max-width: 767px) {
+  .schedule-section.style-two {
+    padding: 0 0 100px;
+  }
+
   .schedule-box .tab-buttons,
   .style-two .schedule-box .tab-buttons {
     float: none;

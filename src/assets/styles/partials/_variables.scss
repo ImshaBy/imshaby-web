@@ -25,8 +25,16 @@ Fonts
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Constantia';
+  src: url('/assets/fonts/Constantia.ttf')  format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 $openSans: 'open_sansregular';
 $fontAwesome: 'FontAwesome';
+$Constantia: 'Constantia';
 
 /***
 
@@ -43,6 +51,7 @@ $color-disco: #871266;
 $color-rouge: #99367d;
 $color-parsley: #256119;
 $color-asparagus: #739953;
+$color-advent: #544192;
 $color-envy: #97b198;
 $color-gum-leaf: #accbbc;
 $color-buff: #f2d389;
@@ -55,5 +64,6 @@ $color-white: #ffffff;
 $color-black: #000000;
 $color-cod-gray: #161616;
 $color-mine-shaft: #292929;
+$color-cod-dark: #020301;
 $color-tundora: #454444;
 $color-dark-gray: #7f7f7f;
