@@ -4,7 +4,7 @@
   "description": "ImshaBy Project",
   "scripts": {
     "start": "webpack-dev-server --env.APP_TARGET pp --inline --progress --colors --port 8080",
-    "build": "webpack --env.APP_TARGET pp --config config/webpack.prod.js --progress --profile --bail",	
+    "build": "webpack --env.APP_TARGET pp --config config/webpack.prod.js --progress --profile --bail",
     "deploy": "rimraf dist && npm run build && npm run assets",
     "assets": "cp -R src/assets/images dist/assets && cp -R src/assets/fonts dist/assets && mkdirp ./dist/images && cp -R src/assets/avatars dist/images/avatars",
     "test": "karma start"

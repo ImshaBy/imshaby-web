@@ -7,27 +7,27 @@ Fonts
  ***/
 @font-face {
   font-family: 'open_sansregular';
-  src: url('/assets/fonts/openSans.eot');
-  src: url('/assets/fonts/openSans.eot?#iefix') format('embedded-opentype'),
-  url('/assets/fonts/openSans.woff2') format('woff2'),
-  url('/assets/fonts/openSans.woff') format('woff');
+  src: url('/assets/static_files_to_copy/fonts/openSans.eot');
+  src: url('/assets/static_files_to_copy/fonts/openSans.eot?#iefix') format('embedded-opentype'),
+  url('/assets/static_files_to_copy/fonts/openSans.woff2') format('woff2'),
+  url('/assets/static_files_to_copy/fonts/openSans.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'FontAwesome';
-  src: url('/assets/fonts/fontAwesome-webfont.eot');
-  src: url('/assets/fonts/fontAwesome-webfont.eot?#iefix') format('embedded-opentype'),
-  url('/assets/fonts/fontawesome-webfont.woff2') format('woff2'),
-  url('/assets/fonts/fontawesome-webfont.woff') format('woff');
+  src: url('/assets/static_files_to_copy/fonts/fontAwesome-webfont.eot');
+  src: url('/assets/static_files_to_copy/fonts/fontAwesome-webfont.eot?#iefix') format('embedded-opentype'),
+  url('/assets/fstatic_files_to_copy/onts/fontawesome-webfont.woff2') format('woff2'),
+  url('/assets/static_files_to_copy/fonts/fontawesome-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Constantia';
-  src: url('/assets/fonts/Constantia.ttf')  format('truetype');
+  src: url('/assets/static_files_to_copy/fonts/Constantia.ttf')  format('truetype');
   font-weight: normal;
   font-style: normal;
 }

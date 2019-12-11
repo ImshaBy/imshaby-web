@@ -4,9 +4,9 @@
   <header class="main-header-wrapper">
     <div class="main-header">
       <ul class="lang-switcher">
+          <li class="by-name" [routerLink]="['/by']" [class.active]="lang == 'be'" (click)="onChangeLang('be')">Blr</li>
           <li class="pl-name" [routerLink]="['/pl']" [class.active]="lang == 'pl'" (click)="onChangeLang('pl')">Pl</li>
           <li class="eng-name" [routerLink]="['/en']" [class.active]="lang == 'en'" (click)="onChangeLang('en')">En</li>
-          <li class="by-name" [routerLink]="['/by']" [class.active]="lang == 'be'" (click)="onChangeLang('be')">Blr</li>
           <li class="rus-name" [routerLink]="['/ru']" [class.active]="lang == 'ru'" (click)="onChangeLang('ru')">Ru</li>
         </ul>
       <div class="site-name-wrapper">
@@ -14,14 +14,14 @@
           <span [class.visible]="lang == 'be'">Час</span>
           <span [class.visible]="lang == 'en'">Time</span>
           <span [class.visible]="lang == 'ru'">Время</span>
-          <span [class.visible]="lang == 'pl'">Godzina</span>
+          <span [class.visible]="lang == 'pl'">Czas</span>
           <div class="logo">
             <img src="/assets/static_files_to_copy/images/logo_adwent.png" alt="Euharist" title="Euharist"  />
           </div>
           <span class="target" [class.visible]="lang == 'be'">Iмшы</span>
           <span class="target" [class.visible]="lang == 'en'">of Mass</span>
           <span class="target" [class.visible]="lang == 'ru'">Мессы</span>
-          <span class="target" [class.visible]="lang == 'pl'">Msze</span>
+          <span class="target" [class.visible]="lang == 'pl'">Mszy</span>
         </div>
         <!-- <img src="/assets/static_files_to_copy/images/slogan.png" alt="Euharist" title="Euharist" class="logo-title"/> -->
       </div>
