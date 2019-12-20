@@ -3,6 +3,7 @@
 .main-header-wrapper {
   position: relative;
   width: 100%;
+  height: 320px;
   left: 0;
   top: 0;
   z-index: 999;
@@ -64,9 +65,18 @@
 .logo {
   display: none;
   position: relative;
+  width: 444px;
+
+  &.en {
+    width: 550px;
+  }
+
+  &.ru {
+    width: 530px;
+  }
 
   img {
-    width: 444px;
+    width: 100%;
   }
 
   &.visible {
@@ -110,6 +120,7 @@
 @media only screen and (max-width: 767px) {
   .main-header-wrapper {
     background: $color-white;
+    height: initial;
   }
 
   .logo-wrapper {
@@ -118,8 +129,8 @@
     padding-bottom: 15px;
 
     img {
-      width: 280px;
-      margin: 0 5px;
+      width: 100%;
+      margin: 0;
     }
 
     &:after {
@@ -131,16 +142,25 @@
       height: 35px;
       position: absolute;
       bottom: 6px;
-      right: 0px;
-  }
+      right: 0;
+    }
   }
 
   .logo {
-    height: 53px;
+    height: 65px;
+    width: 280px;
     overflow: hidden;
 
     &:after {
       content: none;
+    }
+
+    &.en {
+      width: 351px;
+    }
+
+    &.ru {
+      width: 329px;
     }
   }
 
