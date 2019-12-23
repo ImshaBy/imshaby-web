@@ -57,11 +57,11 @@
                 <div [ngClass]="{'mass-parish-relevance': true, 'not-actual': mass.needUpdate}">
                   <p *ngIf="!needUpdate(mass.needUpdate)"
                       class="placeholder actual">
-                      Aktualne informacje
+                      Informacja aktualna
                   </p>
                   <p *ngIf="needUpdate(mass.needUpdate)"
                       class="placeholder not-actual">
-                      Informacje wymagają wyjaśnienia
+                      Informacja wymaga wyjaśnienia
                   </p>
                 </div>
                 <div class="clearfix"></div>
