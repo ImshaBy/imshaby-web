@@ -8,7 +8,7 @@ import { PlAppComponent } from './plApp';
 
 const appRoutes: Routes = [
   { 
-    path: 'by',
+    path: '',
     component: ByAppComponent,
     canActivate: [MetaGuard],
     data: {
@@ -50,17 +50,7 @@ const appRoutes: Routes = [
       }
     }
   },  
-  { path: '', 
-    redirectTo: '/by',
-    pathMatch: 'full',
-    canActivate: [MetaGuard],
-    data: {
-      meta: {
-        title: 'By - redirect',
-        description: 'By - redirect - Description of the home page'
-      }
-    }
-  },   
+    
   // otherwise redirect to root
   { path: '**', redirectTo: '' }
 ];

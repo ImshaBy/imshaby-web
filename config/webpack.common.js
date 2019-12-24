@@ -99,6 +99,13 @@ module.exports = {
             glob : "assets/static_files_to_copy/**/*",
             to : "dist/assets/[name].[ext]"
           }
+        },
+          {
+            context : "./" + srcName,
+            from : {
+              glob : "lang-sitemap.xml",
+              to : "dist/[name].[ext]"
+            }
         }
       ]),
 
