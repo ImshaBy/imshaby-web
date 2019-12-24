@@ -51,7 +51,7 @@ export class Utils {
     let formatted;
 
     if (this.isMobileWidth()) {
-      formatted = date.locale(locale).format('L').replace(/\.[0-9][0-9][0-9][0-9]/, '');
+      formatted = date.locale(locale).format('L').replace(/\.[0-9][0-9][0-9][0-9]|\/[0-9][0-9][0-9][0-9]/, '');
     } else {
       formatted = date.locale(locale).format('D MMMM');
     }

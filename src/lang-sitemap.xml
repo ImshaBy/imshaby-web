@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+	xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+	xmlns:xhtml="http://www.w3.org/1999/xhtml">
+	<url>
+		<loc>https://imsha.by/</loc>
+		<xhtml:link rel="alternate" hreflang="be" href="https://imsha.by/" />
+		<xhtml:link rel="alternate" hreflang="en" href="https://imsha.by/en/" />
+		<xhtml:link rel="alternate" hreflang="ru" href="https://imsha.by/ru/" />
+		<xhtml:link rel="alternate" hreflang="pl" href="https://imsha.by/pl/" />
+	</url>
+	<url>
+		<loc>https://imsha.by/en/</loc>
+		<xhtml:link rel="alternate" hreflang="be" href="https://imsha.by/" />
+		<xhtml:link rel="alternate" hreflang="en" href="https://imsha.by/en/" />
+		<xhtml:link rel="alternate" hreflang="ru" href="https://imsha.by/ru/" />
+		<xhtml:link rel="alternate" hreflang="pl" href="https://imsha.by/pl/" />
+	</url>
+	<url>
+		<loc>https://imsha.by/ru/</loc>
+		<xhtml:link rel="alternate" hreflang="be" href="https://imsha.by/" />
+		<xhtml:link rel="alternate" hreflang="en" href="https://imsha.by/en/" />
+		<xhtml:link rel="alternate" hreflang="ru" href="https://imsha.by/ru/" />
+		<xhtml:link rel="alternate" hreflang="pl" href="https://imsha.by/pl/" />
+	</url>
+	<url>
+		<loc>https://imsha.by/pl/</loc>
+		<xhtml:link rel="alternate" hreflang="be" href="https://imsha.by/" />
+		<xhtml:link rel="alternate" hreflang="en" href="https://imsha.by/en/" />
+		<xhtml:link rel="alternate" hreflang="ru" href="https://imsha.by/ru/" />
+		<xhtml:link rel="alternate" hreflang="pl" href="https://imsha.by/pl/" />
+	</url>
+</urlset>

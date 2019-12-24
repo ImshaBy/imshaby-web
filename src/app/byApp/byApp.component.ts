@@ -31,7 +31,7 @@ export class ByAppComponent {
     this.lang = 'be';
   }
 
-  refresh(){
+  refresh() {
     this.today = new Date();
 
     this.days = this.getActualDays('be');
@@ -55,7 +55,7 @@ export class ByAppComponent {
     return this.massService.getTodaySchedule();
   }
 
-  getTodaySchedulePromise(){
+  getTodaySchedulePromise() {
     this.massService.getTodaySchedulePromise().then(masses => this.masses = masses);
   }
 
@@ -92,4 +92,14 @@ export class ByAppComponent {
   getActualDays(locale: string): Day[] {
     return this.utils.getActualDays(locale);
   }
+
+  // getLangTitle(langCode: string) {
+  //   const langs = ['pl', 'ru', 'en', 'be'];
+
+  //     if(langs.includes(langCode)) {
+  //         //return langCode; put flag icon
+  //     } else {
+  //       return langCode;
+  //     }
+  // }
 }

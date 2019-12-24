@@ -47,7 +47,7 @@
                 <div class="mass-parish-info-wrapper info">
                   <h5 class="mass-parish-name">{{mass.parish.name}}</h5>
                   <h5 class="mass-parish-address">{{mass.parish.address}}</h5>
-                  <h6 class="mass-language">{{mass.langCode}}</h6>
+                  <h6 class="mass-language">Język: {{mass.langCode}}</h6>
                 </div>
 
                 <div class="mass-parish-additional-info-wrapper info">
@@ -57,11 +57,11 @@
                 <div [ngClass]="{'mass-parish-relevance': true, 'not-actual': mass.needUpdate}">
                   <p *ngIf="!needUpdate(mass.needUpdate)"
                       class="placeholder actual">
-                      Aktualne informacje
+                      Informacja aktualna
                   </p>
                   <p *ngIf="needUpdate(mass.needUpdate)"
                       class="placeholder not-actual">
-                      Informacje wymagają wyjaśnienia
+                      Informacja wymaga wyjaśnienia
                   </p>
                 </div>
                 <div class="clearfix"></div>
