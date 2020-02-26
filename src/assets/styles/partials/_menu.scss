@@ -85,7 +85,7 @@
 
   &:after {
     content: '';
-    background: url('/assets/static_files_to_copy/images/star.png') center no-repeat;
+    //background: url('/assets/static_files_to_copy/images/star.png') center no-repeat;
     background-size: contain;
     display: block;
     width: 78px;
@@ -135,7 +135,7 @@
 
     &:after {
       content: '';
-      background: url(/assets/static_files_to_copy/images/star.png) center no-repeat;
+      //background: url(/assets/static_files_to_copy/images/star.png) center no-repeat;
       background-size: contain;
       display: block;
       width: 78px;
