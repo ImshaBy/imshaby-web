@@ -5,7 +5,8 @@
 }
 
 .banner.clear {
-  display: none;
+  visibility: hidden;
+  padding: 0;
 }
 
 .banner-tab {
