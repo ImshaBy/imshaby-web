@@ -106,6 +106,7 @@
   font-size: 22px;
   color: $color-cod-dark;
   margin-left: 15px;
+  float: left;
 
   .city {
     display: none;
@@ -135,7 +136,6 @@
 
     &:after {
       content: '';
-      //background: url(/assets/static_files_to_copy/images/star.png) center no-repeat;
       background-size: contain;
       display: block;
       width: 78px;
@@ -174,7 +174,7 @@
   }
 
   .site-name-wrapper {
-    margin: 0 auto 39px;
+    margin: 0 auto 0;
   }
 
   .location,

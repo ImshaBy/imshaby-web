@@ -1,3 +1,37 @@
+<section class="banner clear"></section>
+<section class="banner auto-container">
+  <div class="banner-tab" 
+      [class.active]="expandedOptions"
+      (click)="expandedOptions = !expandedOptions">
+    <div class="radio-icon"></div>
+    <div class="banner-tab-title" >
+      <span class="subtitle">Радио</span>
+      <span>трансляция</span>
+    </div>
+    <span class="triangle"></span>
+  </div>
+  <div class="tabs-box">
+    <a href="https://www.radiomaria.by/program" target="_blank">
+      <span class="icon icon-maria-radio"></span>
+      <span class="name">Радио Мария в Беларуси</span>
+      <span class="message">Следите за расписанием на сайте</span>
+    </a>
+    <a href="https://www.tvr.by/radio/1-kanal/" target="_blank">
+      <span class="icon icon-bel-radio"></span>
+      <span class="name">Первый Национальный канал</span>
+      <span class="message">8.15 Каждое воскресенье</span>
+    </a>
+  </div>
+  <div class="online-toggle-wrapper"
+      [class.active]="online"
+      (click)="toggleOnlineMasses()">
+      <div class="online-title">
+        <span>Службы online</span>
+        <span class="subtitle">видео трансляция</span>
+      </div>
+      <span class="toggle"></span>
+  </div>
+</section>
 <!--Schedule Section / Style Two-->
 <section class="schedule-section style-two">
   <div class="auto-container">
@@ -48,9 +82,14 @@
                   <h5 class="mass-parish-name">{{mass.parish.name}}</h5>
                   <h5 class="mass-parish-address">{{mass.parish.address}}</h5>
                   <h6 class="mass-language">Язык: {{mass.langCode}}</h6>
+                  <a class="mass-online" 
+                     href="{{mass.parish.broadcastUrl}}" 
+                     target="_blank" 
+                     [class.visible]="!mass.online">Службы online</a>
                 </div>
 
-                <div class="mass-parish-additional-info-wrapper info">
+                <div class="mass-parish-additional-info-wrapper info" 
+                    [class.visible]="mass.info">
                   <h5 class="mass-info">{{mass.info}}</h5>
                 </div>
 
