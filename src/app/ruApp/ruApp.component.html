@@ -22,15 +22,16 @@
       <span class="message">8.15 Каждое воскресенье</span>
     </a>
   </div>
-  <div class="online-toggle-wrapper"
+  <a class="online-toggle-wrapper"
       [class.active]="online"
-      (click)="toggleOnlineMasses()">
+      (click)="toggleOnlineMasses()"
+      href="javascript:void(0)">
       <div class="online-title">
         <span>Службы online</span>
         <span class="subtitle">видео трансляция</span>
       </div>
       <span class="toggle"></span>
-  </div>
+  </a>
 </section>
 <!--Schedule Section / Style Two-->
 <section class="schedule-section style-two">

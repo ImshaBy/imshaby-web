@@ -21,15 +21,16 @@
       <span class="message">8.15 w każdą niedzielę</span>
     </a>
   </div>
-  <div class="online-toggle-wrapper"
+  <a class="online-toggle-wrapper"
       [class.active]="online"
-      (click)="toggleOnlineMasses()">
+      (click)="toggleOnlineMasses()"
+       href="javascript:void(0)">
       <div class="online-title">
         <span>Msze online</span>
         <span class="subtitle">transmisja na żywo</span>
       </div>
       <span class="toggle"></span>
-  </div>
+  </a>
 </section>
 
 <!--Schedule Section / Style Two-->
