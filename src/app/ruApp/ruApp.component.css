@@ -42,9 +42,9 @@
   height: 100%;
 }
 
-.triangle::before, 
+.triangle::before,
 .triangle::after {
-  content: ''; 
+  content: '';
   position: absolute;
   right: -20px;
   top: 39%;
@@ -252,7 +252,7 @@
     font-size: 15px;
   }
 
-  .banner .tabs-box { 
+  .banner .tabs-box {
     padding: 0px 0 0 64px;
     flex-direction: column;
     padding-top: 14px;
@@ -265,7 +265,7 @@
 
   .banner .tabs-box a:last-child {
     margin: 0;
-  } 
+  }
 
   .banner .tabs-box .icon {
     display: none;

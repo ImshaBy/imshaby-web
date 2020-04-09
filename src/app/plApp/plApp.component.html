@@ -1,5 +1,5 @@
 <section class="banner auto-container">
-  <div class="banner-tab" 
+  <div class="banner-tab"
       [class.active]="expandedOptions"
       (click)="expandedOptions = !expandedOptions">
     <div class="radio-icon"></div>
@@ -21,15 +21,16 @@
       <span class="message">8.15 w każdą niedzielę</span>
     </a>
   </div>
-  <div class="online-toggle-wrapper"
+  <a class="online-toggle-wrapper"
       [class.active]="online"
-      (click)="toggleOnlineMasses()">
+      (click)="toggleOnlineMasses()"
+       href="javascript:void(0)">
       <div class="online-title">
         <span>Msze online</span>
         <span class="subtitle">transmisja na żywo</span>
       </div>
       <span class="toggle"></span>
-  </div>
+  </a>
 </section>
 
 <!--Schedule Section / Style Two-->
@@ -82,13 +83,13 @@
                   <h5 class="mass-parish-name">{{mass.parish.name}}</h5>
                   <h5 class="mass-parish-address">{{mass.parish.address}}</h5>
                   <h6 class="mass-language">Język: {{mass.langCode}}</h6>
-                  <a class="mass-online" 
-                     href="{{mass.parish.broadcastUrl}}" 
-                     target="_blank" 
-                     [class.visible]="!mass.online">Msza online</a>
+                  <a class="mass-online"
+                     href="{{mass.parish.broadcastUrl}}"
+                     target="_blank"
+                     [class.visible]="mass.online">Msza online</a>
                 </div>
 
-                <div class="mass-parish-additional-info-wrapper info" 
+                <div class="mass-parish-additional-info-wrapper info"
                     [class.visible]="mass.info">
                   <h5 class="mass-info">{{mass.info}}</h5>
                 </div>
@@ -124,7 +125,7 @@
       <div class="row">
         <div class="col-sm-6 col-xs-12">
           <p>
-            Gdzie w stolicy Białorusi można spotkać się z Chrystusem? Gdzie szukać aktualnego rozkładu Mszy Świętych, odprawianych w Mińsku? 
+            Gdzie w stolicy Białorusi można spotkać się z Chrystusem? Gdzie szukać aktualnego rozkładu Mszy Świętych, odprawianych w Mińsku?
 Na stronie www.imsha.by jest umieszczona informacja o miejscach i godzinach celebracji Eucharystii w Mińsku białoruskim.
           </p>
         </div>
@@ -138,7 +139,7 @@ Na stronie www.imsha.by jest umieszczona informacja o miejscach i godzinach cele
 
     <div class="row">
       <div class="intro-text-right col-sm-offset-4 col-sm-8 col-xs-12">
-        <p> Jeśli znajdziesz błąd, napisz do nas na 
+        <p> Jeśli znajdziesz błąd, napisz do nas na
           <a href="mailto:byimsha@gmail.com" class="contact-us">byimsha@gmail.com</a>
         </p>
       </div>
