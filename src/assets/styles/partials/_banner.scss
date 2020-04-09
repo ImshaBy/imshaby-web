@@ -1,0 +1,316 @@
+@import "./variables";
+
+.banner {
+  display: flex;
+  margin: 10px auto;
+  padding: 0;
+}
+
+
+.banner.clear {
+  visibility: hidden;
+  padding: 0;
+}
+
+.banner-tab {
+  position: relative;
+  display: flex;
+  width: 17.5%;
+  padding: 0 20px;
+  border: 1px solid $color-alto;
+  margin: 0;
+}
+
+.radio-icon {
+  display: flex;
+  align-self: center;
+
+  &:before {
+    display: block;
+    content: '';
+    width: 24px;
+    height: 24px;
+    background-image: url('../../assets/static_files_to_copy/images/icons/radio.svg');
+    background-size: contain;
+  }
+}
+
+.triangle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  width: 20px;
+  height: 100%;
+
+  &::before {
+    content: '';
+    position: absolute;
+    right: -20px;
+    top: 39%;
+    border: 10px solid transparent;
+    border-left: 10px solid $color-alto;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 39%;
+    border: 10px solid transparent;
+    border-left: 10px solid $color-white;
+    right: -19px;
+  }
+}
+
+.banner-tab-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 14px;
+  color: $color-tundora;
+  padding: 0 15px;
+  justify-content: center;
+  position: relative;
+
+  .subtitle {
+    font-size: 20px;
+  }
+}
+
+.banner .tabs-box {
+  display: flex;
+  padding: 23px 3% 23px 0;
+  flex: 1;
+  justify-content: flex-end;
+  border: 1px solid $color-alto;
+  border-left: 0;
+
+  a {
+    margin-left: 130px;
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+    position: relative;
+
+    &:hover, &:active {
+      color: $color-advent;
+    }
+  }
+}
+
+.tabs-box .message {
+  color: $color-tundora;
+}
+
+.banner .tabs-box .icon {
+  position: absolute;
+  left: -82px;
+  height: 40px;
+}
+
+.icon-maria-radio {
+  width: 40px;
+  background-image: url('../../assets/static_files_to_copy/images/icons/maria-radio.svg');
+}
+
+.icon-bel-radio {
+  width: 70px;
+  background-image: url('../../assets/static_files_to_copy/images/icons/bel-radio.svg');
+}
+
+.online-toggle-wrapper {
+  display: flex;
+  font-size: 22px;
+  align-self: center;
+  margin-left: 20px;
+  align-items: center;
+  color: $color-tundora;
+}
+
+.toggle {
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+  border-radius: 10px;
+  background: $color-advent;
+  position: relative;
+  margin-left: 20px;
+
+  &:before {
+    content: "";
+    display: inline-block;
+    width: 36px;
+    height: 16px;
+    background: $color-white;
+    border-radius: 10px;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+  }
+
+  &:after {
+    content: "";
+    display: block;
+    width: 14px;
+    height: 14px;
+    background: $color-alto;
+    border-radius: 50%;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    transition-property: left, right;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+  }
+}
+
+.active .toggle:after {
+  right: 3px;
+  left: initial;
+  background: $color-advent;
+}
+
+.online-title {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  position: relative;
+  margin-left: 35px;
+
+  &:before {
+    display: block;
+    content: '';
+    width: 27px;
+    height: 21px;
+    background-image: url('../../assets/static_files_to_copy/images/icons/youtube.svg');
+    background-size: contain;
+    position: absolute;
+    left: -40px;
+    top: 17px;
+  }
+
+  span {
+    font-size: 24px;
+  }
+
+  .subtitle {
+    font-size: 15px;
+    line-height: 36px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .banner {
+    flex-direction: column;
+    padding: 25px 0;
+  }
+
+  .banner-tab {
+    width: 100%;
+    height: initial;
+    padding: 0 0 0 25px;
+    border: 0px;
+
+    + .tabs-box {
+      display: none;
+    }
+
+    &.active + .tabs-box {
+      display: block;
+    }
+  }
+
+  .banner-tab-title::after {
+    font-family: FontAwesome;
+    content: "\F107";
+    position: absolute;
+    right: -20px;
+    top: 0px;
+    width: 15px;
+    display: block;
+    color: $color-advent;
+    line-height: 24px;
+    font-size: 24px;
+    text-align: right;
+    z-index: 5;
+  }
+
+  .banner-tab.active .banner-tab-title::after {
+    content: "\F106";
+  }
+
+  .banner-tab-title {
+    flex-direction: row;
+    font-size: 20px;
+
+    .subtitle {
+      margin-right: 8px;
+    }
+  }
+
+  .tabs-box {
+    .name {
+      font-size: 18px;
+    }
+
+    .message {
+      font-size: 15px;
+    }
+  }
+
+  .banner .tabs-box {
+    padding: 0px 0 0 64px;
+    flex-direction: column;
+    padding-top: 14px;
+    border: 0;
+
+    a {
+      margin: 0 0 25px 0;
+
+      &:last-child {
+        margin: 0;
+      }
+    }
+
+    .icon {
+      display: none;
+    }
+
+    a {
+      font-size: 20px;
+    }
+  }
+
+  .triangle {
+    display: none;
+  }
+
+  .online-toggle-wrapper {
+    align-self: initial;
+    padding: 0 0 0 25px;
+    margin: 0;
+    margin-top: 20px;
+  }
+
+  .online-title {
+    margin-left: 40px;
+    flex: 1;
+
+    &::before {
+      top: 0;
+    }
+
+    span {
+      font-size: 20px;
+      text-align: left;
+    }
+
+    .subtitle {
+      display: none;
+    }
+  }
+
+  .toggle {
+    margin-right: 20px;
+  }
+}
