@@ -1,6 +1,6 @@
 <section class="banner auto-container clear"></section>
 <section class="banner auto-container">
-  <div class="banner-tab" 
+  <div class="banner-tab"
       [class.active]="expandedOptions"
       (click)="expandedOptions = !expandedOptions">
     <div class="radio-icon"></div>
@@ -82,13 +82,13 @@
                   <h5 class="mass-parish-name">{{mass.parish.name}}</h5>
                   <h5 class="mass-parish-address">{{mass.parish.address}}</h5>
                   <h6 class="mass-language">Язык: {{mass.langCode}}</h6>
-                  <a class="mass-online" 
-                     href="{{mass.parish.broadcastUrl}}" 
-                     target="_blank" 
-                     [class.visible]="!mass.online">Службы online</a>
+                  <a class="mass-online"
+                     href="{{mass.parish.broadcastUrl}}"
+                     target="_blank"
+                     [class.visible]="mass.online">Службы online</a>
                 </div>
 
-                <div class="mass-parish-additional-info-wrapper info" 
+                <div class="mass-parish-additional-info-wrapper info"
                     [class.visible]="mass.info">
                   <h5 class="mass-info">{{mass.info}}</h5>
                 </div>

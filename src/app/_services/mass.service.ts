@@ -24,7 +24,7 @@ export class MassService {
     return null;
     // return SCHEDULE;
   }
- 
+
   getTodayScheduleAsync(pLang: String, pOnline: Boolean) : Observable<MassSchedule> {
     return this.http.get(this.getServiceURL(pLang, pOnline), {  withCredentials: true})
       .map((response) => {
