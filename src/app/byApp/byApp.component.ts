@@ -22,6 +22,7 @@ export class ByAppComponent {
   selectedDate: Date;
   cookieService: CookieService;
   lang: string;
+  online: boolean;
 
   constructor(private pMassService: MassService, private pUtils: Utils, private pCookieService: CookieService ) {
     this.massService = pMassService;
@@ -29,15 +30,20 @@ export class ByAppComponent {
     this.cookieService = pCookieService;
     this.masses = new MassSchedule();
     this.lang = 'be';
+    this.online = false;
   }
 
   refresh() {
     this.today = new Date();
-
     this.days = this.getActualDays('be');
     this.selectedDay = this.utils.getSelectedDay(this.today);
     this.selectedDate = this.today;
     this.getTodayScheduleAsync();
+  }
+
+  toggleOnlineMasses() {
+    this.online = !this.online;
+    this.refresh();
   }
 
   ngOnInit() {
@@ -48,7 +54,7 @@ export class ByAppComponent {
       this.refresh();
       this.selectedDay = massDay.getDay();
       this.selectedDate = massDay;
-      this.getTodayScheduleAsync();
+      // this.getTodayScheduleAsync();
   }
 
   getTodaySchedule(): MassSchedule {
@@ -60,7 +66,7 @@ export class ByAppComponent {
   }
 
   getTodayScheduleAsync() {
-    this.massService.getTodayScheduleAsync(this.lang)
+    this.massService.getTodayScheduleAsync(this.lang, this.online)
     .subscribe(
       masses => {
         this.masses = masses;
@@ -92,14 +98,4 @@ export class ByAppComponent {
   getActualDays(locale: string): Day[] {
     return this.utils.getActualDays(locale);
   }
-
-  // getLangTitle(langCode: string) {
-  //   const langs = ['pl', 'ru', 'en', 'be'];
-
-  //     if(langs.includes(langCode)) {
-  //         //return langCode; put flag icon
-  //     } else {
-  //       return langCode;
-  //     }
-  // }
 }

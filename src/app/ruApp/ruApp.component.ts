@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { CookieService } from 'angular2-cookie/core';
-
 import { MassService } from '../_services/mass.service';
 import { MassSchedule } from '../_models/massSchedule';
 import { Day } from '../_models/day';
@@ -23,6 +22,7 @@ export class RuAppComponent {
   selectedDate: Date;
   cookieService: CookieService;
   lang: string;
+  online: boolean;
 
   constructor(private pMassService: MassService, private pUtils: Utils, private pCookieService: CookieService ) {
     this.massService = pMassService;
@@ -30,6 +30,7 @@ export class RuAppComponent {
     this.cookieService = pCookieService;
     this.masses = new MassSchedule();
     this.lang = 'ru';
+    this.online = false;
   }
 
   refresh(){
@@ -38,6 +39,11 @@ export class RuAppComponent {
     this.selectedDay = this.utils.getSelectedDay(this.today);
     this.selectedDate = this.today;
     this.getTodayScheduleAsync();
+  }
+
+  toggleOnlineMasses() {
+    this.online = !this.online;
+    this.refresh();
   }
 
   ngOnInit() {
@@ -59,7 +65,7 @@ export class RuAppComponent {
   }
 
   getTodayScheduleAsync() {
-    this.massService.getTodayScheduleAsync(this.lang)
+    this.massService.getTodayScheduleAsync(this.lang, this.online)
     .subscribe(
       masses => {
         this.masses = masses;
