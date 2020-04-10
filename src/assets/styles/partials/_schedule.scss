@@ -339,6 +339,11 @@
 
     .mass-parish-additional-info-wrapper {
       flex: 0 0 30%;
+      display: none;
+
+      &.visible {
+        display: block;
+      }
     }
 
     .info .image {
@@ -355,7 +360,10 @@
       }
     }
 
-    .mass-parish-name, .mass-parish-address, .mass-parish-info {
+    .mass-parish-name, 
+    .mass-parish-address, 
+    .mass-parish-info, 
+    .mass-language {
       font-size: 16px;
       margin-bottom: 16px;
     }
@@ -371,9 +379,32 @@
     }
 
     .mass-language,
-    .mass-duration {
+    .mass-duration,
+    .mass-online {
       color: $color-tundora;
       font-size: 17px;
+    }
+
+    .mass-online {
+      display: none;
+      position: relative;
+      margin-left: 35px;
+      color: $color-advent;
+
+      &.visible {
+        display: block;
+      }
+
+      &::before {
+        display: block;
+        content: '';
+        width: 27px;
+        height: 21px;
+        background-image: url('../../assets/static_files_to_copy/images/icons/youtube.svg');
+        background-size: contain;
+        position: absolute;
+        left: -35px;
+      }
     }
   }
 

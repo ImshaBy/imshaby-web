@@ -22,6 +22,7 @@ export class EnAppComponent {
   selectedDate: Date;
   cookieService: CookieService;
   lang: string;
+  online: boolean;
 
   constructor(private pMassService: MassService, private pUtils: Utils, private pCookieService: CookieService ) {
     this.massService = pMassService;
@@ -29,6 +30,7 @@ export class EnAppComponent {
     this.cookieService = pCookieService;
     this.masses = new MassSchedule();
     this.lang = 'en';
+    this.online = false;
   }
 
   refresh(){
@@ -37,6 +39,11 @@ export class EnAppComponent {
     this.selectedDay = this.utils.getSelectedDay(this.today);
     this.selectedDate = this.today;
     this.getTodayScheduleAsync();
+  }
+
+  toggleOnlineMasses() {
+    this.online = !this.online;
+    this.refresh();
   }
 
   ngOnInit() {
@@ -58,7 +65,7 @@ export class EnAppComponent {
   }
 
   getTodayScheduleAsync() {
-    this.massService.getTodayScheduleAsync(this.lang)
+    this.massService.getTodayScheduleAsync(this.lang, this.online)
     .subscribe(
       masses => {
         this.masses = masses;
