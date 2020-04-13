@@ -4,8 +4,8 @@
   display: flex;
   margin: 10px auto;
   padding: 0;
+  font-weight: 300;
 }
-
 
 .banner.clear {
   visibility: hidden;
@@ -30,7 +30,7 @@
     content: '';
     width: 24px;
     height: 24px;
-    background-image: url('../../assets/static_files_to_copy/images/icons/radio.svg');
+    background-image: url('../../assets/static_files_to_copy/images/icons/radio_gray.svg');
     background-size: contain;
   }
 }
@@ -56,9 +56,9 @@
     content: '';
     position: absolute;
     top: 39%;
+    right: -19px;
     border: 10px solid transparent;
     border-left: 10px solid $color-white;
-    right: -19px;
   }
 }
 
@@ -66,56 +66,71 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 14px;
+  font-size: 15px;
   color: $color-tundora;
   padding: 0 15px;
   justify-content: center;
   position: relative;
 
   .subtitle {
-    font-size: 20px;
+    font-size: 24px;
   }
 }
 
 .banner .tabs-box {
   display: flex;
-  padding: 23px 3% 23px 0;
+  padding: 23px;
   flex: 1;
-  justify-content: flex-end;
   border: 1px solid $color-alto;
   border-left: 0;
 
   a {
-    margin-left: 130px;
+    margin-right: 40px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    align-items: center;
     font-size: 18px;
     position: relative;
 
     &:hover, &:active {
-      color: $color-advent;
+      color: $color-main-theme;
+
+      .tab-box-title .name {
+        color: $color-main-theme;
+      }
     }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  .icon {
+    margin-right: 14px;
+  }
+
+  .icon-maria-radio {
+    width: 20px;
+    height: 20px;
+  }
+
+  .icon-bel-radio {
+    width: 35px;
+    height: 20px;
+  }
+}
+
+.tab-box-title {
+  display: flex;
+  flex-direction: column;
+
+  .name {
+    color: $color-tundora;
   }
 }
 
 .tabs-box .message {
   color: $color-tundora;
-}
-
-.banner .tabs-box .icon {
-  position: absolute;
-  left: -82px;
-  height: 40px;
-}
-
-.icon-maria-radio {
-  width: 40px;
-  background-image: url('../../assets/static_files_to_copy/images/icons/maria-radio.svg');
-}
-
-.icon-bel-radio {
-  width: 70px;
-  background-image: url('../../assets/static_files_to_copy/images/icons/bel-radio.svg');
 }
 
 .online-toggle-wrapper {
@@ -125,6 +140,10 @@
   margin-left: 20px;
   align-items: center;
   color: $color-tundora;
+
+  &:hover, &:active, &:focus {
+    color: $color-tundora;
+  }
 }
 
 .toggle {
@@ -132,7 +151,7 @@
   width: 40px;
   height: 20px;
   border-radius: 10px;
-  background: $color-advent;
+  background: $color-main-theme;
   position: relative;
   margin-left: 20px;
 
@@ -167,7 +186,7 @@
 .active .toggle:after {
   right: 3px;
   left: initial;
-  background: $color-advent;
+  background: $color-main-theme;
 }
 
 .online-title {
@@ -182,10 +201,10 @@
     content: '';
     width: 27px;
     height: 21px;
-    background-image: url('../../assets/static_files_to_copy/images/icons/youtube.svg');
+    background-image: url('../../assets/static_files_to_copy/images/icons/youtube_gray.svg');
     background-size: contain;
     position: absolute;
-    left: -40px;
+    left: -35px;
     top: 17px;
   }
 
@@ -199,6 +218,19 @@
   }
 }
 
+.online-toggle-wrapper {
+  &:hover, &:active, &:focus {
+    .toggle {
+      color: $color-main-theme;
+    }
+
+    .online-title::before {
+      background-image: url('../../assets/static_files_to_copy/images/icons/youtube_yellow.svg');
+    }
+  }
+}
+
+
 @media only screen and (max-width: 768px) {
   .banner {
     flex-direction: column;
@@ -209,7 +241,7 @@
     width: 100%;
     height: initial;
     padding: 0 0 0 25px;
-    border: 0px;
+    border: 0;
 
     + .tabs-box {
       display: none;
@@ -225,10 +257,10 @@
     content: "\F107";
     position: absolute;
     right: -20px;
-    top: 0px;
+    top: 0;
     width: 15px;
     display: block;
-    color: $color-advent;
+    color: $color-main-theme;
     line-height: 24px;
     font-size: 24px;
     text-align: right;
@@ -245,12 +277,14 @@
 
     .subtitle {
       margin-right: 8px;
+      font-size: 20px;
     }
   }
 
   .tabs-box {
     .name {
       font-size: 18px;
+      color: $color-main-theme;
     }
 
     .message {
@@ -258,10 +292,13 @@
     }
   }
 
+  .tab-box-title {
+    color: $color-main-theme;
+  }
+
   .banner .tabs-box {
-    padding: 0px 0 0 64px;
+    padding: 20px 14px 0 64px;
     flex-direction: column;
-    padding-top: 14px;
     border: 0;
 
     a {
@@ -288,8 +325,7 @@
   .online-toggle-wrapper {
     align-self: initial;
     padding: 0 0 0 25px;
-    margin: 0;
-    margin-top: 20px;
+    margin: 20px 0 0 0;
   }
 
   .online-title {
@@ -298,6 +334,7 @@
 
     &::before {
       top: 0;
+      left: -40px;
     }
 
     span {

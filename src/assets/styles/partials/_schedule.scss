@@ -38,7 +38,7 @@
   display: table-cell;
   text-align: center;
   background: $color-white;
-  color: $color-advent;
+  color: $color-main-theme;
   line-height: 1.4em;
   padding: 17px 10px;
   border-bottom: 1px solid $color-alto;
@@ -63,8 +63,8 @@
   }
 
   &.active, &:hover {
-    border-color: $color-advent;
-    background: $color-advent;
+    border-color: $color-main-theme;
+    background: $color-main-theme;
     color: $color-white;
   }
 }
@@ -135,7 +135,7 @@
   width: 0;
   height: 0;
   border: 7px solid transparent;
-  border-top-color: $color-advent;
+  border-top-color: $color-main-theme;
 }
 
 .style-two .schedule-box .tab-buttons .tab-btn .curve:after {
@@ -147,7 +147,7 @@
   width: 0;
   height: 0;
   border: 7px solid transparent;
-  border-left-color: $color-advent;
+  border-left-color: $color-main-theme;
 }
 
 .schedule-box .tabs-box {
@@ -192,7 +192,7 @@
     }
 
     &.active-box:before {
-      background: $color-advent;
+      background: $color-main-theme;
     }
 
     &:last-child:before {
@@ -225,7 +225,7 @@
     }
 
     &.active-box .circle {
-      border-color: $color-advent;
+      border-color: $color-main-theme;
     }
 
     .content-box {
@@ -271,7 +271,7 @@
       width: 30px;
       height: 30px;
       display: block;
-      color: $color-advent;
+      color: $color-main-theme;
       line-height: 28px;
       font-size: 24px;
       text-align: right;
@@ -360,9 +360,9 @@
       }
     }
 
-    .mass-parish-name, 
-    .mass-parish-address, 
-    .mass-parish-info, 
+    .mass-parish-name,
+    .mass-parish-address,
+    .mass-parish-info,
     .mass-language {
       font-size: 16px;
       margin-bottom: 16px;
@@ -389,7 +389,7 @@
       display: none;
       position: relative;
       margin-left: 35px;
-      color: $color-advent;
+      color: $color-main-theme;
 
       &.visible {
         display: block;
@@ -409,7 +409,7 @@
   }
 
   .theme-btn {
-    background: $color-advent;
+    background: $color-main-theme;
     margin: 15px 5px 5px;
   }
 }
@@ -468,7 +468,7 @@
   }
 
   .schedule-box .hour-box {
-    padding-left: 50px;
+    padding-left: 45px;
     padding-top: 5px;
 
     &.active-box {

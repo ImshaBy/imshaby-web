@@ -16,6 +16,16 @@ Fonts
 }
 
 @font-face {
+  font-family: 'open_sanssemibold';
+  src: url('/assets/static_files_to_copy/fonts/openSansSemiBold.eot');
+  src: url('/assets/static_files_to_copy/fonts/openSansSemiBold.eot?#iefix') format('embedded-opentype'),
+  url('/assets/static_files_to_copy/fonts/openSansSemiBold.woff2') format('woff2'),
+  url('/assets/static_files_to_copy/fonts/openSansSemiBold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
   font-family: 'FontAwesome';
   src: url('/assets/static_files_to_copy/fonts/fontAwesome-webfont.eot');
   src: url('/assets/static_files_to_copy/fonts/fontAwesome-webfont.eot?#iefix') format('embedded-opentype'),
@@ -33,6 +43,7 @@ Fonts
 }
 
 $openSans: 'open_sansregular';
+$openSansSemiBold: 'open_sanssemibold';
 $fontAwesome: 'FontAwesome';
 $Constantia: 'Constantia';
 
@@ -55,10 +66,14 @@ $color-parsley: #256119;
 $color-asparagus: #739953;
 
 //red
-$color-advent: #ab1818;
+//$color-main-theme: #ab1818;
 
 //fiolet(adwent)
 //$color-advent: #622f9c;
+
+//Main theme variable
+$color-main-theme: #f3d245;
+
 $color-envy: #97b198;
 $color-gum-leaf: #accbbc;
 $color-buff: #f2d389;
