@@ -22,7 +22,7 @@
       <img src="/assets/static_files_to_copy/images/icons/bel-radio.svg" alt="belradio" class="icon icon-bel-radio" />
       <span class="tab-box-title">
         <span class="name">Першы Нацыянальны канал</span>
-        <span class="message">8.15 Кожная нядзеля</span>
+        <span class="message">08:15 Кожная нядзеля</span>
       </span>
     </a>
   </div>
@@ -85,7 +85,7 @@
                   <a class="mass-online"
                      href="{{mass.parish.broadcastUrl}}"
                      target="_blank"
-                     [class.visible]="mass.online">Імша online</a>
+                     [class.visible]="!mass.online">Імша online</a>
                 </div>
                 <div class="mass-parish-additional-info-wrapper info"
                     [class.visible]="mass.info">
