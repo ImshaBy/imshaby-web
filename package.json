@@ -1,5 +1,5 @@
 {
-  "name": "@imshaby/web",
+  "name": "imshaby-web",
   "version": "1.3.0",
   "description": "ImshaBy Web Project",
   "scripts": {
@@ -13,7 +13,7 @@
     "node": "6.9.2",
     "npm": "4.0.3"
   },
-  "publishConfig": { "registry": "https://npm.pkg.github.com/" },
+  "publishConfig": { "registry": "https://npm.pkg.github.com/@ImshaBy" },
 
   "license": "MIT",
   "dependencies": {
