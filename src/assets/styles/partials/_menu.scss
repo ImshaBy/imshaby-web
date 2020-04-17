@@ -33,7 +33,7 @@
   li {
     display: block;
     font: normal 20px 'Calibri';
-    color: $color-black;
+    color: $color-tundora;
     cursor: pointer;
     margin-left: 18px;
     text-transform: uppercase;
@@ -112,6 +112,7 @@
   .city {
     display: none;
     padding: 13px 0;
+    color: $color-tundora;
   }
 
   .visible {
