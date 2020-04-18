@@ -1,14 +1,15 @@
-name: Imshaby Web CI/CD for QA env
+name: Imshaby Web CI/CD for BETA env
 
 on:
   push:
-    branches: [ develop ]
+    tags:        
+    - v* 
 jobs:
   build:
 
     runs-on: ubuntu-latest
     env:
-      TARGET: qa  
+      TARGET: beta  
       NODE_AUTH_TOKEN: ${{ secrets.GIT_TOKEN }}
     strategy:
       matrix:
@@ -44,5 +45,5 @@ jobs:
     - name: List files
       run: ls -la
     - name: Copy to server
-      run: rsync -avz --delete-before -e "ssh -p 3022 -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no" dist/ 58336-1897@${{ secrets.SSH_HOST }}:~/www/static/
+      run: rsync -avz --delete-before -e "ssh -p 3022 -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no" dist/ 54449-1897@${{ secrets.SSH_HOST }}:~/www/static/
         
