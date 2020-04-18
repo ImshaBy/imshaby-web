@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  apiHost: "http://api-imshaby.mycloud.by"
+  apiHost: "https://api.qa.imsha.by"
 };
