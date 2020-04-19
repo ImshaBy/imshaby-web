@@ -1,0 +1,48 @@
+name: Imshaby Web CI/CD for QA env
+
+on:
+  push:
+    branches: [ develop, all-env-cis ]
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    env:
+      TARGET: qa  
+      NODE_AUTH_TOKEN: ${{ secrets.GIT_TOKEN }}
+    strategy:
+      matrix:
+        node-version: [10.x]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Create ssh-key file
+      run: |
+        mkdir ~/.ssh
+        echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
+        ssh-keyscan -t rsa github.com
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+        registry-url: 'https://npm.pkg.github.com'
+    - run: npm ci
+
+    - name: Set-up env variables
+      run:  cp src/environments/environment.${{env.TARGET}}.ts src/environments/environment.ts
+    
+    - name: Check env variables
+      run: cat src/environments/environment.ts
+
+    - run: npm run deploy
+    
+#    - run: npm publish -- for creation package
+
+
+    - name: List files
+      run: ls -la
+    - name: Copy to server
+      run: rsync -avz --delete-before -e "ssh -p 3022 -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no" dist/ 58336-1897@${{ secrets.SSH_HOST }}:~/www/static/
+        
