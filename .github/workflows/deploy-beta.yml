@@ -1,8 +1,8 @@
-name: Imshaby Web CI/CD for BETA env
+name: BETA env (beta.imsha.by)
 
 on:
   push:
-    branches: [ master ] 
+    branches: [ master, all-env-cis ] 
 jobs:
   build:
 

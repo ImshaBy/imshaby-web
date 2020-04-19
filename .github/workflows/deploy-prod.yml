@@ -1,4 +1,4 @@
-name: Imshaby Web CI/CD for PROD env
+name: PROD env (imsha.by)
 
 on:
   push:

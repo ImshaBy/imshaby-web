@@ -1,8 +1,8 @@
-name: Imshaby Web CI/CD for QA env
+name: QA env (qa.imsha.by)
 
 on:
   push:
-    branches: [ develop, all-env-cis ]
+    branches: [ develop ]
 jobs:
   build:
 
