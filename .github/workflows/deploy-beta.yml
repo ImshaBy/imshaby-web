@@ -2,7 +2,7 @@ name: BETA env (beta.imsha.by)
 
 on:
   push:
-    branches: [ master, all-env-cis ] 
+    branches: [ master ] 
 jobs:
   build:
 
