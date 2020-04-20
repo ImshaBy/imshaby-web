@@ -33,23 +33,36 @@
   li {
     display: block;
     font: normal 20px 'Calibri';
-    color: $color-black;
+    color: $color-tundora;
     cursor: pointer;
     margin-left: 18px;
     text-transform: uppercase;
-    
+
     &:hover {
       text-decoration: none;
     }
   }
 
   .active {
-    color: $color-advent;
+    color: $color-main-theme;
   }
 }
 
 .site-name-wrapper {
+  position: relative;
   margin: 0 auto 82px;
+
+  &:after {
+    content: '';
+    background: url(/assets/static_files_to_copy/images/baranak.png) center no-repeat;
+    background-size: contain;
+    display: block;
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    bottom: -80px;
+    right: 180px;
+  }
 }
 
 .logo-wrapper {
@@ -82,18 +95,6 @@
   &.visible {
     display: block;
   }
-
-  &:after {
-    content: '';
-    //background: url('/assets/static_files_to_copy/images/star.png') center no-repeat;
-    background-size: contain;
-    display: block;
-    width: 78px;
-    height: 35px;
-    position: absolute;
-    bottom: 26px;
-    right: -51px;
-  }
 }
 
 .logo-title {
@@ -111,6 +112,7 @@
   .city {
     display: none;
     padding: 13px 0;
+    color: $color-tundora;
   }
 
   .visible {
@@ -175,6 +177,10 @@
 
   .site-name-wrapper {
     margin: 0 auto 0;
+
+    &:after {
+      content: none;
+    }
   }
 
   .location,

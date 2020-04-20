@@ -149,7 +149,7 @@
   width: 48px;
   height: 48px;
   color: $color-white;
-  background: $color-advent url(/assets/static_files_to_copy/images/icons/arrow-up.png) center center no-repeat;
+  background: $color-main-theme url(/assets/static_files_to_copy/images/icons/arrow-up.png) center center no-repeat;
   font-size: 20px;
   line-height: 48px;
   text-align: center;
@@ -158,7 +158,7 @@
   display: block;
 
   &:hover {
-    background-color: $color-advent;
+    background-color: $color-main-theme;
     color: $color-white;
   }
 }

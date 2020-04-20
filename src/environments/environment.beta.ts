@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiHost: "http://api.pp.imsha.by"
+  apiHost: "https://api.beta.imsha.by"
 };
