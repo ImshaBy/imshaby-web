@@ -1,6 +1,8 @@
 {
   "name": "imshaby-web",
-  "version": "1.3.1",
+
+  "version": "1.3.2",
+
   "description": "ImshaBy Web Project",
   "scripts": {
     "start": "webpack-dev-server --env.APP_TARGET pp --inline --progress --colors --port 8080",

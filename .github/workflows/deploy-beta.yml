@@ -1,9 +1,8 @@
-name: Imshaby Web CI/CD for BETA env
+name: BETA env (beta.imsha.by)
 
 on:
   push:
-    tags:        
-    - v* 
+    branches: [ master ] 
 jobs:
   build:
 
@@ -39,7 +38,7 @@ jobs:
 
     - run: npm run deploy
     
-#    - run: npm publish -- for creation package
+    # - run: npm publish
 
 
     - name: List files
