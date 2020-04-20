@@ -40,7 +40,7 @@ jobs:
 
     - run: npm run deploy
     
-    - run: npm publish
+    # - run: npm publish
 
     - name: List files
       run: ls -la
@@ -48,4 +48,4 @@ jobs:
       run: |
         rsync -avz -e "ssh -p 3022 -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no" dist/ 53214-1897@${{ secrets.SSH_HOST }}:~/www/static/passive
         ssh -p 3022 -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no "cd ~/www/static && ln -sfn passive a && rm -r active/* && cp -r passive/* active/ && ln -sfn active a && rm -r passive/*"
-        
+
