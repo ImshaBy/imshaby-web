@@ -3,7 +3,7 @@
 ![QA env (qa.imsha.by)](https://github.com/ImshaBy/imshaby-web/workflows/QA%20env%20(qa.imsha.by)/badge.svg)
 
 
-# Development env : how to run
+# Development env
 
 
 ## Prerequisites
