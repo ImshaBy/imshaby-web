@@ -1,10 +1,8 @@
 <section class="banner auto-container clear"></section>
 <section class="banner auto-container">
-  <div class="banner-tab"
-      [class.active]="expandedOptions"
-      (click)="expandedOptions = !expandedOptions">
+  <div class="banner-tab" [class.active]="expandedOptions" (click)="expandedOptions = !expandedOptions">
     <div class="radio-icon"></div>
-    <div class="banner-tab-title" >
+    <div class="banner-tab-title">
       <span class="subtitle">Радио</span>
       <span>трансляция</span>
     </div>
@@ -12,7 +10,8 @@
   </div>
   <div class="tabs-box">
     <a href="https://www.radiomaria.by/program" target="_blank">
-      <img src="/assets/static_files_to_copy/images/icons/maria-radio.svg" alt="radiomaria" class="icon icon-maria-radio" />
+      <img src="/assets/static_files_to_copy/images/icons/maria-radio.svg" alt="radiomaria"
+        class="icon icon-maria-radio" />
       <span class="tab-box-title">
         <span class="name">Радио Мария в Беларуси</span>
         <span class="message">Следите за расписанием на сайте</span>
@@ -26,15 +25,12 @@
       </span>
     </a>
   </div>
-  <a class="online-toggle-wrapper"
-      [class.active]="online"
-      (click)="toggleOnlineMasses()"
-      href="javascript:void(0)">
-      <div class="online-title">
-        <span>Службы online</span>
-        <span class="subtitle">видео трансляция</span>
-      </div>
-      <span class="toggle"></span>
+  <a class="online-toggle-wrapper" [class.active]="online" (click)="toggleOnlineMasses()" href="javascript:void(0)">
+    <div class="online-title">
+      <span>Службы online</span>
+      <span class="subtitle">видео трансляция</span>
+    </div>
+    <span class="toggle"></span>
   </a>
 </section>
 <!--Schedule Section / Style Two-->
@@ -46,8 +42,7 @@
       <!--Tab Buttons-->
       <ul class="tab-buttons clearfix" id="navbar">
         <li class="tab-btn" [class.active]="(day.date | date: 'dd/MM/yyyy') == (selectedDate | date: 'dd/MM/yyyy') "
-            *ngFor="let day of days"
-            (click)="onSelect(day.date)">
+          *ngFor="let day of days" (click)="onSelect(day.date)">
           <span class="day">{{day.dayName}}</span>
           <span class="date">{{day.humanFormat}}</span>
           <span class="curve"></span>
@@ -58,28 +53,25 @@
       <div class="tabs-box" id="tabs-box">
 
         <!--Tab / Current / Monday-->
-        <div class="tab"
-              *ngFor="let massDay of masses.schedule"
-              [class.current]="(massDay.date | date: 'dd/MM/yyyy') == (selectedDate | date: 'dd/MM/yyyy')"
-              [hidden]="!((massDay.date | date: 'dd/MM/yyyy') == (selectedDate | date: 'dd/MM/yyyy'))" >
-          <div class="hour-box"
-                [class.active-box]="massHour.active" *ngFor="let massHour of massDay.massHours">
+        <div class="tab" *ngFor="let massDay of masses.schedule"
+          [class.current]="(massDay.date | date: 'dd/MM/yyyy') == (selectedDate | date: 'dd/MM/yyyy')"
+          [hidden]="!((massDay.date | date: 'dd/MM/yyyy') == (selectedDate | date: 'dd/MM/yyyy'))">
+          <div class="hour-box" [class.active-box]="massHour.active" *ngFor="let massHour of massDay.massHours">
             <div class="hour">{{massHour.hour}}</div>
             <div class="img-circle circle"><span></span></div>
-            <div class="toggle-btn" [class.active]="massHour.active"
-                  (click)="massHour.active = !massHour.active">
+            <div class="toggle-btn" [class.active]="massHour.active" (click)="massHour.active = !massHour.active">
               <h3 *ngIf="checkMassesAmount(massHour.data.length)">Святая служба в {{massHour.data.length}} приходе</h3>
-              <h3 *ngIf="!checkMassesAmount(massHour.data.length)" >Святая служба в {{massHour.data.length}} приходах</h3>
+              <h3 *ngIf="!checkMassesAmount(massHour.data.length)">Святая служба в {{massHour.data.length}} приходах
+              </h3>
             </div>
             <div class="content-box row" [class.collapsed]="massHour.active">
-              <div class="panel panel-default mass-card"
-                    *ngFor="let mass of massHour.data">
+              <div class="panel panel-default mass-card" *ngFor="let mass of massHour.data">
 
                 <div class="mass-parish-image-wrapper info">
                   <figure class="img-circle image">
                     <img class="img-circle"
-                          [src]="mass.parish.imgPath !== null ? mass.parish.imgPath : '/assets/images/building-in-progress.png'"
-                          alt='Мінск, Здымак: {{mass.parish.name}}'>
+                      [src]="mass.parish.imgPath !== null ? mass.parish.imgPath : '/assets/images/building-in-progress.png'"
+                      alt='Мінск, Здымак: {{mass.parish.name}}'>
                   </figure>
                 </div>
 
@@ -87,24 +79,19 @@
                   <h5 class="mass-parish-name">{{mass.parish.name}}</h5>
                   <h5 class="mass-parish-address">{{mass.parish.address}}</h5>
                   <h6 class="mass-language">Язык: {{mass.langCode}}</h6>
-                  <a class="mass-online"
-                     href="{{mass.parish.broadcastUrl}}"
-                     target="_blank"
-                     [class.visible]="mass.online">Службы online</a>
+                  <a class="mass-online" href="{{mass.parish.broadcastUrl}}" target="_blank"
+                    [class.visible]="mass.online">Службы online</a>
                 </div>
 
-                <div class="mass-parish-additional-info-wrapper info"
-                    [class.visible]="mass.info">
+                <div class="mass-parish-additional-info-wrapper info" [class.visible]="mass.info">
                   <h5 class="mass-info">{{mass.info}}</h5>
                 </div>
 
                 <div [ngClass]="{'mass-parish-relevance': true, 'not-actual': mass.needUpdate}">
-                  <p *ngIf="!needUpdate(mass.needUpdate)"
-                      class="placeholder actual">
+                  <p *ngIf="!needUpdate(mass.needUpdate)" class="placeholder actual">
                     Информация актуальная
                   </p>
-                  <p *ngIf="needUpdate(mass.needUpdate)"
-                      class="placeholder not-actual">
+                  <p *ngIf="needUpdate(mass.needUpdate)" class="placeholder not-actual">
                     Информация требует уточнений
                   </p>
                 </div>
@@ -129,13 +116,15 @@
       <div class="row">
         <div class="col-sm-6 col-xs-12">
           <p>
-            Где и во сколько можно встретиться с Христом в столице Беларуси и как найти актуальное расписание Месс?
-            Информация про место и время совершения святой Евхаристии в Минске представлена на сайте www.imsha.by
+            Где можно встретиться с Христом в столице Беларуси? Как найти актуальное расписание богослужений в Минке?
+            Когда будет католическая месса в костеле или месса онлайн?
           </p>
         </div>
         <div class="col-sm-6 col-xs-12">
           <p>
-            Здесь вы найдете актуальное расписание латинской римо-католической мессы и византийской греко-католической литургии
+            Информация про место и время совершения святой Евхаристии в Минске представлена на сайте imsha.by (имша
+            бай). Здесь находится актуальное расписание латинской римо-католической мессы и византийской
+            греко-католической литургии
           </p>
         </div>
       </div>
