@@ -10,7 +10,7 @@ jobs:
 
     runs-on: ubuntu-latest
     env:
-      TARGET: prod
+      TARGET: prd
       NODE_AUTH_TOKEN: ${{ secrets.GIT_TOKEN }}
     strategy:
       matrix:
