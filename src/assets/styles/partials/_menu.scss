@@ -52,11 +52,12 @@
   position: relative;
   margin: 0 auto 82px;
 
+  //lamb icon
   &:after {
     content: '';
     background: url(/assets/static_files_to_copy/images/baranak.png) center no-repeat;
     background-size: contain;
-    display: block;
+    display: none;
     width: 150px;
     height: 150px;
     position: absolute;
