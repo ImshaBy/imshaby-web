@@ -80,7 +80,6 @@
 .banner .tabs-box {
   display: flex;
   padding: 23px;
-  flex: 1;
   border: 1px solid $color-alto;
   border-left: 0;
 
@@ -139,7 +138,7 @@
   display: flex;
   font-size: 22px;
   align-self: center;
-  margin-left: 20px;
+  margin-left: 60px;
   align-items: center;
   color: $color-tundora;
 
@@ -161,7 +160,7 @@
     }
 
     .online-title::before {
-      background-image: url('../../assets/static_files_to_copy/images/icons/youtube_yellow.svg');
+      background-image: url('../../assets/static_files_to_copy/images/icons/youtube_green.svg');
     }
   }
 }
