@@ -1830,7 +1830,7 @@ TrackLib.XPath = {
             iterator = document.evaluate(xpath, document.documentElement, null, XPathResult.ANY_TYPE, null);
         } else {
             try {
-                // IE5 and later has implemented that [0] should be the first node, 
+                // IE5 and later has implemented that [0] should be the first node,
                 // but according to the W3C standard it should have been [1]!
                 document.setProperty("SelectionLanguage", "XPath");
                 iterator = document.selectNodes(xpath);
@@ -2103,7 +2103,7 @@ TrackLib.Events = {
             document.addEventListener("DOMContentLoaded", callback, false);
         }
         else if (document.attachEvent) {
-            // Internet Explorer ¬¬
+            // Internet Explorer ï¿½ï¿½
             try {
                 document.write("<scr" + "ipt id=__ie_onload defer=true src=//:><\/scr" + "ipt>");
                 var script = document.getElementById("__ie_onload");
@@ -2326,7 +2326,7 @@ if (document.referrer === "" || !window.CTURL.includes(document.referrer.split("
 var identified = false;
 
 // Initialize Fingerprint
-if ((location.origin+"/").localeCompare(window.CTURL) === 0) {
+if ((location.origin).localeCompare(window.CTURL) === 0) {
     var fingerprintReport = function () {
         if (identified === true) return;
         Fingerprint2.get(function (components) {
@@ -2414,7 +2414,7 @@ console.log("origin: " + location.origin); //TODO: Remove debug
 console.log("cturl: " + window.CTURL); //TODO: Remove debug
 console.log("compare: " + (location.origin).localeCompare(window.CTURL)); //TODO: Remove debug
 
-if ((location.origin+"/").localeCompare(window.CTURL) === 0) {
+if ((location.origin).localeCompare(window.CTURL) === 0) {
 
     (function () {
 
