@@ -55,13 +55,13 @@
   //lamb icon
   &:after {
     content: '';
-    background: url(/assets/static_files_to_copy/images/baranak.png) center no-repeat;
+    background: url(/assets/static_files_to_copy/images/adwent2.png) center no-repeat;
     background-size: contain;
-    display: none;
+    display: block;
     width: 150px;
     height: 150px;
     position: absolute;
-    bottom: -80px;
+    bottom: -56px;
     right: 180px;
   }
 }
@@ -118,6 +118,14 @@
 
   .visible {
     display: block;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .site-name-wrapper {
+    &:after {
+      right: 53px;
+    }
   }
 }
 

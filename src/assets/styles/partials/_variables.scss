@@ -69,13 +69,14 @@ $color-asparagus: #739953;
 //$color-main-theme: #ab1818;
 
 //fiolet(adwent)
-//$color-advent: #622f9c;
+$color-advent: #622f9c;
 
 //$color-main-theme: #f3d245;
 
 //Main theme variable
-$color-main-theme: #739953;
+// $color-main-theme: #739953;
 
+$color-main-theme: $color-advent;
 $color-envy: #97b198;
 $color-gum-leaf: #accbbc;
 $color-buff: #f2d389;
