@@ -66,17 +66,10 @@ $color-parsley: #256119;
 $color-asparagus: #739953;
 
 //red
-//$color-main-theme: #ab1818;
-
-//fiolet(adwent)
+$color-red: #ab1818;
+$color-green: #739953;
 $color-advent: #622f9c;
-
-//$color-main-theme: #f3d245;
-
-//Main theme variable
-// $color-main-theme: #739953;
-
-$color-main-theme: $color-advent;
+$color-xmass: #f3d245;
 $color-envy: #97b198;
 $color-gum-leaf: #accbbc;
 $color-buff: #f2d389;
@@ -92,3 +85,7 @@ $color-mine-shaft: #292929;
 $color-cod-dark: #020301;
 $color-tundora: #454444;
 $color-dark-gray: #7f7f7f;
+
+//Main theme variable
+
+$color-main-theme: $color-xmass;
