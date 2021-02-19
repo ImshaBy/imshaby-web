@@ -62,8 +62,8 @@
             <div class="img-circle circle"><span></span></div>
             <div class="toggle-btn" [class.active]="massHour.active"
                   (click)="massHour.active = !massHour.active">
-              <h3 *ngIf="checkMassesAmount(massHour.data.length)">Holy mass at {{massHour.data.length}} parish</h3>
-              <h3 *ngIf="!checkMassesAmount(massHour.data.length)" >Holy mass at {{massHour.data.length}} parishes</h3>
+              <h3 *ngIf="checkMassesAmount(massHour.data.length)">Holy Mass at {{massHour.data.length}} parish</h3>
+              <h3 *ngIf="!checkMassesAmount(massHour.data.length)" >Holy Mass at {{massHour.data.length}} parishes</h3>
             </div>
             <div class="content-box row" [class.collapsed]="massHour.active">
               <div class="panel panel-default mass-card"
