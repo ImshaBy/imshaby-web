@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "importHelpers": true,
     "target": "es5",
     "lib": ["es2015", "es2017", "dom"],
     "module": "commonjs",
