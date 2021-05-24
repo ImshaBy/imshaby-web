@@ -2,7 +2,7 @@ import { BrowserModule,  } from '@angular/platform-browser';
 import { MetaModule } from 'ng2-meta';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import { CookieService } from 'angular2-cookie/core';
 
 //custom
@@ -29,7 +29,7 @@ import { Utils } from './_services/app.utils';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule,
+    HttpClientModule,
     routing,
     MetaModule.forRoot(),
   ],

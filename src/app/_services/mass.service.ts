@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http, Headers, RequestOptions, Response } from '@angular/http';
-
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/operator/map';
@@ -17,7 +16,7 @@ export class MassService {
   // private API_URI = 'masses.json';
   private API_URI = '/api/mass/week';
 
-  constructor(private http: Http) {}
+  constructor(private HttpClient: HttpClient) {}
 
   //TODO implement if it's needed
   getTodaySchedule():MassSchedule {
@@ -26,8 +25,8 @@ export class MassService {
   }
 
   getTodayScheduleAsync(pLang: String, pOnline: Boolean) : Observable<MassSchedule> {
-    return this.http.get(this.getServiceURL(pLang, pOnline), {  withCredentials: true})
-      .map((response) => {
+    return this.HttpClient.get(this.getServiceURL(pLang, pOnline), {  withCredentials: true})
+      .map((response: { json: () => any; }) => {
         let jsonObject = response.json();
         let massScheduleJSON: MassScheduleJSON = Object.assign(new MassScheduleJSON(), jsonObject);
 
@@ -72,16 +71,4 @@ export class MassService {
     // return Promise.resolve(SCHEDULE);
   }
 
-  private jwt() {
-    // create authorization header with jwt token
-    let currentUser = JSON.parse(localStorage.getItem('currentUser'));
-    if (currentUser && currentUser.token) {
-      let headers = new Headers({'Authorization': 'Bearer ' + currentUser.token});
-      return new RequestOptions({headers: headers});
-    }
-  }
-
-  private handleError(error:Response) {
-    return Observable.throw(error.json().error || 'Server error');
-  }
 }
