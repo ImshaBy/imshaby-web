@@ -1,9 +1,11 @@
+
+import {map} from 'rxjs/operators';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/toPromise';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/do';
+import { Observable } from 'rxjs';
+
+
+
 import 'rxjs/Rx';
 
 import { MassSchedule, MassDay } from '../_models/massSchedule';
@@ -25,13 +27,13 @@ export class MassService {
   }
 
   getTodayScheduleAsync(pLang: String, pOnline: Boolean) : Observable<MassSchedule> {
-    return this.HttpClient.get(this.getServiceURL(pLang, pOnline), {  withCredentials: true})
-      .map((response: { json: () => any; }) => {
+    return this.HttpClient.get(this.getServiceURL(pLang, pOnline), {  withCredentials: true}).pipe(
+      map((response: { json: () => any; }) => {
         let jsonObject = response.json();
         let massScheduleJSON: MassScheduleJSON = Object.assign(new MassScheduleJSON(), jsonObject);
 
         return this.transform(massScheduleJSON);
-      });
+      }));
   }
 
   private getParams(pLang: String, pOnline: Boolean) {
