@@ -9,6 +9,7 @@
     "sourceMap": true,
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
+    "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "removeComments": false,
     "noImplicitAny": true,
