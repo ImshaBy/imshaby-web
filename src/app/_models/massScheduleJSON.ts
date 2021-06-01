@@ -1,7 +1,9 @@
 
 import {MassHour} from './massSchedule';
+import { Nav } from './navigation';
 
 export class MassScheduleJSON {
+  nav: Nav;
   schedule: MassDayJSON[]
 }
 

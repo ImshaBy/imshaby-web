@@ -134,36 +134,36 @@
   color: $color-tundora;
 }
 
-.online-toggle-wrapper {
-  display: flex;
-  font-size: 22px;
-  align-self: center;
-  margin-left: 60px;
-  align-items: center;
-  color: $color-tundora;
+// .online-toggle-wrapper {
+//   display: flex;
+//   font-size: 22px;
+//   align-self: center;
+//   margin-left: 60px;
+//   align-items: center;
+//   color: $color-tundora;
 
-  &:active, 
-  &:focus, 
-  &:hover {
-    color: $color-tundora;
+//   &:active, 
+//   &:focus, 
+//   &:hover {
+//     color: $color-tundora;
 
-    .toggle {
-      color: $color-main-theme;
-    }
-  }
+//     .toggle {
+//       color: $color-main-theme;
+//     }
+//   }
 
-  &.active {
-    .toggle:after {
-      right: 4px;
-      left: initial;
-      background: $color-main-theme;
-    }
+//   &.active {
+//     .toggle:after {
+//       right: 4px;
+//       left: initial;
+//       background: $color-main-theme;
+//     }
 
-    .online-title::before {
-      background-image: url('../../assets/static_files_to_copy/images/icons/youtube_advent.svg');
-    }
-  }
-}
+//     .online-title::before {
+//       background-image: url('../../assets/static_files_to_copy/images/icons/youtube_advent.svg');
+//     }
+//   }
+// }
 
 .toggle {
   display: inline-block;
@@ -202,34 +202,6 @@
   }
 }
 
-.online-title {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  position: relative;
-  margin-left: 35px;
-
-  &:before {
-    display: block;
-    content: '';
-    width: 27px;
-    height: 21px;
-    background-image: url('../../assets/static_files_to_copy/images/icons/youtube_gray.svg');
-    background-size: contain;
-    position: absolute;
-    left: -35px;
-    top: 17px;
-  }
-
-  span {
-    font-size: 24px;
-  }
-
-  .subtitle {
-    font-size: 15px;
-    line-height: 36px;
-  }
-}
 
 @media only screen and (max-width: 768px) {
   .banner {

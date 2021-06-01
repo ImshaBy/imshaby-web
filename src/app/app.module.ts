@@ -1,6 +1,7 @@
 import { BrowserModule,  } from '@angular/platform-browser';
 import { MetaModule } from 'ng2-meta';
 import { NgModule } from '@angular/core';
+import { NgSelectModule } from '@ng-select/ng-select';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CookieService } from 'angular2-cookie/core';
@@ -28,6 +29,7 @@ import { Utils } from './_services/app.utils';
   ],
   imports: [
     BrowserModule,
+    NgSelectModule,
     FormsModule,
     HttpClientModule,
     routing,

@@ -1,35 +1,65 @@
 <section class="banner auto-container clear"></section>
-<section class="banner auto-container">
-  <div class="banner-tab"
-      [class.active]="expandedOptions"
-      (click)="expandedOptions = !expandedOptions">
-    <div class="radio-icon"></div>
-    <div class="banner-tab-title" >
-      <span class="subtitle">Радио</span>
-      <span>трансляция</span>
+<section class="filters-container" [class.filters-expanded]="isCollapsed">
+  <div class="filters-title">
+    <div class="filters-button" (click)="expandFilters()">
+      Фильтр месс
     </div>
-    <span class="triangle"></span>
   </div>
-  <div class="tabs-box">
-    <a href="https://www.radiomaria.by/program" target="_blank">
-      <img src="/assets/static_files_to_copy/images/icons/maria-radio.svg" alt="radiomaria" class="icon icon-maria-radio" />
-      <span class="tab-box-title">
-        <span class="name">Радио Мария в Беларуси</span>
-        <span class="message">Следите за расписанием на сайте</span>
-      </span>
+  <div class="filters">
+    <div class="filter-section">
+      <div class="filter-location">
+        <div>Населенный пункт</div>
+        <ng-select [items]="cities"
+           bindLabel="name"
+           autofocus
+           placeholder="Поиск"
+           bindValue="value"
+           (change)="filterByCity()"
+           [(ngModel)]="cityId">
+        </ng-select>
+      </div>
+      <div class="filter-language">
+        <div>Язык мессы</div>
+        <ng-select [items]="massLanguages"
+          bindLabel="name"
+          autofocus
+          placeholder="Поиск"
+          bindValue="value"
+          (change)="filterByMassLang()"
+          [(ngModel)]="massLanguageId">
+      </ng-select>
+      </div>
+      <div class="filter-parish">
+        <div>Парафия</div>
+        <ng-select [items]="parishes"
+          bindLabel="name"
+          autofocus
+          placeholder="Поиск"
+          bindValue="value"
+          (change)="filterByParish()"
+          [(ngModel)]="parishId">
+      </ng-select>
+      </div>
+    </div>
+  </div>
+  <div class="filters-footer">
+    <div class="radio-container">
+      <div class="title">Слушать святую мессу</div>
+      <div class="subtitle">трансляция Радио Мария в Беларуси</div>
+    </div>
+    <a class="online-toggle-wrapper"
+        [class.active]="online"
+        (click)="toggleOnlineMasses()"
+        href="javascript:void(0)">
+        <div class="online-title">
+          <span>Мессы online</span>
+          <span class="subtitle">видео трансляция</span>
+        </div>
+        <span class="toggle"></span>
     </a>
   </div>
-  <a class="online-toggle-wrapper"
-      [class.active]="online"
-      (click)="toggleOnlineMasses()"
-      href="javascript:void(0)">
-      <div class="online-title">
-        <span>Мессы online</span>
-        <span class="subtitle">видео трансляция</span>
-      </div>
-      <span class="toggle"></span>
-  </a>
 </section>
+
 <!--Schedule Section / Style Two-->
 <section class="schedule-section style-two">
   <div class="auto-container">

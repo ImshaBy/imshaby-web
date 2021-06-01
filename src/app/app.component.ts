@@ -29,7 +29,6 @@ export class AppComponent {
   ngOnInit() {
     this.router.events.subscribe((event:Event) => {
       if(event instanceof NavigationEnd ){
-        console.log(event.url);
         let langs = ['/by', '/ru', '/en', '/pl'];
 
         if(event.url === '/by') {

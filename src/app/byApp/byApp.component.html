@@ -1,36 +1,75 @@
 <section class="banner auto-container clear"></section>
-<section class="banner auto-container">
-  <div class="banner-tab"
-      [class.active]="expandedOptions"
-      (click)="expandedOptions = !expandedOptions">
-    <div class="radio-icon"></div>
-    <div class="banner-tab-title" >
-      <span class="subtitle">Радыё</span>
-      <span>трансляцыя</span>
+<section class="filters-container" [class.filters-expanded]="isCollapsed">
+  <div class="filters-title">
+    <div class="filters-button" (click)="expandFilters()">
+      Фільтр Імшаў
     </div>
-    <span class="triangle"></span>
   </div>
-  <div class="tabs-box">
-    <a href="https://www.radiomaria.by/program" target="_blank">
-      <img src="/assets/static_files_to_copy/images/icons/maria-radio.svg" alt="radiomaria" class="icon icon-maria-radio" />
-      <span class="tab-box-title">
-        <span class="name">Радыё Марыя ў Беларусі</span>
-        <span class="message">Сачыце за раскладам на сайце</span>
-      </span>
+  <div class="choosen-filters">
+    <div class="location"></div>
+    <div class="parish"></div>
+    <div class="mass-language"></div>
+    <div class="online"></div>
+  </div>
+  <div class="filters">
+    <div class="filter-section">
+      <div class="filter-location">
+        <div>Населены пункт </div>
+        <ng-select [items]="cities"
+           bindLabel="name"
+           autofocus
+           placeholder="Пошук"
+           bindValue="value"
+           (change)="filterByCity()"
+           [(ngModel)]="cityId">
+        </ng-select>
+      </div>
+      <div class="filter-language">
+        <div>Мова імшы</div>
+        <ng-select [items]="massLanguages"
+          bindLabel="name"
+          autofocus
+          placeholder="Пошук"
+          bindValue="value"
+          (change)="filterByMassLang()"
+          (clear)="resetMassLangusges()"
+          [(ngModel)]="massLanguageId">
+      </ng-select>
+      </div>
+      <div class="filter-parish">
+        <div>Парафія</div>
+        <ng-select [items]="parishes"
+          bindLabel="name"
+          autofocus
+          placeholder="Пошук"
+          bindValue="value"
+          (change)="filterByParish()"
+          (clear)="resetParishes()"
+          [(ngModel)]="parishId">
+      </ng-select>
+      </div>
+    </div>
+  </div>
+  <div class="filters-footer">
+    <a class="radio-container" href="https://www.radiomaria.by/program" target="_blank">
+      <div class="title">Слухай святую імшу</div>
+      <div class="subtitle">трансляцыя Радыё Марыя ў Беларусі</div>
+    </a>
+    <a class="online-toggle-wrapper"
+        [class.active]="online"
+        (click)="toggleOnlineMasses()"
+        href="javascript:void(0)">
+        <div class="online-title">
+          <span>Імшы online</span>
+          <span class="subtitle">відэа трансляцыя</span>
+        </div>
+        <span class="toggle"></span>
     </a>
   </div>
-  <a class="online-toggle-wrapper"
-      [class.active]="online"
-      (click)="toggleOnlineMasses()"
-      href="javascript:void(0)">
-      <div class="online-title">
-        <span>Імшы online</span>
-        <span class="subtitle">відэа трансляцыя</span>
-      </div>
-      <span class="toggle"></span>
-  </a>
 </section>
-
+City: {{cityId}}
+MassLang: {{massLanguageId}}
+Parish: {{parishId}}
 <section class="schedule-section style-two">
   <div class="auto-container">
     <!--Schedule Box-->
@@ -54,6 +93,7 @@
              [hidden]="!((massDay.date | date: 'dd/MM/yyyy') == (selectedDate | date: 'dd/MM/yyyy'))" >
           <div class="hour-box"
                [class.active-box]="massHour.active" *ngFor="let massHour of massDay.massHours">
+            <div *ngIf="!massHour">Content to render when condition is true.</div>
             <div class="hour">{{massHour.hour}}</div>
             <div class="img-circle circle"><span></span></div>
             <div class="toggle-btn" [class.active]="massHour.active"
