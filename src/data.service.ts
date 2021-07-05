@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import 'rxjs/add/operator/map';
 import { HttpClient } from '@angular/common/http';
+import { environment } from './environments/environment';
 
 @Injectable({
     providedIn: 'root'
@@ -20,24 +21,30 @@ export class DataService {
       }
 
     getAvailableCities(): Observable<any> {
-        return this.http.get('http://qa-api-imsha.mycloud.by/api/mass/week?lang=be');
+        const apiURL = environment.apiHost;
+
+        return this.http.get(`${apiURL}/api/mass/week?lang=be`);
     }
 
     getRelevanteFilters(pLang: String, pOnline: Boolean, pCityId: string, pParish: string, pMassLang: string): Observable<any> {
         const params = this.getParams(pLang, pOnline, pCityId, pParish, pMassLang);
+        const apiURL = environment.apiHost;
 
-        return this.http.get(`http://qa-api-imsha.mycloud.by/api/mass/week${params}`);
+        return this.http.get(`${apiURL}/api/mass/week${params}`);
     }
 
     getDefaultFiltersData(): Observable<any> {
-        return this.http.get('http://qa-api-imsha.mycloud.by/api/mass/week?lang=be');
+        const apiURL = environment.apiHost;
+        return this.http.get(`${apiURL}/api/mass/week?lang=be`);
     }
 
     getAvailableLanguages(): Observable<any> {
-        return this.http.get('http://qa-api-imsha.mycloud.by/api/mass/week?lang=be');
+        const apiURL = environment.apiHost;
+        return this.http.get(`${apiURL}/api/mass/week?lang=be`);
     }
 
     getAvailableParishes(): Observable<any> {
-        return this.http.get('http://qa-api-imsha.mycloud.by/api/mass/week?lang=be');
+        const apiURL = environment.apiHost;
+        return this.http.get(`${apiURL}/api/mass/week?lang=be`);
     }
 }
