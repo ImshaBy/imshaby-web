@@ -42,6 +42,34 @@ Fonts
   font-style: normal;
 }
 
+
+@font-face {
+  font-family: 'Calibri';
+  src: url('assets/static_files_to_copy/fonts/calibri/Calibri.eot'); /* IE9 Compat Modes */
+  src: url('assets/static_files_to_copy/fonts/calibri/Calibri.woff2') format('woff2'), /* Super Modern Browsers */
+       url('assets/static_files_to_copy/fonts/calibri/Calibri.woff') format('woff'), /* Pretty Modern Browsers */
+       url('assets/static_files_to_copy/fonts/calibri/Calibri.ttf')  format('truetype'), /* Safari, Android, iOS */
+}
+
+@font-face {
+  font-family: 'Calibri-bold';
+  src: url('assets/static_files_to_copy/fonts/calibri/Calibri-Bold.eot'); /* IE9 Compat Modes */
+  src: url('assets/static_files_to_copy/fonts/calibri/Calibri-Bold.woff2') format('woff2'), /* Super Modern Browsers */
+       url('assets/static_files_to_copy/fonts/calibri/Calibri-Bold.woff') format('woff'), /* Pretty Modern Browsers */
+       url('assets/static_files_to_copy/fonts/calibri/Calibri-Bold.ttf')  format('truetype'), /* Safari, Android, iOS */
+}
+
+@font-face {
+  font-family: 'Calibri-italic';
+  src: url('assets/static_files_to_copy/fonts/calibri/Calibri-Italic.eot'); /* IE9 Compat Modes */
+  src: url('assets/static_files_to_copy/fonts/calibri/Calibri-Italic.woff2') format('woff2'), /* Super Modern Browsers */
+       url('assets/static_files_to_copy/fonts/calibri/Calibri-Italic.woff') format('woff'), /* Pretty Modern Browsers */
+       url('assets/static_files_to_copy/fonts/calibri/Calibri-Italic.ttf')  format('truetype'), /* Safari, Android, iOS */
+}
+
+$calibri: 'Calibri';
+$calibriBold: 'Calibri-bold';
+$calibriItalic: 'Calibri-italic';
 $openSans: 'open_sansregular';
 $openSansSemiBold: 'open_sanssemibold';
 $fontAwesome: 'FontAwesome';
@@ -68,7 +96,7 @@ $color-asparagus: #739953;
 //red
 $color-red: #ab1818;
 $color-green: #739953;
-$colod-light-green: #7399531a;
+$color-light-green: #7399531a;
 $color-advent: #622f9c;
 $color-xmass: #f3d245;
 $color-envy: #97b198;
@@ -90,3 +118,4 @@ $color-dark-gray: #7f7f7f;
 //Main theme variable
 
 $color-main-theme: $color-green;
+$color-main-theme-light: $color-light-green;

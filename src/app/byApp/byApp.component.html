@@ -1,9 +1,33 @@
 <section class="banner auto-container clear"></section>
-<section class="filters-container" [class.filters-expanded]="isCollapsed">
+<section class="filters-container" [class.filters-collapsed]="isCollapsed">
   <div class="filters-title">
     <div class="filters-button" (click)="expandFilters()">
-      Фільтр Імшаў
+      <svg class="filter-icon" width="26" height="27" viewBox="0 0 26 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <line x1="4.2334" y1="7.02197" x2="21.7334" y2="7.02197" stroke="#5D3E81" stroke-width="2.5" stroke-linecap="round"/>
+        <circle r="3" transform="matrix(1 0 0 -1 7.99609 7.02197)" fill="#5D3E81"/>
+        <ellipse rx="1.5" ry="1.50251" transform="matrix(1 0 0 -1 7.99609 7.02679)" fill="white"/>
+        <line x1="4.2334" y1="14.0093" x2="21.7334" y2="14.0093" stroke="#5D3E81" stroke-width="2.5" stroke-linecap="round"/>
+        <circle cx="17.1836" cy="14.022" r="3" fill="#5D3E81"/>
+        <ellipse rx="1.5" ry="1.50251" transform="matrix(1 0 0 -1 17.1836 14.0273)" fill="white"/>
+        <line x1="4.2334" y1="21.0317" x2="21.7334" y2="21.0317" stroke="#5D3E81" stroke-width="2.5" stroke-linecap="round"/>
+        <circle cx="10.9961" cy="21.022" r="3" fill="#5D3E81"/>
+        <circle r="1.5" transform="matrix(1 0 0 -1 10.9961 21.0225)" fill="white"/>
+      </svg>
+      <span>Фільтр Імшаў</span>
+      <svg class="arrow arrow-down" width="13" height="8" viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1 1L6.5 6L12 1" stroke="#5D3E81" stroke-width="2"/>
+      </svg>
+      <svg class="arrow arrow-up" width="13" height="8" viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1 7L6.5 2L12 7" stroke="#5D3E81" stroke-width="2" stroke-linecap="round"/>
+      </svg>        
     </div>
+    <a class="radio-container" href="https://www.radiomaria.by/program" target="_blank">
+      <svg class="radio-icon" width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M9.63073 7.69826H22.5998C23.9253 7.69826 24.9999 8.77279 24.9999 10.0983V22.0985C24.9999 23.424 23.9253 24.4985 22.5998 24.4985H3.39955C2.07404 24.4985 0.999512 23.424 0.999512 22.0985V10.0983C0.999512 8.86343 1.93212 7.84638 3.13142 7.71307L20.9541 0.583984L21.8455 2.81236L9.63073 7.69826ZM3.02456 10.0215V22.475H22.9891V10.0215H3.02456ZM15.6789 16.1829V18.1922H21.0371V16.1829H15.6789ZM15.3999 14.8987V12.4987H21.3999V14.8987H15.3999ZM4.59981 16.0989C4.59981 18.7499 6.74887 20.899 9.39987 20.899C12.0509 20.899 14.1999 18.7499 14.1999 16.0989C14.1999 13.4479 12.0509 11.2989 9.39987 11.2989C6.74887 11.2989 4.59981 13.4479 4.59981 16.0989ZM9.40003 18.8431C10.9157 18.8431 12.1444 17.6144 12.1444 16.0988C12.1444 14.5831 10.9157 13.3544 9.40003 13.3544C7.88436 13.3544 6.65566 14.5831 6.65566 16.0988C6.65566 17.6144 7.88436 18.8431 9.40003 18.8431ZM8.19984 16.0986C8.19984 16.7613 8.73711 17.2986 9.39986 17.2986C10.0626 17.2986 10.5999 16.7613 10.5999 16.0986C10.5999 15.4358 10.0626 14.8986 9.39986 14.8986C8.73711 14.8986 8.19984 15.4358 8.19984 16.0986Z" fill="#5D3E81"/>
+      </svg>
+      <div class="title">Слухай святую імшу</div>
+      <div class="subtitle">трансляцыя Радыё Марыя ў Беларусі</div>
+    </a>
   </div>
   <div class="choosen-filters">
     <div class="location"></div>
@@ -14,12 +38,14 @@
   <div class="filters">
     <div class="filter-section">
       <div class="filter-location">
-        <div>Населены пункт </div>
+        <div>Населены пункт</div>
         <ng-select [items]="cities"
            bindLabel="name"
            autofocus
+           notFoundText="не знойдзена"
            placeholder="Пошук"
            bindValue="value"
+           dropdownPosition="bottom"
            (change)="filterByCity()"
            [(ngModel)]="cityId">
         </ng-select>
@@ -30,7 +56,9 @@
           bindLabel="name"
           autofocus
           placeholder="Пошук"
+          notFoundText="не знойдзена"
           bindValue="value"
+          dropdownPosition="bottom"
           (change)="filterByMassLang()"
           (clear)="resetMassLangusges()"
           [(ngModel)]="massLanguageId">
@@ -42,7 +70,9 @@
           bindLabel="name"
           autofocus
           placeholder="Пошук"
+          notFoundText="не знойдзена"
           bindValue="value"
+          dropdownPosition="bottom"
           (change)="filterByParish()"
           (clear)="resetParishes()"
           [(ngModel)]="parishId">
@@ -52,6 +82,9 @@
   </div>
   <div class="filters-footer">
     <a class="radio-container" href="https://www.radiomaria.by/program" target="_blank">
+      <svg class="radio-icon" width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M9.63073 7.69826H22.5998C23.9253 7.69826 24.9999 8.77279 24.9999 10.0983V22.0985C24.9999 23.424 23.9253 24.4985 22.5998 24.4985H3.39955C2.07404 24.4985 0.999512 23.424 0.999512 22.0985V10.0983C0.999512 8.86343 1.93212 7.84638 3.13142 7.71307L20.9541 0.583984L21.8455 2.81236L9.63073 7.69826ZM3.02456 10.0215V22.475H22.9891V10.0215H3.02456ZM15.6789 16.1829V18.1922H21.0371V16.1829H15.6789ZM15.3999 14.8987V12.4987H21.3999V14.8987H15.3999ZM4.59981 16.0989C4.59981 18.7499 6.74887 20.899 9.39987 20.899C12.0509 20.899 14.1999 18.7499 14.1999 16.0989C14.1999 13.4479 12.0509 11.2989 9.39987 11.2989C6.74887 11.2989 4.59981 13.4479 4.59981 16.0989ZM9.40003 18.8431C10.9157 18.8431 12.1444 17.6144 12.1444 16.0988C12.1444 14.5831 10.9157 13.3544 9.40003 13.3544C7.88436 13.3544 6.65566 14.5831 6.65566 16.0988C6.65566 17.6144 7.88436 18.8431 9.40003 18.8431ZM8.19984 16.0986C8.19984 16.7613 8.73711 17.2986 9.39986 17.2986C10.0626 17.2986 10.5999 16.7613 10.5999 16.0986C10.5999 15.4358 10.0626 14.8986 9.39986 14.8986C8.73711 14.8986 8.19984 15.4358 8.19984 16.0986Z" fill="#5D3E81"/>
+      </svg>
       <div class="title">Слухай святую імшу</div>
       <div class="subtitle">трансляцыя Радыё Марыя ў Беларусі</div>
     </a>
@@ -59,8 +92,12 @@
         [class.active]="online"
         (click)="toggleOnlineMasses()"
         href="javascript:void(0)">
+        <div class="online-checkbox"></div>
         <div class="online-title">
-          <span>Імшы online</span>
+          <span>Паказваць толькі імшы анлайн</span>
+          <svg class="youtube-icon" width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12.3474 10.2896C12.746 9.4699 12.9163 8.14811 12.9163 5.99794C12.9163 3.85635 12.7476 2.54224 12.3448 1.70052C11.9411 0.826456 11.4623 0.549024 10.512 0.482433C9.86329 0.429668 8.25099 0.399902 6.50123 0.399902C4.7477 0.399902 3.13468 0.429657 2.48109 0.482847C1.53616 0.549183 1.05724 0.827228 0.649968 1.70372C0.252982 2.54253 0.0830078 3.86306 0.0830078 6.00578C0.0830078 8.13633 0.253805 9.46351 0.653456 10.2996C1.05543 11.1648 1.52672 11.4395 2.47969 11.5198C3.16462 11.5679 4.86892 11.5999 6.50123 11.5999C8.12988 11.5999 9.83335 11.5679 10.512 11.5203C11.4738 11.4395 11.945 11.1643 12.3474 10.2896ZM10.4386 1.87965C11.033 1.92134 11.1432 1.98545 11.3316 2.39466C11.6059 2.96471 11.7497 4.08032 11.7497 6.0058C11.7497 7.91671 11.6052 9.03845 11.3329 9.59861C11.1438 10.0091 11.0344 10.073 10.4372 10.1232C9.7949 10.1682 8.10794 10.1999 6.50125 10.1999C4.89093 10.1999 3.20313 10.1682 2.55463 10.1227C1.96486 10.073 1.85382 10.0082 1.66895 9.61038C1.39486 9.03688 1.24969 7.90884 1.24969 5.99796C1.24969 4.08821 1.39409 2.96639 1.66672 2.39031C1.85446 1.9863 1.96628 1.92138 2.55466 1.88006C3.17765 1.82939 4.7755 1.79992 6.50125 1.79992C8.22329 1.79992 9.82039 1.8294 10.4386 1.87965ZM5.33293 3.89983L8.2496 5.99983L5.33293 8.09983V3.89983Z" fill="#5D3E81"/>
+          </svg>            
           <span class="subtitle">відэа трансляцыя</span>
         </div>
         <span class="toggle"></span>
@@ -97,6 +134,12 @@
                  (click)="massHour.active = !massHour.active">
               <h3 *ngIf="checkMassesAmount(massHour.data.length)">Святая Імша ў {{massHour.data.length}} парафіі</h3>
               <h3 *ngIf="!checkMassesAmount(massHour.data.length)" >Святая Імша ў {{massHour.data.length}} парафіях</h3>
+              <svg class="arrow arrow-down" width="13" height="8" viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 1L6.5 6L12 1" stroke="#5D3E81" stroke-width="2"/>
+              </svg>
+              <svg class="arrow arrow-up" width="13" height="8" viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 7L6.5 2L12 7" stroke="#5D3E81" stroke-width="2" stroke-linecap="round"/>
+              </svg>  
             </div>
             <div class="content-box row" [class.collapsed]="massHour.active">
               <div class="panel panel-default mass-card"

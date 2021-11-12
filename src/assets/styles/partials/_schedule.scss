@@ -43,7 +43,7 @@
   padding: 17px 10px;
   border-bottom: 1px solid $color-alto;
   border-right: 1px solid $color-alto;
-  font-family: $openSans, sans-serif;
+  font-family: $calibri, sans-serif;
   cursor: pointer;
   transition: all 300ms ease;
   -webkit-transition: all 300ms ease;
@@ -259,28 +259,30 @@
     display: inline-block;
     font-size: 18px;
     line-height: 28px;
-    padding-right: 30px;
+    padding-right: 15px;
     color: $color-tundora;
+  }
 
-    &:after {
-      font-family: $fontAwesome;
-      content: '\f107';
-      position: absolute;
-      right: 0;
-      top: 0;
-      width: 30px;
-      height: 30px;
-      display: block;
-      color: $color-main-theme;
-      line-height: 28px;
-      font-size: 24px;
-      text-align: right;
-      z-index: 5;
+  .arrow {
+    path {
+      stroke: $color-main-theme;
     }
   }
 
-  &.active h3:after {
-    content: '\f106';
+  .arrow-down {
+    display: none;
+  }
+  .arrow-up {
+    display: inline-block;
+  }
+
+  &.active {
+    .arrow-down {
+      display: inline-block;
+    }
+    .arrow-up {
+      display: none;
+    }
   }
 }
 
@@ -436,6 +438,10 @@
     padding: 0 0 100px;
   }
 
+  .schedule-box .tab {
+    padding-top: 0;
+  }
+
   .schedule-box .tab-buttons,
   .style-two .schedule-box .tab-buttons {
     float: none;
@@ -456,8 +462,8 @@
     flex: 1;
     float: none;
     border: 1px solid $color-alto-light !important;
-    margin-bottom: 5px;
-    padding: 20px 0;
+    margin-bottom: 0;
+    padding: 1px 0;
   }
 
   .schedule-box .tab-buttons .tab-btn {

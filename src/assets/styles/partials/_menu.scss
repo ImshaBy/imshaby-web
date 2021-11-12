@@ -93,6 +93,10 @@
     width: 100%;
   }
 
+  svg {
+    display: none;
+  }
+
   &.visible {
     display: block;
   }
@@ -138,7 +142,7 @@
   .logo-wrapper {
     color: $color-black;
     font: normal 36px/44px 'Constantia';
-    padding-bottom: 15px;
+    padding-bottom: 0;
 
     img {
       width: 100%;
@@ -158,25 +162,35 @@
   }
 
   .logo {
-    height: 65px;
-    width: 280px;
+    height: 66px;
+    width: auto;
+    padding: 8px 0;
     overflow: hidden;
+
+    img {
+      display: none;
+    }
+
+    svg {
+      display: block;
+
+      path {
+        fill: $color-main-theme;
+      }
+    }
 
     &:after {
       content: none;
     }
 
-    &.en {
-      width: 351px;
-    }
-
-    &.ru {
-      width: 329px;
+    &.en,
+    &.ru  {
+      width: auto;
     }
   }
 
   .lang-switcher {
-    padding: 15px 0 15px 0;
+    padding: 15px 0 0 0;
     margin-right: 10px;
 
     .active {
