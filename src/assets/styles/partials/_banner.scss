@@ -134,75 +134,6 @@
   color: $color-tundora;
 }
 
-// .online-toggle-wrapper {
-//   display: flex;
-//   font-size: 22px;
-//   align-self: center;
-//   margin-left: 60px;
-//   align-items: center;
-//   color: $color-tundora;
-
-//   &:active, 
-//   &:focus, 
-//   &:hover {
-//     color: $color-tundora;
-
-//     .toggle {
-//       color: $color-main-theme;
-//     }
-//   }
-
-//   &.active {
-//     .toggle:after {
-//       right: 4px;
-//       left: initial;
-//       background: $color-main-theme;
-//     }
-
-//     .online-title::before {
-//       background-image: url('../../assets/static_files_to_copy/images/icons/youtube_advent.svg');
-//     }
-//   }
-// }
-
-.toggle {
-  display: inline-block;
-  width: 40px;
-  height: 20px;
-  border-radius: 10px;
-  background: $color-main-theme;
-  position: relative;
-  margin-left: 20px;
-
-  &:before {
-    content: "";
-    display: inline-block;
-    width: 36px;
-    height: 16px;
-    background: $color-white;
-    border-radius: 10px;
-    position: absolute;
-    top: 2px;
-    left: 2px;
-  }
-
-  &:after {
-    content: "";
-    display: block;
-    width: 12px;
-    height: 12px;
-    background: $color-alto;
-    border-radius: 50%;
-    position: absolute;
-    top: 4px;
-    left: 4px;
-    transition-property: left, right;
-    transition-duration: 0.5s;
-    transition-timing-function: ease;
-  }
-}
-
-
 @media only screen and (max-width: 768px) {
   .banner {
     flex-direction: column;
@@ -292,34 +223,5 @@
 
   .triangle {
     display: none;
-  }
-
-  .online-toggle-wrapper {
-    align-self: initial;
-    padding: 0 0 0 25px;
-    margin: 20px 0 0 0;
-  }
-
-  .online-title {
-    margin-left: 40px;
-    flex: 1;
-
-    &::before {
-      top: 0;
-      left: -40px;
-    }
-
-    span {
-      font-size: 20px;
-      text-align: left;
-    }
-
-    .subtitle {
-      display: none;
-    }
-  }
-
-  .toggle {
-    margin-right: 20px;
   }
 }

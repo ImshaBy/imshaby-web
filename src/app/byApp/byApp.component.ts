@@ -35,7 +35,7 @@ export class ByAppComponent {
   cityId: string | null = null;
   massLanguageId: string | null = null;
   parishId: string | null = null;
-  public isCollapsed: boolean = false;
+  public isCollapsed: boolean = true;
 
   massLanguages: any[] = [];
   allLanguages: any[] = [];
