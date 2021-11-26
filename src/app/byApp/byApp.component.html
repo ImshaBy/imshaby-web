@@ -25,7 +25,7 @@
       <svg class="radio-icon" width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path fill-rule="evenodd" clip-rule="evenodd" d="M9.63073 7.69826H22.5998C23.9253 7.69826 24.9999 8.77279 24.9999 10.0983V22.0985C24.9999 23.424 23.9253 24.4985 22.5998 24.4985H3.39955C2.07404 24.4985 0.999512 23.424 0.999512 22.0985V10.0983C0.999512 8.86343 1.93212 7.84638 3.13142 7.71307L20.9541 0.583984L21.8455 2.81236L9.63073 7.69826ZM3.02456 10.0215V22.475H22.9891V10.0215H3.02456ZM15.6789 16.1829V18.1922H21.0371V16.1829H15.6789ZM15.3999 14.8987V12.4987H21.3999V14.8987H15.3999ZM4.59981 16.0989C4.59981 18.7499 6.74887 20.899 9.39987 20.899C12.0509 20.899 14.1999 18.7499 14.1999 16.0989C14.1999 13.4479 12.0509 11.2989 9.39987 11.2989C6.74887 11.2989 4.59981 13.4479 4.59981 16.0989ZM9.40003 18.8431C10.9157 18.8431 12.1444 17.6144 12.1444 16.0988C12.1444 14.5831 10.9157 13.3544 9.40003 13.3544C7.88436 13.3544 6.65566 14.5831 6.65566 16.0988C6.65566 17.6144 7.88436 18.8431 9.40003 18.8431ZM8.19984 16.0986C8.19984 16.7613 8.73711 17.2986 9.39986 17.2986C10.0626 17.2986 10.5999 16.7613 10.5999 16.0986C10.5999 15.4358 10.0626 14.8986 9.39986 14.8986C8.73711 14.8986 8.19984 15.4358 8.19984 16.0986Z" fill="#5D3E81"/>
       </svg>
-      <div class="title">Слухай святую імшу</div>
+      <div class="title">Слухай Святую Імшу</div>
       <div class="subtitle">трансляцыя Радыё Марыя ў Беларусі</div>
     </a>
   </div>
@@ -85,7 +85,7 @@
       <svg class="radio-icon" width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path fill-rule="evenodd" clip-rule="evenodd" d="M9.63073 7.69826H22.5998C23.9253 7.69826 24.9999 8.77279 24.9999 10.0983V22.0985C24.9999 23.424 23.9253 24.4985 22.5998 24.4985H3.39955C2.07404 24.4985 0.999512 23.424 0.999512 22.0985V10.0983C0.999512 8.86343 1.93212 7.84638 3.13142 7.71307L20.9541 0.583984L21.8455 2.81236L9.63073 7.69826ZM3.02456 10.0215V22.475H22.9891V10.0215H3.02456ZM15.6789 16.1829V18.1922H21.0371V16.1829H15.6789ZM15.3999 14.8987V12.4987H21.3999V14.8987H15.3999ZM4.59981 16.0989C4.59981 18.7499 6.74887 20.899 9.39987 20.899C12.0509 20.899 14.1999 18.7499 14.1999 16.0989C14.1999 13.4479 12.0509 11.2989 9.39987 11.2989C6.74887 11.2989 4.59981 13.4479 4.59981 16.0989ZM9.40003 18.8431C10.9157 18.8431 12.1444 17.6144 12.1444 16.0988C12.1444 14.5831 10.9157 13.3544 9.40003 13.3544C7.88436 13.3544 6.65566 14.5831 6.65566 16.0988C6.65566 17.6144 7.88436 18.8431 9.40003 18.8431ZM8.19984 16.0986C8.19984 16.7613 8.73711 17.2986 9.39986 17.2986C10.0626 17.2986 10.5999 16.7613 10.5999 16.0986C10.5999 15.4358 10.0626 14.8986 9.39986 14.8986C8.73711 14.8986 8.19984 15.4358 8.19984 16.0986Z" fill="#5D3E81"/>
       </svg>
-      <div class="title">Слухай святую імшу</div>
+      <div class="title">Слухай Святую Імшу</div>
       <div class="subtitle">трансляцыя Радыё Марыя ў Беларусі</div>
     </a>
     <a class="online-toggle-wrapper"
@@ -148,7 +148,23 @@
                   <figure class="img-circle image">
                     <img class="img-circle"
                          [src]="mass.parish.imgPath !== null ? mass.parish.imgPath : '/assets/images/building-in-progress.png'"
-                         alt='Мінск, Здымак: {{mass.parish.name}}'>
+                         alt='Мінск, Здымак: {{mass.parish.name}}' />
+                    <div class="overlay" *ngIf="mass.rorate"></div>
+                    <svg *ngIf="mass.rorate" width="50" height="80" viewBox="0 0 50 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M28.8638 28.4307H14.6611V77.6341H28.8638V28.4307Z" stroke="#F3D245" stroke-width="2.46817" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M21.7637 28.4296V23.6816" stroke="#F3D245" stroke-width="2.46817" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M21.6562 13.3779C21.6562 13.3779 17.9759 18.5307 21.6562 23.6834" stroke="#F3D245" stroke-width="2.46817" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M21.8574 13.3779C21.8574 13.3779 25.5377 18.5307 21.8574 23.6834" stroke="#F3D245" stroke-width="2.46817" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M14.8284 22.6992H9.6748" stroke="#F3D245" stroke-width="2.46817" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M14.8261 13.3775L9.90332 11.4722" stroke="#F3D245" stroke-width="2.46817" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M28.2686 13.3775L33.1913 11.4722" stroke="#F3D245" stroke-width="2.46817" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M33.308 22.6992H28.1553" stroke="#F3D245" stroke-width="2.46817" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M21.626 2V7.15275" stroke="#F3D245" stroke-width="2.46817" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M25.4219 37.9121H28.2678" stroke="#F3D245" stroke-width="1.97454" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M14.6611 37.9121H22.5395L22.6195 39.2774C22.6195 40.0318 23.2312 40.6427 23.9847 40.6427C24.7391 40.6427 25.35 40.0309 25.35 39.2774V37.9121" stroke="#F3D245" stroke-width="1.97454" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M3 78H40.4774" stroke="#F3D245" stroke-width="2.46817" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M40.5384 77.99C44.3431 77.99 47.4275 74.9056 47.4275 71.1009C47.4275 67.2962 44.3431 64.2119 40.5384 64.2119C36.7337 64.2119 33.6494 67.2962 33.6494 71.1009C33.6494 74.9056 36.7337 77.99 40.5384 77.99Z" stroke="#F3D245" stroke-width="2.46817" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>                          
                   </figure>
                 </div>
                 <div class="mass-parish-info-wrapper info">

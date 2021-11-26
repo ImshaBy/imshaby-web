@@ -16,6 +16,8 @@ export class AppComponent {
   days: Day[];
   cookieService: CookieService;
   lang: string;
+  public isCollapsed: boolean = true;
+
 
   constructor(
     private pCookieService: CookieService,
@@ -45,6 +47,10 @@ export class AppComponent {
   onChangeLang(pLang: string): void {
     this.lang = pLang;
     this.cookieService.put("i_lang", this.lang);
+  }
+
+  expandLangSwitcher() {
+    this.isCollapsed = !this.isCollapsed;
   }
 
   @HostListener('window:scroll', ['$event'])

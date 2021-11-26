@@ -352,6 +352,9 @@
       position: absolute;
       border: 1px solid $color-alto;
       overflow: hidden;
+      position: relative;
+      width: 110px;
+      height: 110px;
 
       img {
         background: rgba(127,127,127, 0.2);
@@ -359,6 +362,21 @@
         display: block;
         width: 110px;
         height: 110px;
+      }
+
+      .overlay {
+        position: absolute;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+        width: 100%;
+        height: 100%;
+        text-align: center;
+      }
+
+      svg {
+        position: absolute;
+        top: 10px;
+        left: 29%;
       }
     }
 
@@ -493,10 +511,20 @@
         font-size: 15px;
       }
 
-      .info .image img {
+      .info .image {
         width: 90px;
         height: 90px;
-      }
+
+        img {
+          width: 90px;
+          height: 90px;
+        }
+
+        svg {
+          top: 0;
+          left: inherit;
+        }
+     }
 
       .mass-online.visible {
         color: $color-main-theme;
