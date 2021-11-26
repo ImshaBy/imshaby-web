@@ -98,7 +98,9 @@ $color-red: #ab1818;
 $color-green: #739953;
 $color-light-green: #7399531a;
 $color-advent: #622f9c;
+$color-light-advent: #622f9c24;
 $color-xmass: #f3d245;
+$color-light-xmass: #f3d24538;
 $color-envy: #97b198;
 $color-gum-leaf: #accbbc;
 $color-buff: #f2d389;
@@ -117,5 +119,5 @@ $color-dark-gray: #7f7f7f;
 
 //Main theme variable
 
-$color-main-theme: $color-green;
-$color-main-theme-light: $color-light-green;
+$color-main-theme: $color-advent;
+$color-main-theme-light: $color-light-advent;
