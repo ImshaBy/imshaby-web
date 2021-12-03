@@ -46,8 +46,6 @@ export class ByAppComponent {
   availableOnline: boolean = true
   ;
 
-
-
   constructor(
     private pMassService: MassService,
     private pUtils: Utils,

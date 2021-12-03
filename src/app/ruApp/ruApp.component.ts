@@ -6,6 +6,7 @@ import { MassSchedule } from '../_models/massSchedule';
 import { Day } from '../_models/day';
 import { Utils } from '../_services/app.utils';
 import { delay } from 'rxjs/operators';
+import { Nav } from '../_models/navigation';
 
 @Component({
   selector: 'ru-view',
@@ -28,6 +29,8 @@ export class RuAppComponent {
   parish: string;
   massLang: string;
   online: boolean;
+  nav: any;
+
   cityId: string | null = null;
   massLanguageId: string | null = null;
   parishId: string | null = null;
@@ -39,6 +42,8 @@ export class RuAppComponent {
   allCities: any[] = [];
   parishes: any[] = [];
   allParish: any[] = [];
+  availableOnline: boolean = true
+  ;
 
   constructor(
     private pMassService: MassService,
@@ -56,50 +61,92 @@ export class RuAppComponent {
     this.parishId = this.parishId;
     this.massLanguageId = this.massLanguageId;
   }
-
-  private loadCities() {
-    this.dataService.getAvailableCities().pipe(delay(500)).subscribe(resp => {
+  private loadDefaultFiltersData() {
+    this.dataService.getDefaultFiltersData().pipe(delay(500)).subscribe(resp => {
         this.allCities = resp.nav.guided.city;
-        this.cities = [...this.allCities];
-    });
-  }
-
-  private loadLanguages() {
-    this.dataService.getAvailableLanguages().pipe(delay(500)).subscribe(resp => {
         this.allLanguages = resp.nav.guided.lang;
+        this.allParish = resp.nav.guided.parish;
+        this.updateOnlineAvailability(resp.nav.guided.online);
+
         this.massLanguages = [...this.allLanguages];
+        this.cities = [...this.allCities];
+        this.parishes = [...this.allParish];
+        this.allCities.length < 2
     });
   }
 
-  private loadParishes() {
-    this.dataService.getAvailableParishes().pipe(delay(500)).subscribe(resp => {
-        this.allParish = resp.nav.guided.parish;
-        this.parishes = [...this.allParish];
+  private updateOnlineAvailability(onlineValues: any[]) {
+    if (onlineValues && onlineValues.length < 2) {
+      this.availableOnline = false;
+    } else if (onlineValues) {
+      this.availableOnline = true;
+    }
+  }
+
+  private loadRelevanteFiltersLang(pLang: String, pOnline: Boolean, pCityId: string, pParish: string, pMassLang: string) {
+    console.log('update parishes');
+
+    this.dataService.getRelevanteFilters(pLang, pOnline, pCityId, pParish, pMassLang).pipe(delay(500)).subscribe(resp => {
+      this.allParish = resp.nav.guided.parish;
+      this.updateOnlineAvailability(resp.nav.guided.online);
+
+
+      this.parishes = [...this.allParish];
+    });
+  }
+
+  private loadRelevanteFiltersParish(pLang: String, pOnline: Boolean, pCityId: string, pParish: string, pMassLang: string) {
+    console.log('update languages');
+
+    this.dataService.getRelevanteFilters(pLang, pOnline, pCityId, pParish, pMassLang).pipe(delay(500)).subscribe(resp => {
+      this.allLanguages = resp.nav.guided.lang;
+
+      this.updateOnlineAvailability(resp.nav.guided.online);
+
+
+      this.massLanguages = [...this.allLanguages];
+    });
+  }
+
+
+  private loadRelevanteFiltersParishAndLang(pLang: String, pOnline: Boolean, pCityId: string, pParish: string, pMassLang: string) {
+
+    this.dataService.getRelevanteFilters(pLang, pOnline, pCityId, pParish, pMassLang).pipe(delay(500)).subscribe(resp => {
+      this.allLanguages = resp.nav.guided.lang;
+      this.allParish = resp.nav.guided.parish;
+      this.updateOnlineAvailability(resp.nav.guided.online);
+      this.parishes = [...this.allParish];
+      this.massLanguages = [...this.allLanguages];
+      this.updateDayTabsWithMasses();
+
     });
   }
 
   refresh() {
     this.today = new Date();
-    this.days = this.getActualDays('ru');
+    this.days = this.getActualDays('be');
     this.selectedDay = this.utils.getSelectedDay(this.today);
     this.selectedDate = this.today;
     this.getTodayScheduleAsyncWithAllParams();
   }
 
-  getCityNameById(cities: any[], cityId: string | null) {
-    return cities.filter(i => i.value === cityId)[0].name;
+  refreshWithSelection(date: Date){
+    this.days = this.getActualDays('be');
+    this.selectedDay = this.utils.getSelectedDay(date);
+    this.selectedDate = date;
+    this.getTodayScheduleAsyncWithAllParams();
   }
 
   toggleOnlineMasses() {
     this.online = !this.online;
-    this.getTodayScheduleAsyncWithAllParams();
+    this.loadRelevanteFiltersParishAndLang(this.lang, this.online, this.cityId, this.parishId, this.massLanguageId);
+    this.refreshWithSelection(this.selectedDate);
+    // this.getTodayScheduleAsyncWithAllParams();
   }
 
   ngOnInit() {
     this.refresh();
-    this.loadCities();
-    this.loadLanguages();
-    this.loadParishes();
+    this.loadDefaultFiltersData();
     this.cdr.detectChanges();
   }
 
@@ -107,15 +154,28 @@ export class RuAppComponent {
     this.massLanguageId = null;
     this.parishId = null;
     this.online = false;
-    this.getTodayScheduleAsyncWithAllParams();
+    // this.getTodayScheduleAsyncWithAllParams();
+    this.refreshWithSelection(this.selectedDate);
   }
 
   filterByMassLang() {
-    this.getTodayScheduleAsyncWithAllParams();
+    this.loadRelevanteFiltersLang(this.lang, this.online, this.cityId, this.parishId, this.massLanguageId);
+    // this.getTodayScheduleAsyncWithAllParams();
+    this.refreshWithSelection(this.selectedDate);
+  }
+
+  resetMassLangusges() {
+    this.loadRelevanteFiltersParish(this.lang, this.online, this.cityId, this.parishId, this.massLanguageId);
+  }
+
+  resetParishes(){
+    this.loadRelevanteFiltersLang(this.lang, this.online, this.cityId, this.parishId, this.massLanguageId);
   }
 
   filterByParish() {
-    this.getTodayScheduleAsyncWithAllParams();
+    this.loadRelevanteFiltersParish(this.lang, this.online, this.cityId, this.parishId, this.massLanguageId);
+    // this.getTodayScheduleAsyncWithAllParams();
+    this.refreshWithSelection(this.selectedDate);
   }
 
   expandFilters() {
@@ -126,6 +186,20 @@ export class RuAppComponent {
       this.refresh();
       this.selectedDay = massDay.getDay();
       this.selectedDate = massDay;
+  }
+
+  updateDayTabsWithMasses(): boolean {
+    if(this.masses.schedule){
+      this.days.forEach(tabDay => {
+        let massDay = this.masses.schedule.find(day => day.date.toLocaleDateString() == tabDay.date.toLocaleDateString());
+        if(massDay){
+          tabDay.hasMasses = true;
+        }
+      })
+    }else{
+      console.log("not initialized yet..")
+    }
+    return false;
   }
 
   getTodaySchedule(): MassSchedule {
@@ -141,6 +215,8 @@ export class RuAppComponent {
     .subscribe(
       masses => {
         this.masses = masses;
+        this.nav = masses.nav;
+        this.updateDayTabsWithMasses();
       },
       error => console.error('Error: ' + error)
     );
