@@ -46,6 +46,10 @@
   .active {
     color: $color-main-theme;
   }
+
+  .arrow {
+    display: none;
+  }
 }
 
 .site-name-wrapper {
@@ -93,6 +97,10 @@
     width: 100%;
   }
 
+  svg {
+    display: none;
+  }
+
   &.visible {
     display: block;
   }
@@ -138,7 +146,7 @@
   .logo-wrapper {
     color: $color-black;
     font: normal 36px/44px 'Constantia';
-    padding-bottom: 15px;
+    padding-bottom: 0;
 
     img {
       width: 100%;
@@ -158,30 +166,92 @@
   }
 
   .logo {
-    height: 65px;
-    width: 280px;
+    height: 66px;
+    width: auto;
+    padding: 8px 0;
     overflow: hidden;
+
+    img {
+      display: none;
+    }
+
+    svg {
+      display: block;
+
+      path {
+        fill: $color-main-theme;
+      }
+    }
 
     &:after {
       content: none;
     }
 
-    &.en {
-      width: 351px;
-    }
-
-    &.ru {
-      width: 329px;
+    &.en,
+    &.ru  {
+      width: auto;
     }
   }
 
-  .lang-switcher {
-    padding: 15px 0 15px 0;
-    margin-right: 10px;
+  .main-header {
+    position: relative;
+  }
 
-    .active {
+  .lang-switcher {
+    padding: 15px 0 0 25px;
+    margin-right: 10px;
+    flex-direction: column;
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+    z-index: 2;
+    background: $color-white;
+
+    li {
+      margin: 0 25px 0 0;
+      padding-bottom: 5px;
+    }
+
+    .arrow {
+      position: absolute;
+      right: 0;
+      top: 21px;
+      display: block;
+
+      path {
+        stroke: $color-main-theme;
+      }
+    }
+
+    &.switcher-collapsed {
+      li {
+        display: none;
+      }
+
+      .active {
+        display: block;
+      }
+
+      .arrow-down {
+        display: block;
+      }
+  
+      .arrow-up {
+        display: none;
+      }  
+    }
+
+    li {
       display: block;
     }
+
+    .arrow-down {
+      display: none;
+    }
+
+    .arrow-up {
+      display: block;
+    } 
   }
 
   .site-name-wrapper {

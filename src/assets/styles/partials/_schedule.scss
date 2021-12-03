@@ -43,7 +43,7 @@
   padding: 17px 10px;
   border-bottom: 1px solid $color-alto;
   border-right: 1px solid $color-alto;
-  font-family: $openSans, sans-serif;
+  font-family: $calibri, sans-serif;
   cursor: pointer;
   transition: all 300ms ease;
   -webkit-transition: all 300ms ease;
@@ -259,28 +259,30 @@
     display: inline-block;
     font-size: 18px;
     line-height: 28px;
-    padding-right: 30px;
+    padding-right: 15px;
     color: $color-tundora;
+  }
 
-    &:after {
-      font-family: $fontAwesome;
-      content: '\f107';
-      position: absolute;
-      right: 0;
-      top: 0;
-      width: 30px;
-      height: 30px;
-      display: block;
-      color: $color-main-theme;
-      line-height: 28px;
-      font-size: 24px;
-      text-align: right;
-      z-index: 5;
+  .arrow {
+    path {
+      stroke: $color-main-theme;
     }
   }
 
-  &.active h3:after {
-    content: '\f106';
+  .arrow-down {
+    display: none;
+  }
+  .arrow-up {
+    display: inline-block;
+  }
+
+  &.active {
+    .arrow-down {
+      display: inline-block;
+    }
+    .arrow-up {
+      display: none;
+    }
   }
 }
 
@@ -350,6 +352,9 @@
       position: absolute;
       border: 1px solid $color-alto;
       overflow: hidden;
+      position: relative;
+      width: 110px;
+      height: 110px;
 
       img {
         background: rgba(127,127,127, 0.2);
@@ -357,6 +362,21 @@
         display: block;
         width: 110px;
         height: 110px;
+      }
+
+      .overlay {
+        position: absolute;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+        width: 100%;
+        height: 100%;
+        text-align: center;
+      }
+
+      svg {
+        position: absolute;
+        top: 10px;
+        left: 29%;
       }
     }
 
@@ -399,7 +419,7 @@
         content: '';
         width: 27px;
         height: 21px;
-        background-image: url('../../assets/static_files_to_copy/images/icons/youtube_advent.svg');
+        background-image: url('../../assets/static_files_to_copy/images/icons/youtube_green.svg');
         background-size: contain;
         position: absolute;
         left: -35px;
@@ -436,6 +456,10 @@
     padding: 0 0 100px;
   }
 
+  .schedule-box .tab {
+    padding-top: 0;
+  }
+
   .schedule-box .tab-buttons,
   .style-two .schedule-box .tab-buttons {
     float: none;
@@ -456,8 +480,8 @@
     flex: 1;
     float: none;
     border: 1px solid $color-alto-light !important;
-    margin-bottom: 5px;
-    padding: 20px 0;
+    margin-bottom: 0;
+    padding: 1px 0;
   }
 
   .schedule-box .tab-buttons .tab-btn {
@@ -487,10 +511,20 @@
         font-size: 15px;
       }
 
-      .info .image img {
+      .info .image {
         width: 90px;
         height: 90px;
-      }
+
+        img {
+          width: 90px;
+          height: 90px;
+        }
+
+        svg {
+          top: 0;
+          left: inherit;
+        }
+     }
 
       .mass-online.visible {
         color: $color-main-theme;

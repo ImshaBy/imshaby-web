@@ -42,6 +42,34 @@ Fonts
   font-style: normal;
 }
 
+
+@font-face {
+  font-family: 'Calibri';
+  src: url('/assets/static_files_to_copy/fonts/calibri/Calibri.eot'); /* IE9 Compat Modes */
+  src: url('/assets/static_files_to_copy/fonts/calibri/Calibri.woff2') format('woff2'), /* Super Modern Browsers */
+       url('/assets/static_files_to_copy/fonts/calibri/Calibri.woff') format('woff'), /* Pretty Modern Browsers */
+       url('/assets/static_files_to_copy/fonts/calibri/Calibri.ttf')  format('truetype'), /* Safari, Android, iOS */
+}
+
+@font-face {
+  font-family: 'Calibri-bold';
+  src: url('/assets/static_files_to_copy/fonts/calibri/Calibri-Bold.eot'); /* IE9 Compat Modes */
+  src: url('/assets/static_files_to_copy/fonts/calibri/Calibri-Bold.woff2') format('woff2'), /* Super Modern Browsers */
+       url('/assets/static_files_to_copy/fonts/calibri/Calibri-Bold.woff') format('woff'), /* Pretty Modern Browsers */
+       url('/assets/static_files_to_copy/fonts/calibri/Calibri-Bold.ttf')  format('truetype'), /* Safari, Android, iOS */
+}
+
+@font-face {
+  font-family: 'Calibri-italic';
+  src: url('/assets/static_files_to_copy/fonts/calibri/Calibri-Italic.eot'); /* IE9 Compat Modes */
+  src: url('/assets/static_files_to_copy/fonts/calibri/Calibri-Italic.woff2') format('woff2'), /* Super Modern Browsers */
+       url('/assets/static_files_to_copy/fonts/calibri/Calibri-Italic.woff') format('woff'), /* Pretty Modern Browsers */
+       url('/assets/static_files_to_copy/fonts/calibri/Calibri-Italic.ttf')  format('truetype'), /* Safari, Android, iOS */
+}
+
+$calibri: 'Calibri';
+$calibriBold: 'Calibri-bold';
+$calibriItalic: 'Calibri-italic';
 $openSans: 'open_sansregular';
 $openSansSemiBold: 'open_sanssemibold';
 $fontAwesome: 'FontAwesome';
@@ -68,8 +96,11 @@ $color-asparagus: #739953;
 //red
 $color-red: #ab1818;
 $color-green: #739953;
+$color-light-green: #7399531a;
 $color-advent: #622f9c;
+$color-light-advent: #622f9c24;
 $color-xmass: #f3d245;
+$color-light-xmass: #f3d24538;
 $color-envy: #97b198;
 $color-gum-leaf: #accbbc;
 $color-buff: #f2d389;
@@ -89,3 +120,4 @@ $color-dark-gray: #7f7f7f;
 //Main theme variable
 
 $color-main-theme: $color-advent;
+$color-main-theme-light: $color-light-advent;

@@ -16,6 +16,8 @@ export class AppComponent {
   days: Day[];
   cookieService: CookieService;
   lang: string;
+  public isCollapsed: boolean = true;
+
 
   constructor(
     private pCookieService: CookieService,
@@ -29,7 +31,6 @@ export class AppComponent {
   ngOnInit() {
     this.router.events.subscribe((event:Event) => {
       if(event instanceof NavigationEnd ){
-        console.log(event.url);
         let langs = ['/by', '/ru', '/en', '/pl'];
 
         if(event.url === '/by') {
@@ -46,6 +47,10 @@ export class AppComponent {
   onChangeLang(pLang: string): void {
     this.lang = pLang;
     this.cookieService.put("i_lang", this.lang);
+  }
+
+  expandLangSwitcher() {
+    this.isCollapsed = !this.isCollapsed;
   }
 
   @HostListener('window:scroll', ['$event'])
