@@ -43,7 +43,10 @@ export class ByAppComponent {
   allCities: any[] = [];
   parishes: any[] = [];
   allParish: any[] = [];
-  
+  availableOnline: boolean = true
+  ;
+
+
 
   constructor(
     private pMassService: MassService,
@@ -66,10 +69,21 @@ export class ByAppComponent {
         this.allCities = resp.nav.guided.city;
         this.allLanguages = resp.nav.guided.lang;
         this.allParish = resp.nav.guided.parish;
+        this.updateOnlineAvailability(resp.nav.guided.online);
+
         this.massLanguages = [...this.allLanguages];
         this.cities = [...this.allCities];
         this.parishes = [...this.allParish];
+        this.allCities.length < 2
     });
+  }
+
+  private updateOnlineAvailability(onlineValues: any[]) {
+    if (onlineValues && onlineValues.length < 2) {
+      this.availableOnline = false;
+    } else if (onlineValues) {
+      this.availableOnline = true;
+    }
   }
 
   private loadRelevanteFiltersLang(pLang: String, pOnline: Boolean, pCityId: string, pParish: string, pMassLang: string) {
@@ -77,6 +91,9 @@ export class ByAppComponent {
 
     this.dataService.getRelevanteFilters(pLang, pOnline, pCityId, pParish, pMassLang).pipe(delay(500)).subscribe(resp => {
       this.allParish = resp.nav.guided.parish;
+      this.updateOnlineAvailability(resp.nav.guided.online);
+
+
       this.parishes = [...this.allParish];
     });
   }
@@ -86,7 +103,25 @@ export class ByAppComponent {
 
     this.dataService.getRelevanteFilters(pLang, pOnline, pCityId, pParish, pMassLang).pipe(delay(500)).subscribe(resp => {
       this.allLanguages = resp.nav.guided.lang;
+
+      this.updateOnlineAvailability(resp.nav.guided.online);
+
+
       this.massLanguages = [...this.allLanguages];
+    });
+  }
+
+
+  private loadRelevanteFiltersParishAndLang(pLang: String, pOnline: Boolean, pCityId: string, pParish: string, pMassLang: string) {
+
+    this.dataService.getRelevanteFilters(pLang, pOnline, pCityId, pParish, pMassLang).pipe(delay(500)).subscribe(resp => {
+      this.allLanguages = resp.nav.guided.lang;
+      this.allParish = resp.nav.guided.parish;
+      this.updateOnlineAvailability(resp.nav.guided.online);
+      this.parishes = [...this.allParish];
+      this.massLanguages = [...this.allLanguages];
+      this.updateDayTabsWithMasses();
+
     });
   }
 
@@ -98,9 +133,18 @@ export class ByAppComponent {
     this.getTodayScheduleAsyncWithAllParams();
   }
 
+  refreshWithSelection(date: Date){
+    this.days = this.getActualDays('be');
+    this.selectedDay = this.utils.getSelectedDay(date);
+    this.selectedDate = date;
+    this.getTodayScheduleAsyncWithAllParams();
+  }
+
   toggleOnlineMasses() {
     this.online = !this.online;
-    this.getTodayScheduleAsyncWithAllParams();
+    this.loadRelevanteFiltersParishAndLang(this.lang, this.online, this.cityId, this.parishId, this.massLanguageId);
+    this.refreshWithSelection(this.selectedDate);
+    // this.getTodayScheduleAsyncWithAllParams();
   }
 
   ngOnInit() {
@@ -113,12 +157,14 @@ export class ByAppComponent {
     this.massLanguageId = null;
     this.parishId = null;
     this.online = false;
-    this.getTodayScheduleAsyncWithAllParams();
+    // this.getTodayScheduleAsyncWithAllParams();
+    this.refreshWithSelection(this.selectedDate);
   }
 
   filterByMassLang() {
     this.loadRelevanteFiltersLang(this.lang, this.online, this.cityId, this.parishId, this.massLanguageId);
-    this.getTodayScheduleAsyncWithAllParams();
+    // this.getTodayScheduleAsyncWithAllParams();
+    this.refreshWithSelection(this.selectedDate);
   }
 
   resetMassLangusges() {
@@ -131,7 +177,8 @@ export class ByAppComponent {
 
   filterByParish() {
     this.loadRelevanteFiltersParish(this.lang, this.online, this.cityId, this.parishId, this.massLanguageId);
-    this.getTodayScheduleAsyncWithAllParams();
+    // this.getTodayScheduleAsyncWithAllParams();
+    this.refreshWithSelection(this.selectedDate);
   }
 
   expandFilters() {
@@ -142,6 +189,20 @@ export class ByAppComponent {
       this.refresh();
       this.selectedDay = massDay.getDay();
       this.selectedDate = massDay;
+  }
+
+  updateDayTabsWithMasses(): boolean {
+    if(this.masses.schedule){
+      this.days.forEach(tabDay => {
+        let massDay = this.masses.schedule.find(day => day.date.toLocaleDateString() == tabDay.date.toLocaleDateString());
+        if(massDay){
+          tabDay.hasMasses = true;
+        }
+      })
+    }else{
+      console.log("not initialized yet..")
+    }
+    return false;
   }
 
   getTodaySchedule(): MassSchedule {
@@ -158,6 +219,7 @@ export class ByAppComponent {
       masses => {
         this.masses = masses;
         this.nav = masses.nav;
+        this.updateDayTabsWithMasses();
       },
       error => console.error('Error: ' + error)
     );

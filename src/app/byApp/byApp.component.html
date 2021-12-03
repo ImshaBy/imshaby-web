@@ -19,7 +19,7 @@
       </svg>
       <svg class="arrow arrow-up" width="13" height="8" viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M1 7L6.5 2L12 7" stroke="#5D3E81" stroke-width="2" stroke-linecap="round"/>
-      </svg>        
+      </svg>
     </div>
     <a class="radio-container" href="https://www.radiomaria.by/program" target="_blank">
       <svg class="radio-icon" width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -38,8 +38,20 @@
   <div class="filters">
     <div class="filter-section">
       <div class="filter-location">
-        <div>Населены пункт</div>
-        <ng-select [items]="cities"
+        <div>Парафія</div>
+        <ng-select [items]="parishes"
+          bindLabel="name"
+          autofocus
+          placeholder="Пошук"
+          notFoundText="не знойдзена"
+          bindValue="value"
+          dropdownPosition="bottom"
+          (change)="filterByParish()"
+          (clear)="resetParishes()"
+          [(ngModel)]="parishId">
+      </ng-select>
+        <!-- <div>Населены пункт</div> -->
+        <!-- <ng-select [items]="cities"
            bindLabel="name"
            autofocus
            notFoundText="не знойдзена"
@@ -48,7 +60,7 @@
            dropdownPosition="bottom"
            (change)="filterByCity()"
            [(ngModel)]="cityId">
-        </ng-select>
+        </ng-select> -->
       </div>
       <div class="filter-language">
         <div>Мова імшы</div>
@@ -64,8 +76,8 @@
           [(ngModel)]="massLanguageId">
       </ng-select>
       </div>
-      <div class="filter-parish">
-        <div>Парафія</div>
+      <!-- <div class="filter-parish"> -->
+        <!-- <div>Парафія</div>
         <ng-select [items]="parishes"
           bindLabel="name"
           autofocus
@@ -76,8 +88,8 @@
           (change)="filterByParish()"
           (clear)="resetParishes()"
           [(ngModel)]="parishId">
-      </ng-select>
-      </div>
+      </ng-select> -->
+      <!-- </div> -->
     </div>
   </div>
   <div class="filters-footer">
@@ -88,20 +100,22 @@
       <div class="title">Слухай Святую Імшу</div>
       <div class="subtitle">трансляцыя Радыё Марыя ў Беларусі</div>
     </a>
-    <a class="online-toggle-wrapper"
-        [class.active]="online"
-        (click)="toggleOnlineMasses()"
-        href="javascript:void(0)">
-        <div class="online-checkbox"></div>
-        <div class="online-title">
-          <span>Паказваць толькі імшы анлайн</span>
-          <svg class="youtube-icon" width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M12.3474 10.2896C12.746 9.4699 12.9163 8.14811 12.9163 5.99794C12.9163 3.85635 12.7476 2.54224 12.3448 1.70052C11.9411 0.826456 11.4623 0.549024 10.512 0.482433C9.86329 0.429668 8.25099 0.399902 6.50123 0.399902C4.7477 0.399902 3.13468 0.429657 2.48109 0.482847C1.53616 0.549183 1.05724 0.827228 0.649968 1.70372C0.252982 2.54253 0.0830078 3.86306 0.0830078 6.00578C0.0830078 8.13633 0.253805 9.46351 0.653456 10.2996C1.05543 11.1648 1.52672 11.4395 2.47969 11.5198C3.16462 11.5679 4.86892 11.5999 6.50123 11.5999C8.12988 11.5999 9.83335 11.5679 10.512 11.5203C11.4738 11.4395 11.945 11.1643 12.3474 10.2896ZM10.4386 1.87965C11.033 1.92134 11.1432 1.98545 11.3316 2.39466C11.6059 2.96471 11.7497 4.08032 11.7497 6.0058C11.7497 7.91671 11.6052 9.03845 11.3329 9.59861C11.1438 10.0091 11.0344 10.073 10.4372 10.1232C9.7949 10.1682 8.10794 10.1999 6.50125 10.1999C4.89093 10.1999 3.20313 10.1682 2.55463 10.1227C1.96486 10.073 1.85382 10.0082 1.66895 9.61038C1.39486 9.03688 1.24969 7.90884 1.24969 5.99796C1.24969 4.08821 1.39409 2.96639 1.66672 2.39031C1.85446 1.9863 1.96628 1.92138 2.55466 1.88006C3.17765 1.82939 4.7755 1.79992 6.50125 1.79992C8.22329 1.79992 9.82039 1.8294 10.4386 1.87965ZM5.33293 3.89983L8.2496 5.99983L5.33293 8.09983V3.89983Z" fill="#5D3E81"/>
-          </svg>            
-          <span class="subtitle">відэа трансляцыя</span>
-        </div>
-        <span class="toggle"></span>
-    </a>
+    <div [class.selection-disabled]="!availableOnline && !online" >
+      <a class="online-toggle-wrapper"
+          [class.active]="online"
+          (click)="toggleOnlineMasses()"
+          href="javascript:void(0)">
+          <div class="online-checkbox"></div>
+          <div class="online-title">
+            <span>Паказваць толькі імшы анлайн</span>
+            <svg class="youtube-icon" width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M12.3474 10.2896C12.746 9.4699 12.9163 8.14811 12.9163 5.99794C12.9163 3.85635 12.7476 2.54224 12.3448 1.70052C11.9411 0.826456 11.4623 0.549024 10.512 0.482433C9.86329 0.429668 8.25099 0.399902 6.50123 0.399902C4.7477 0.399902 3.13468 0.429657 2.48109 0.482847C1.53616 0.549183 1.05724 0.827228 0.649968 1.70372C0.252982 2.54253 0.0830078 3.86306 0.0830078 6.00578C0.0830078 8.13633 0.253805 9.46351 0.653456 10.2996C1.05543 11.1648 1.52672 11.4395 2.47969 11.5198C3.16462 11.5679 4.86892 11.5999 6.50123 11.5999C8.12988 11.5999 9.83335 11.5679 10.512 11.5203C11.4738 11.4395 11.945 11.1643 12.3474 10.2896ZM10.4386 1.87965C11.033 1.92134 11.1432 1.98545 11.3316 2.39466C11.6059 2.96471 11.7497 4.08032 11.7497 6.0058C11.7497 7.91671 11.6052 9.03845 11.3329 9.59861C11.1438 10.0091 11.0344 10.073 10.4372 10.1232C9.7949 10.1682 8.10794 10.1999 6.50125 10.1999C4.89093 10.1999 3.20313 10.1682 2.55463 10.1227C1.96486 10.073 1.85382 10.0082 1.66895 9.61038C1.39486 9.03688 1.24969 7.90884 1.24969 5.99796C1.24969 4.08821 1.39409 2.96639 1.66672 2.39031C1.85446 1.9863 1.96628 1.92138 2.55466 1.88006C3.17765 1.82939 4.7755 1.79992 6.50125 1.79992C8.22329 1.79992 9.82039 1.8294 10.4386 1.87965ZM5.33293 3.89983L8.2496 5.99983L5.33293 8.09983V3.89983Z" fill="#5D3E81"/>
+            </svg>
+            <span class="subtitle">відэа трансляцыя</span>
+          </div>
+          <span class="toggle"></span>
+      </a>
+  </div>
   </div>
 </section>
 <section class="schedule-section style-two">
@@ -111,6 +125,7 @@
       <!--Tab Buttons-->
       <ul class="tab-buttons clearfix" id="navbar">
         <li class="tab-btn" [class.active]="(day.date | date: 'dd/MM/yyyy') == (selectedDate | date: 'dd/MM/yyyy') "
+            [class.selection-disabled]="!day.hasMasses"
             *ngFor="let day of days"
             (click)="onSelect(day.date)">
           <span class="day">{{day.dayName}}</span>
@@ -120,13 +135,16 @@
       </ul>
       <!--Tabs Box-->
       <div class="tabs-box" id="tabs-box">
+
         <!--Tab / Current / Monday-->
         <div class="tab"
              *ngFor="let massDay of masses.schedule"
              [class.current]="(massDay.date | date: 'dd/MM/yyyy') == (selectedDate | date: 'dd/MM/yyyy')"
              [hidden]="!((massDay.date | date: 'dd/MM/yyyy') == (selectedDate | date: 'dd/MM/yyyy'))" >
+
           <div class="hour-box"
                [class.active-box]="massHour.active" *ngFor="let massHour of massDay.massHours">
+
             <div *ngIf="!massHour">Content to render when condition is true.</div>
             <div class="hour">{{massHour.hour}}</div>
             <div class="img-circle circle"><span></span></div>
@@ -139,7 +157,7 @@
               </svg>
               <svg class="arrow arrow-up" width="13" height="8" viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M1 7L6.5 2L12 7" stroke="#5D3E81" stroke-width="2" stroke-linecap="round"/>
-              </svg>  
+              </svg>
             </div>
             <div class="content-box row" [class.collapsed]="massHour.active">
               <div class="panel panel-default mass-card"
@@ -164,7 +182,7 @@
                       <path d="M14.6611 37.9121H22.5395L22.6195 39.2774C22.6195 40.0318 23.2312 40.6427 23.9847 40.6427C24.7391 40.6427 25.35 40.0309 25.35 39.2774V37.9121" stroke="#F3D245" stroke-width="1.97454" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
                       <path d="M3 78H40.4774" stroke="#F3D245" stroke-width="2.46817" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
                       <path d="M40.5384 77.99C44.3431 77.99 47.4275 74.9056 47.4275 71.1009C47.4275 67.2962 44.3431 64.2119 40.5384 64.2119C36.7337 64.2119 33.6494 67.2962 33.6494 71.1009C33.6494 74.9056 36.7337 77.99 40.5384 77.99Z" stroke="#F3D245" stroke-width="2.46817" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>                          
+                    </svg>
                   </figure>
                 </div>
                 <div class="mass-parish-info-wrapper info">
