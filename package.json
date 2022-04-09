@@ -37,7 +37,7 @@
     "font-awesome": "^4.7.0",
     "i18n": "0.8.6",
     "jquery": "3.6.0",
-    "moment": "2.29.1",
+    "moment": "2.29.2",
     "mydatepicker": "^1.0.19",
     "ng2-datetime-picker": "^0.9.10",
     "ng2-meta": "^4.0.0",
